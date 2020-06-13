@@ -6,27 +6,14 @@ command_exists() {
 
 echo "Installing dotfiles."
 
+source install/base.sh
+
 source install/link.sh
 
 source install/git.sh
 
 # only perform macOS-specific install
 if [ "$(uname)" == "Darwin" ]; then
-    echo -e "\\n\\nRunning on macOS"
-
-    if test ! "$( command -v brew )"; then
-        echo "Installing homebrew"
-        ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
-    fi
-
-    # install brew dependencies from Brewfile
-    brew bundle
-
-    # After the install, setup fzf
-    echo -e "\\n\\nRunning fzf install script..."
-    echo "=============================="
-    /usr/local/opt/fzf/install --all --no-bash --no-fish
-
     # after the install, install neovim python libraries
     echo -e "\\n\\nRunning Neovim Python install"
     echo "=============================="

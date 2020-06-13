@@ -9,7 +9,7 @@ if !exists('g:vscode')
   set pumheight=10                        " Makes popup menu smaller
   set fileencoding=utf-8                  " The encoding written to file
   set ruler              			            " Show the cursor position all the time
-  set cmdheight=2                         " More space for displaying messages
+  set cmdheight=1                         " More space for displaying messages
   set mouse=a                             " Enable your mouse
   set splitbelow                          " Horizontal splits will automatically be below
   set splitright                          " Vertical splits will automatically be to the right
@@ -36,14 +36,14 @@ if !exists('g:vscode')
   set clipboard=unnamedplus               " Copy paste between vim and everything else
   set incsearch
   set guifont=Hack\ Nerd\ Font
-  " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  " set mmp=1300
+  set norelativenumber!
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  set mmp=1300
   set autochdir                           " Your working directory will always be the same as your working directory
-  " set foldcolumn=2                        " Folding abilities
+  set foldcolumn=2                        " Folding abilities
 
   au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 
   " You can't stop me
   cmap w!! w !sudo tee %
