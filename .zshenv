@@ -1,0 +1,1 @@
+/home/imlong/.dotfiles/zsh/zshenv.symlink
