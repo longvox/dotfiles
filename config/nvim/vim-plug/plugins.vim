@@ -47,11 +47,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Closetags
     Plug 'alvan/vim-closetag'
     " Themes
-    " Plug 'christianchiarulli/onedark.vim'
+    Plug 'christianchiarulli/onedark.vim'
     " Plug 'kaicataldo/material.vim'
     " Plug 'NLKNguyen/papercolor-theme'
     " Plug 'tomasiser/vim-code-dark'
-    Plug 'morhetz/gruvbox'
+    " Plug 'morhetz/gruvbox'
+    Plug 'jacoborus/tender.vim'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line

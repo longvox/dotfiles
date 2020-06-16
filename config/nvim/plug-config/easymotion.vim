@@ -19,12 +19,12 @@ nmap s <Plug>(easymotion-overwin-f2)
 " nmap S <Plug>(easymotion-overwin-t)
 
 " Move to line
-map <Leader>l <Plug>(easymotion-bd-jk)
-nmap <Leader>l <Plug>(easymotion-overwin-line)
+" map <Leader>l <Plug>(easymoti:wqon-bd-jk)
+" nmap <Leader>l <Plug>(easymotion-overwin-line)
 
 " Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+" map  <Leader>w <Plug>(easymotion-bd-w)
+" nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
