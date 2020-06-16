@@ -24,5 +24,7 @@ sudo apt-get install lazygit
 # A simple terminal UI for both docker and docker-compose, written in Go with the gocui library.
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash 
 
+# install ndcu
+sudo apt-get install -y ncdu
 
 

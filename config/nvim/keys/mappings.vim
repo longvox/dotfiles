@@ -1,10 +1,18 @@
+" vim tig mapping keys
+let g:tig_explorer_keymap_edit    = '<C-o>'
+let g:tig_explorer_keymap_tabedit = '<C-t>'
+let g:tig_explorer_keymap_split   = '<C-s>'
+let g:tig_explorer_keymap_vsplit  = '<C-v>'
 
+" switch window in vim
 imap <C-h> <C-w>h
 imap <C-j> <C-w>j
 imap <C-k> <C-w>k
 imap <C-l> <C-w>l
+
 " g Leader key
 let mapleader=" "
+
 " let localleader=" "
 nnoremap <Space> <Nop>
 
@@ -28,8 +36,8 @@ else
   inoremap kj <Esc>
 
   " Easy CAPS
-  " inoremap <c-u> <ESC>viwUi
-  " nnoremap <c-u> viwU<Esc>
+  inoremap <c-u> <ESC>viwUi
+  nnoremap <c-u> viwU<Esc>
 
   " TAB in general mode will move to text buffer
   nnoremap <silent> <TAB> :bnext<CR>
@@ -39,8 +47,12 @@ else
   " Move selected line / block of text in visual mode
   " shift + k to move up
   " shift + j to move down
-  xnoremap K :move '<-2<CR>gv-gv
-  xnoremap J :move '>+1<CR>gv-gv
+  nnoremap <M-J> :m .+1<CR>==
+  nnoremap <M-K> :m .-2<CR>==
+  inoremap <M-J> <Esc>:m .+1<CR>==gi
+  inoremap <M-K> <Esc>:m .-2<CR>==gi
+  vnoremap <M-J> :m '>+1<CR>gv=gv
+  vnoremap <M-K> :m '<-2<CR>gv=gv
 
   " Alternate way to save
   nnoremap <silent> <C-s> :w<CR>
@@ -70,9 +82,9 @@ else
   tnoremap <Esc> <C-\><C-n>
 
   " Use alt + hjkl to resize windows
-  nnoremap <silent> <M-j>    :resize -2<CR>
-  nnoremap <silent> <M-k>    :resize +2<CR>
-  nnoremap <silent> <M-h>    :vertical resize -2<CR>
-  nnoremap <silent> <M-l>    :vertical resize +2<CR>
+  nnoremap <silent> <M-k>    :resize -2<CR>
+  nnoremap <silent> <M-j>    :resize +2<CR>
+  nnoremap <silent> <M-l>    :vertical resize -2<CR>
+  nnoremap <silent> <M-h>    :vertical resize +2<CR>
 endif
 
