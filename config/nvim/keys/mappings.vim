@@ -10,6 +10,12 @@ imap <C-j> <C-w>j
 imap <C-k> <C-w>k
 imap <C-l> <C-w>l
 
+" hack
+nnoremap <up>    :echoe "please use 'k' key"<CR>
+nnoremap <down>  :echoe "please use 'j' key"<CR>
+nnoremap <left>  :echoe "please use 'h' key"<CR>
+nnoremap <right> :echoe "please use 'l' key"<CR>
+
 " g Leader key
 let mapleader=" "
 
