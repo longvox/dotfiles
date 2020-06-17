@@ -17,7 +17,6 @@ sudo apt install \
 
 echo "Installing python pip!"
 sudo apt install python3-pip
-sudo apt install python-pip
 
 echo "Install docker!"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -46,5 +45,4 @@ sudo apt update && sudo apt install yarn
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 echo "Done install node, npm, nvm, yarn!"
-
 

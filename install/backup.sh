@@ -24,7 +24,7 @@ for file in $linkables; do
 done
 
 for filename in "$HOME/.config/nvim" "$HOME/.vim" "$HOME/.vimrc"; do
-    if [ ! -L "$filename" || ! -d "$filename" ]; then
+    if [[ ! -L "$filename" && -d "$filename" ]]; then
         echo "backing up $filename"
         cp -rf "$filename" "$BACKUP_DIR"
     else
