@@ -1,4 +1,12 @@
+# add  apt-repository 
+# lazygit
+echo "Add apt-repository!!!!"
+
+# sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
+
+echo "[Done] Add apt-repository" 
+# ################################## 
 sudo apt-get install curl wget
 sudo apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo
 
@@ -14,17 +22,11 @@ sudo apt-get install silversearcher-ag
 # A simple, fast and user-friendly alternative to 'find' 
 sudo apt install fd-find
 
-sudo snap install universal-ctags*.snap --dangerous
-
-# simple terminal UI for git commands
-sudo add-apt-repository ppa:lazygit-team/release
-sudo apt-get update
-sudo apt-get install lazygit
-
-# A simple terminal UI for both docker and docker-compose, written in Go with the gocui library.
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash 
-
 # install ndcu
 sudo apt-get install -y ncdu
 
+# lazygit: simple terminal UI for git commands
+sudo apt-get install lazygit
 
+# lazydocker: The lazier way to manage everything docker 
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash

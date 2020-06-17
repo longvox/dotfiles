@@ -96,6 +96,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'https://github.com/vimwiki/vimwiki.git'
     " Vim tig
     Plug 'iberianpig/tig-explorer.vim'
+    " mutiple  cursor
+    Plug 'terryma/vim-multiple-cursors'
   endif
 
 

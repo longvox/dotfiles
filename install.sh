@@ -4,16 +4,25 @@ command_exists() {
     type "$1" > /dev/null 2>&1
 }
 
+# set policies executable
+echo "Set policies executable"
+chmod +x ./install/backup.sh
+chmod +x ./install/link.sh
+chmod +x ./install/base-nvim.sh
+chmod +x ./install/git.sh
+echo "Backups dotfiles."
+. install/backup.sh
+
+echo "Link dotfiles."
+. install/link.sh
+
 echo "Installing dotfiles."
+. install/base-nvim.sh
+. install/git.sh
 
-source install/base.sh
-
-source install/link.sh
-
-source install/git.sh
 
 # only perform macOS-specific install
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" == "Linux" ]; then
     # after the install, install neovim python libraries
     echo -e "\\n\\nRunning Neovim Python install"
     echo "=============================="
@@ -27,11 +36,9 @@ if [ "$(uname)" == "Darwin" ]; then
     fi
 
     if [[ "$SHELL" != "$zsh_path" ]]; then
-        chsh -s "$zsh_path"
-        echo "default shell changed to $zsh_path"
+	chsh -s "$zsh_path"
+	echo -e "\\n\\ndefault shell changed to $zsh_path"
     fi
-
-    source install/osx.sh
 fi
 
 echo "creating vim directories"
