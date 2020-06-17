@@ -40,8 +40,8 @@ if [ "$(uname)" == "Linux" ]; then
     fi
 
     if [[ "$SHELL" != "$zsh_path" ]]; then
-	chsh -s "$zsh_path"
-	echo -e "\\n\\ndefault shell changed to $zsh_path"
+	      chsh -s "$zsh_path"
+	      echo -e "\\n\\ndefault shell changed to $zsh_path"
     fi
 fi
 
