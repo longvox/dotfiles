@@ -6,10 +6,13 @@ command_exists() {
 
 # set policies executable
 echo "Set policies executable"
-chmod +x ./install/backup.sh
-chmod +x ./install/link.sh
-chmod +x ./install/base-nvim.sh
-chmod +x ./install/git.sh
+chmod +x install/backup.sh
+chmod +x install/link.sh
+chmod +x install/base.sh
+chmod +x install/base-nvim.sh
+chmod +x install/base-zsh.sh
+chmod +x install/git.sh
+
 echo "Backups dotfiles."
 . install/backup.sh
 
@@ -17,9 +20,10 @@ echo "Link dotfiles."
 . install/link.sh
 
 echo "Installing dotfiles."
+. install/base.sh
 . install/base-nvim.sh
+. install/base-zsh.sh
 . install/git.sh
-
 
 # only perform macOS-specific install
 if [ "$(uname)" == "Linux" ]; then

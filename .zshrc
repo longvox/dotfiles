@@ -68,7 +68,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions history-substring-search)
+plugins=(
+    git
+    docker
+    zsh-autosuggestions
+    history-substring-search
+    zsh-completions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,5 +114,10 @@ alias ls="colorls --sd -A"
 alias robo3t="~/.robo3t/bin/robo3t"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/imlong/.sdkman"
-[[ -s "/home/imlong/.sdkman/bin/sdkman-init.sh" ]] && source "/home/imlong/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="~/.sdkman"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+
+[[ -s "~/.autojump/etc/profile.d/autojump.sh" ]] && source "~/.autojump/etc/profile.d/autojump.sh"
+
+autoload -U compinit && compinit -u
+

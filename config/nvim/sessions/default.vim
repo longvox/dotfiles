@@ -7,10 +7,16 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +42 ~/.dotfiles/install.sh
-badd +1 ~/.dotfiles/install/backup.sh
+badd +36 install.sh
+badd +32 install/base-nvim.sh
+badd +35 install/link.sh
+badd +20 install/git.sh
+badd +35 git/gitconfig.symlink
+badd +44 ~/.dotfiles/install/base-zsh.sh
+badd +1 ~/.dotfiles/config/nvim/init.vim
 argglobal
 %argdel
+edit ~/.dotfiles/install/base-zsh.sh
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -18,7 +24,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-if bufexists("term://.//33754:/usr/bin/zsh") | buffer term://.//33754:/usr/bin/zsh | else | edit term://.//33754:/usr/bin/zsh | endif
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -27,12 +32,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 231 - ((35 * winheight(0) + 18) / 36)
+silent! normal! zE
+let s:l = 61 - ((34 * winheight(0) + 17) / 35)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-231
-normal! 027|
+61
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
