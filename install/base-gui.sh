@@ -4,8 +4,6 @@ reset=`tput sgr0`
 
 if [[ $(whoami) == "imlong" ]];
 then
-    echo "abc"
-fi
     echo "${green}Install GUI application!${reset}"
 
     echo "${green}Installing gnome  tweak tool!${reset}"

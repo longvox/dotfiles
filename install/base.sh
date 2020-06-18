@@ -10,16 +10,21 @@ sudo apt dist-upgrade
 
 echo "${green}Installing base app!${reset}"
 sudo apt install \
-    software-properties-common \
-    apt-transport-https \
-    apt-transport-https \
-    ca-certificates \
-    gnupg-agent \
-    curl \
-    wget \
-    git \
-    ruby \
-    htop
+   software-properties-common \
+   apt-transport-https \
+   ca-certificates \
+   gnupg-agent \
+   build-essential \
+   libssl-dev \
+   libffi-dev \
+   libxml2-dev \
+   libxslt1-dev \
+   zlib1g-dev \
+   curl \
+   wget \
+   git \
+   ruby \
+   htop
 
 echo "${green}Installing python pip!${reset}"
 sudo apt install \
