@@ -1,11 +1,16 @@
+# colors output
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
 # add  apt-repository 
 # lazygit
-echo "Add apt-repository!!!!"
+echo "${green}Add apt-repository!!!!${reset}"
 
 # sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
 
-echo "[Done] Add apt-repository" 
+echo "${green}[Done] Add apt-repository${reset}" 
 # ################################## 
 sudo apt-get install curl wget
 sudo apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo

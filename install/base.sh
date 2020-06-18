@@ -1,10 +1,14 @@
-echo "Update and Upgrade!"
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+
+echo "${green}Update and Upgrade!${reset}"
 
 sudo apt update
 sudo apt upgrade
 sudo apt dist-upgrade
 
-echo "Installing base app!"
+echo "${green}Installing base app!${reset}"
 sudo apt install \
     software-properties-common \
     apt-transport-https \
@@ -13,12 +17,17 @@ sudo apt install \
     gnupg-agent \
     curl \
     wget \
-    git
+    git \
+    ruby \
+    htop
 
-echo "Installing python pip!"
-sudo apt install python3-pip
+echo "${green}Installing python pip!${reset}"
+sudo apt install \
+   python-dev \
+   python3-dev \
+   python3-pip
 
-echo "Install docker!"
+echo "${green}Install docker!${reset}"
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 
@@ -31,9 +40,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 sudo docker run hello-world
 
-echo "Done install docker!"
+echo "${green}Done install docker!${reset}"
 
-echo "Installing node, npm, nvm, yarn!"
+echo "${green}Installing node, npm, nvm, yarn!${reset}"
 sudo apt install nodejs
 sudo apt install npm
 
@@ -44,13 +53,13 @@ sudo apt update && sudo apt install yarn
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-echo "Done install node, npm, nvm, yarn!"
+echo "${green}Done install node, npm, nvm, yarn!${reset}"
 
-echo "Installing vim!"
+echo "${green}Installing vim!${reset}"
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt install vim
 
-echo "Installing neovim!"
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get install neovim
-
+echo "${green}Installing neovim!${reset}"
+curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
 
-printf "Setting up Git...\\n\\n"
+printf -e "${green}Setting up Git...\\n\\n${reset}"
 
 defaultName=$( git config --global user.name )
 defaultEmail=$( git config --global user.email )
