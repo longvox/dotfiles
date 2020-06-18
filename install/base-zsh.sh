@@ -62,6 +62,15 @@ else
         ${ZSH_CUSTOM}/plugins/zsh-completions
 fi
 
+if [ -d ${ZSH_CUSTOM}/plugins/zsh-nvm ];
+then
+   echo "${red}Installed zsh nvm!${reset}" 
+else
+    echo "${green}Installing zsh nvm!${reset}"
+    git clone https://github.com/lukechilds/zsh-nvm \
+       ${ZSH_CUSTOM}/plugins/zsh-nvm
+fi
+
 # echo "Installing ruby!"
 # sudo apt-get install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
 
