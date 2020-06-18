@@ -3,7 +3,7 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-printf -e "${green}Setting up Git...\\n\\n${reset}"
+echo -e "${green}Setting up Git...\\n\\n${reset}"
 
 defaultName=$( git config --global user.name )
 defaultEmail=$( git config --global user.email )

@@ -62,8 +62,6 @@ else
         ${ZSH_CUSTOM}/plugins/zsh-completions
 fi
 
-npm install -g neovim
-
 # echo "Installing ruby!"
 # sudo apt-get install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
 

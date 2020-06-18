@@ -25,11 +25,11 @@ echo "${green}Link dotfiles.${reset}"
 . install/link.sh
 
 echo "${green}Installing dotfiles.${reset}"
-# . install/base.sh
-# . install/base-gui.sh
-# . install/base-nvim.sh
-# . install/base-zsh.sh
-# . install/git.sh
+. install/base.sh
+. install/base-gui.sh
+. install/base-nvim.sh
+. install/base-zsh.sh
+. install/git.sh
 
 echo "${green}After install dotfiles.${reset}"
 . install/after-install.sh
