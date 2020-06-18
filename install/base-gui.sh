@@ -2,8 +2,10 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-if [[ ${whoami} -eq "imlong" ]];
+if [[ $(whoami) == "imlong" ]];
 then
+    echo "abc"
+fi
     echo "${green}Install GUI application!${reset}"
 
     echo "${green}Installing gnome  tweak tool!${reset}"
