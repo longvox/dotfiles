@@ -46,3 +46,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 echo "Done install node, npm, nvm, yarn!"
 
+echo "Installing vim!"
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt install vim
+
+echo "Installing neovim!"
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get install neovim
+

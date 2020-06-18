@@ -9,7 +9,12 @@ cd autojump
 cd $BASEDIR
 
 echo "Installing oh-my-zsh!"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ ! -d ~/.oh-my-zsh ];
+then
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+else
+   "Installed oh my zsh!"
+fi   
 
 ZSH_CUSTOM="~/.oh-my-zsh/custom"
 
