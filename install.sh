@@ -8,6 +8,8 @@ command_exists() {
     type "$1" > /dev/null 2>&1
 }
 
+set -eE
+
 # set policies executable
 echo "${green}set policies executable${reset}"
 chmod +x install/backup.sh
@@ -26,10 +28,10 @@ echo "${green}Link dotfiles.${reset}"
 
 echo "${green}Installing dotfiles.${reset}"
 . install/base.sh
+. install/git.sh
 . install/base-gui.sh
 . install/base-nvim.sh
 . install/base-zsh.sh
-. install/git.sh
 
 echo "${green}After install dotfiles.${reset}"
 . install/after-install.sh

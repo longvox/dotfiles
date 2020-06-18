@@ -11,10 +11,10 @@ then
 
     sudo apt install gufw -y
 
-    sudo apt install gdebi-core 
+    sudo apt install gdebi-core -y 
 
     echo "${green}Installing kazam!${reset}"
-    sudo apt-get install kazam
+    sudo apt-get install kazam -y
 
     echo "${green}Install flameshot!${reset}"
     sudo apt-get install flameshot
@@ -30,14 +30,14 @@ then
     echo "${green}Installing mailspring!${reset}"
     sudo snap install mailspring
 
-    sudo apt-get install ubuntu-restricted-extras
+    sudo apt-get install -y ubuntu-restricted-extras
     
     echo "${green}Installing google chrome!${reset}"
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo gdebi google-chrome-stable_current_amd64.deb
+    sudo gdebi google-chrome-stable_current_amd64.deb -y
     
     echo "${green}Installing firefox${reset}"
-    sudo apt install firefox
+    sudo apt install -y firefox
 
     echo "${green}Installing spotify!${reset}"
     sudo snap install spotify
