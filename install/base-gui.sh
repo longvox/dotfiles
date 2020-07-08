@@ -11,7 +11,7 @@ then
 
     sudo apt install gufw -y
 
-    sudo apt install gdebi-core -y 
+    sudo apt install gdebi-core -y
 
     echo "${green}Installing kazam!${reset}"
     sudo apt-get install kazam -y

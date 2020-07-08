@@ -25,7 +25,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-rooter'
   " auto set indent settings
   Plug 'tpope/vim-sleuth'
-
+  " wakatime
+  Plug 'wakatime/vim-wakatime'
   if exists('g:vscode')
     " Easy motion for VSCode
     Plug 'asvetliakov/vim-easymotion'

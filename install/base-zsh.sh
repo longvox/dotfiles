@@ -1,7 +1,7 @@
 red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
-
+set +e
 # autojump - a faster way to navigate your filesystem
 BASEDIR=$(dirname "$0")
 if [ ! -d "${BASEDIR}/autojump" ];
