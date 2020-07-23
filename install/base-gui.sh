@@ -2,7 +2,7 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-if [[ $(whoami) == "imlong" ]];
+if [[ $(whoami) == "administrator" ]];
 then
     echo "${green}Install GUI application!${reset}"
 
@@ -34,7 +34,7 @@ then
     
     echo "${green}Installing google chrome!${reset}"
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo gdebi google-chrome-stable_current_amd64.deb -y
+    sudo gdebi google-chrome-stable_current_amd64.deb
     
     echo "${green}Installing firefox${reset}"
     sudo apt install -y firefox
