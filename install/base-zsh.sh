@@ -72,16 +72,7 @@ else
 fi
 
 # echo "Installing ruby!"
-# sudo apt-get install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
-
-# echo "Installing rubygems-update"
-# gem install rubygems-update
-
-# echo "Run update rubygems"
-# update_rubygems
-
-# echo "Update gem system"
-# gem update --system
+sudo apt-get install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
 
 # echo "Installing colorls!"
-# gem install colorls
+gem install colorls
