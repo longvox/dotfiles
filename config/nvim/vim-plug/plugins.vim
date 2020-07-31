@@ -98,6 +98,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'iberianpig/tig-explorer.vim'
     " mutiple  cursor
     Plug 'terryma/vim-multiple-cursors'
+    " vim tsx
+    Plug 'ianks/vim-tsx'
+    Plug 'leafgarland/typescript-vim'
+    " rename
+    Plug 'neoclide/rename.nvim'
   endif
 
 

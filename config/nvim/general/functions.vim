@@ -1,3 +1,6 @@
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+
 " Turn spellcheck on for markdown files
 augroup auto_spellcheck
   autocmd BufNewFile,BufRead *.md setlocal spell
