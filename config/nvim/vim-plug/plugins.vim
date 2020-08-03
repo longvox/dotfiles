@@ -103,6 +103,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'leafgarland/typescript-vim'
     " rename
     Plug 'neoclide/rename.nvim'
+    " show author git commit in line
+    Plug 'apzelos/blamer.nvim'
   endif
 
 

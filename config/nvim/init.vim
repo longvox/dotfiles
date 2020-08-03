@@ -41,6 +41,7 @@ else
   luafile $HOME/.config/nvim/lua/plug-colorizer.lua
   source $HOME/.config/nvim/plug-config/easymotion.vim
   source $HOME/.config/nvim/plug-config/multiple-cursors.vim
+  source $HOME/.config/nvim/plug-config/blame.vim
 endif
 
 " Experimental
