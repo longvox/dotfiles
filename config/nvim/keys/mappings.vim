@@ -4,6 +4,20 @@ let g:tig_explorer_keymap_tabedit = '<C-t>'
 let g:tig_explorer_keymap_split   = '<C-s>'
 let g:tig_explorer_keymap_vsplit  = '<C-v>'
 
+" map hjkl
+nnoremap L l
+nnoremap H h
+nnoremap l w
+nnoremap h b
+
+" scroll 1 page up/down
+nnoremap <C-k> <C-u>
+nnoremap <C-j> <C-d>
+
+" move left/right in insert mode
+inoremap <M-h> <left>
+inoremap <M-l> <right>
+
 " switch window in vim
 imap <C-h> <C-w>h
 imap <C-j> <C-w>j
@@ -92,5 +106,9 @@ else
   nnoremap <silent> <M-j>    :resize +2<CR>
   nnoremap <silent> <M-l>    :vertical resize -2<CR>
   nnoremap <silent> <M-h>    :vertical resize +2<CR>
+  
+  " set time
+  nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+  imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 endif
 
