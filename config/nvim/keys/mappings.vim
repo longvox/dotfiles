@@ -14,6 +14,9 @@ nnoremap h b
 nnoremap <C-k> <C-u>
 nnoremap <C-j> <C-d>
 
+" map o to a
+nnoremap o a
+
 " move left/right in insert mode
 inoremap <M-h> <left>
 inoremap <M-l> <right>
