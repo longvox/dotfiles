@@ -42,11 +42,8 @@ if !exists('g:vscode')
   set autochdir                           " Your working directory will always be the same as your working directory
   set foldcolumn=2                        " Folding abilities
   set wrap linebreak                      " wrap by window
-  au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRCasd asd asd asd asdasda sd asd asdasdasdasdasdsadsdasdasdasdasd
+  au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
   match WarningMsg '\%>80v.\+'
-  " match ErrorMsg '\%>100v.\+'
-
-  
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
   " You can't stop me

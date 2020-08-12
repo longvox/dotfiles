@@ -2,11 +2,14 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Work/My\ Project/NESTJS/Demo_Mongo_BOK
+cd ~/.dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +3 config/nvim/general/functions.vim
+badd +11 config/nvim/general/settings.vim
+badd +17 config/nvim/themes/airline.vim
 argglobal
 %argdel
 set splitbelow splitright

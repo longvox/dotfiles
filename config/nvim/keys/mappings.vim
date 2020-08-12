@@ -16,6 +16,41 @@ nnoremap <C-j> <C-d>
 
 " map o to a
 nnoremap o a
+nnoremap a 
+
+" Switch between tabs
+map <M-=> :tabnext<CR>
+map <M--> :tabprevious<CR>
+nnoremap <C-1> 1gt<CR>
+nnoremap <C-2> 2gt<CR>
+nnoremap <C-3> 3gt<CR>
+nnoremap <C-4> 4gt<CR>
+nnoremap <C-5> 5gt<CR>
+nnoremap <C-6> 6gt<CR>
+nnoremap <C-7> 7gt<CR>
+nnoremap <C-8> 8gt<CR>
+nnoremap <C-9> 9gt<CR>
+nnoremap <C-0> 10gt<CR>
+
+" Next/Previous between buffers
+nnoremap <M-1> :1b<CR>
+nnoremap <M-2> :2b<CR>
+nnoremap <M-3> :3b<CR>
+nnoremap <M-4> :4b<CR>
+nnoremap <M-5> :5b<CR>
+nnoremap <M-6> :6b<CR>
+nnoremap <M-7> :7b<CR>
+nnoremap <M-8> :8b<CR>
+nnoremap <M-9> :9b<CR>
+nnoremap <M-0> :10b<CR>
+
+" simple surround
+
+" Don't use recording now
+map q <Nop>
+
+" Add simple hightlight removal
+nnoremap <ESC><ESC> :nohlsearch<cr>
 
 " move left/right in insert mode
 inoremap <M-h> <left>
@@ -43,12 +78,16 @@ nnoremap <Space> <Nop>
 vnoremap < <gv
 vnoremap > >gv
 
+" paste and auto jump end line
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+
 if exists('g:vscode')
-
-" Simulate same TAB behavior in VSCode
-nmap <Tab> :Tabnext<CR>
-nmap <S-Tab> :Tabprev<CR>
-
+  " Simulate same TAB behavior in VSCode
+  nmap <Tab> :Tabnext<CR>
+  nmap <S-Tab> :Tabprev<CR>
 else
   " Better nav for omnicomplete
   inoremap <expr> <c-j> ("\<C-n>")
@@ -57,6 +96,12 @@ else
   " I hate escape more than anything else
   inoremap jk <Esc>
   inoremap kj <Esc>
+  inoremap jj <Esc>
+
+  " Operation mapping
+  onoremap in( :<c-u>normal! f(vi(<cr>
+  onoremap il( :<c-u>normal! F(vi(<cr>
+  onoremap p i(
 
   " Easy CAPS
   inoremap <c-u> <ESC>viwUi
@@ -109,9 +154,8 @@ else
   nnoremap <silent> <M-j>    :resize +2<CR>
   nnoremap <silent> <M-l>    :vertical resize -2<CR>
   nnoremap <silent> <M-h>    :vertical resize +2<CR>
-  
+
   " set time
   nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
   imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 endif
-
