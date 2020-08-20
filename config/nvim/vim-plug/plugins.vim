@@ -106,6 +106,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/rename.nvim'
     " show author git commit in line
     Plug 'apzelos/blamer.nvim'
+    " check tslint
+    Plug 'neoclide/coc-tslint'
   endif
 
 

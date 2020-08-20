@@ -21,30 +21,16 @@ nnoremap a
 " Switch between tabs
 map <M-=> :tabnext<CR>
 map <M--> :tabprevious<CR>
-nnoremap <C-1> 1gt<CR>
-nnoremap <C-2> 2gt<CR>
-nnoremap <C-3> 3gt<CR>
-nnoremap <C-4> 4gt<CR>
-nnoremap <C-5> 5gt<CR>
-nnoremap <C-6> 6gt<CR>
-nnoremap <C-7> 7gt<CR>
-nnoremap <C-8> 8gt<CR>
-nnoremap <C-9> 9gt<CR>
-nnoremap <C-0> 10gt<CR>
-
-" Next/Previous between buffers
-nnoremap <M-1> :1b<CR>
-nnoremap <M-2> :2b<CR>
-nnoremap <M-3> :3b<CR>
-nnoremap <M-4> :4b<CR>
-nnoremap <M-5> :5b<CR>
-nnoremap <M-6> :6b<CR>
-nnoremap <M-7> :7b<CR>
-nnoremap <M-8> :8b<CR>
-nnoremap <M-9> :9b<CR>
-nnoremap <M-0> :10b<CR>
-
-" simple surround
+nnoremap <M-1> 1gt<CR>
+nnoremap <M-2> 2gt<CR>
+nnoremap <M-3> 3gt<CR>
+nnoremap <M-4> 4gt<CR>
+nnoremap <M-5> 5gt<CR>
+nnoremap <M-6> 6gt<CR>
+nnoremap <M-7> 7gt<CR>
+nnoremap <M-8> 8gt<CR>
+nnoremap <M-9> 9gt<CR>
+nnoremap <M-0> 10gt<CR>
 
 " Don't use recording now
 map q <Nop>
