@@ -108,8 +108,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'apzelos/blamer.nvim'
     " check tslint
     Plug 'neoclide/coc-tslint'
-    " show image
-    Plug 'ashisha/image.vim'
     " mutile cursor
     Plug 'terryma/vim-multiple-cursors'
   endif
