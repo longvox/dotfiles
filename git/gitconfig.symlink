@@ -158,7 +158,7 @@
     extendRegexp = true
     lineNumber = true
 [credential]
-	helper = store
+	helper = cache --timeout 3600
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
@@ -170,3 +170,5 @@
 [pager]
     diff = "diff-so-fancy | less --tabs=4 -RFX"
     show = "diff-so-fancy | less --tabs=4 -RFX"
+[cola]
+	spellcheck = false

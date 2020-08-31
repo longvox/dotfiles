@@ -76,9 +76,9 @@ if exists('g:vscode')
   nmap <S-Tab> :Tabprev<CR>
 else
   " Better nav for omnicomplete
-  inoremap <expr> <c-j> ("\<C-n>")
-  inoremap <expr> <c-k> ("\<C-p>")
-
+  inoremap <expr> <M-j> '<C-n>'
+  inoremap <expr> <M-k> '<C-p>'
+ 
   " I hate escape more than anything else
   inoremap jk <Esc>
   inoremap kj <Esc>

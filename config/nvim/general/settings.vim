@@ -43,6 +43,9 @@ if !exists('g:vscode')
   set foldcolumn=2                        " Folding abilities
   set wrap linebreak                      " wrap by window
   au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+  set foldmethod=manual
+  au BufWinLeave * silent! mkview
+  au BufWinEnter * silent! loadview
   match WarningMsg '\%>80v.\+'
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 

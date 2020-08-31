@@ -107,10 +107,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.dotfiles/.fzf.zsh ] && source ~/.dotfiles/.fzf.zsh
-source $(dirname $(gem which colorls))/tab_complete.sh
+# source $(dirname $(gem which colorls))/tab_complete.sh
 export JAVA_HOME=$(dirname $(dirname $(readlink -f  /usr/bin/java)))
 
-alias ls="colorls --sd -A"
+# alias ls="colorls --sd -A"
 alias robo3t="~/.robo3t/bin/robo3t"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -142,3 +142,5 @@ if [ -f '/home/imlong/google-cloud-sdk/path.zsh.inc' ]; then . '/home/imlong/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/imlong/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/imlong/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias evrasa="conda activate rasa"
