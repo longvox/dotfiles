@@ -76,8 +76,7 @@
             "ignoredRootPaths": ["~"]
         }
     },
-    "suggest.enablePreselect": true,
-    "suggest.select": true
+    "suggest.enablePreselect": true
     // TODO b:coc_suggest_disable=1 GOYO
     // TODO add to paths.vim g:coc_node_path
 }

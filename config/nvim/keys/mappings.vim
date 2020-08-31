@@ -14,10 +14,6 @@ nnoremap h b
 nnoremap <C-k> <C-u>
 nnoremap <C-j> <C-d>
 
-" map o to a
-nnoremap o a
-nnoremap a 
-
 " Switch between tabs
 map <M-=> :tabnext<CR>
 map <M--> :tabprevious<CR>
