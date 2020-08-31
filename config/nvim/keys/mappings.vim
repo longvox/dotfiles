@@ -28,6 +28,17 @@ nnoremap <M-8> 8gt<CR>
 nnoremap <M-9> 9gt<CR>
 nnoremap <M-0> 10gt<CR>
 
+" simple surround
+vmap " S"
+vmap ' S'
+vmap ` S`
+vmap [ S[
+vmap ( S(
+vmap { S{
+vmap } S}
+vmap ] S]
+vmap ) S)
+
 " Don't use recording now
 map q <Nop>
 
@@ -37,6 +48,8 @@ nnoremap <ESC><ESC> :nohlsearch<cr>
 " move left/right in insert mode
 inoremap <M-h> <left>
 inoremap <M-l> <right>
+inoremap <M-k> <up>
+inoremap <M-j> <down>
 
 " switch window in vim
 imap <C-h> <C-w>h
@@ -44,12 +57,20 @@ imap <C-j> <C-w>j
 imap <C-k> <C-w>k
 imap <C-l> <C-w>l
 
+" replace
+nnoremap <C-R> :%s//gI<Left><Left><Left>
+
 " hack
 nnoremap <up>    :echoe "please use 'k' key"<CR>
 nnoremap <down>  :echoe "please use 'j' key"<CR>
 nnoremap <left>  :echoe "please use 'h' key"<CR>
 nnoremap <right> :echoe "please use 'l' key"<CR>
 
+" " hack
+" inoremap <up>    <ESC>:echoe "please use 'Alt + k' key"<CR>:append<CR>
+" inoremap <down>  <ESC>:echoe "please use 'Alt + j' key"<CR>:append<CR>
+" inoremap <left>  <ESC>:echoe "please use 'Alt + h' key"<CR>:append<CR>
+" inoremap <right> <ESC>:echoe "please use 'Alt + l' key"<CR>:append<CR>
 " g Leader key
 let mapleader=" "
 
@@ -137,6 +158,9 @@ else
   nnoremap <silent> <M-l>    :vertical resize -2<CR>
   nnoremap <silent> <M-h>    :vertical resize +2<CR>
 
+  " save file sudo
+  cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+  
   " set time
   nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
   imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
