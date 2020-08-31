@@ -145,7 +145,7 @@ if [ -f '/home/imlong/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/imlo
 
 alias evrasa="conda activate rasa"
 
-tmux has -t scratch &> /dev/null
+tmux has -t imlong &> /dev/null
 
 if [ $? != 0 ]; then
   tmux -2 new-session -s imlong -D -d
