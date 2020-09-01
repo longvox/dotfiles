@@ -144,11 +144,20 @@ if [ -f '/home/imlong/google-cloud-sdk/path.zsh.inc' ]; then . '/home/imlong/goo
 if [ -f '/home/imlong/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/imlong/google-cloud-sdk/completion.zsh.inc'; fi
 
 alias evrasa="conda activate rasa"
+alias tmximlong="tmux attach -t imlong -d"
+alias tmxbackend="tmux attach -t backend -d"
+alias tmxvibot="tmux attach -t vibot -d"
+alias tmxenbot="tmux attach -t enbot -d"
+alias tmxnovo="tmux attach -t novo -d"
 
 tmux has -t imlong &> /dev/null
 
 if [ $? != 0 ]; then
   tmux -2 new-session -s imlong -D -d
+  tmux -2 new-session -s backend -D -d
+  tmux -2 new-session -s vibot -D -d
+  tmux -2 new-session -s enbot -D -d
+  tmux -2 new-session -s novo -D -d
 fi
 
 if [ -z "$TMUX" ]; then
