@@ -92,6 +92,55 @@ bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reatt
 bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 bind C-v run "tmux set-buffer $(reattach-to-user-namespace pbpaste); tmux paste-buffer"
 
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-yank'
+set -g @plugin 'nhdaly/tmux-scroll-copy-mode'
+set -g @plugin 'seebi/tmux-colors-solarized'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+# for neovim
+set -g @resurrect-strategy-nvim 'session'
+
+set -g @plugin 'jimeh/tmux-themepack'
+set -g @scroll-down-exit-copy-mode "on"
+set -g @colors-solarized 'dark'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# fs [FUZZY PATTERN] - Select selected tmux session
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+
+# Auto restore session 
+#set -g @continuum-restore 'on'
+# Start tmux when computer start
+#set -g @continuum-boot 'on'
+#set -g @continuum-boot-options 'iterm'
+
+ # restore neovim session for neovim
+ #set -g @resurrect-strategy-nvim 'session'
+
+# fzf-locate
+bind-key -n 'M-`' run "tmux split-window -p 40 'tmux send-keys -t #{pane_id} \"$(locate / | fzf -m | paste -sd\\  -)\"'"
+
+# Index starts from 1
+set-option -g base-index 1
+
+# select-pane (@george-b)
+bind-key 0 run "tmux split-window -p 40 'bash -ci ftpane'"
+
+set -g default-shell $SHELL 
+set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.dotfiles/tmux/tpm/tpm'
+
 ##############################
 ### Color & Style Settings ###
 ##############################
