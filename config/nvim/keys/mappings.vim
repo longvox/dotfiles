@@ -58,7 +58,7 @@ imap <C-k> <C-w>k
 imap <C-l> <C-w>l
 
 " replace
-nnoremap <C-R> :%s//gI<Left><Left><Left>
+nnoremap <M-C-r> :%s//gI<Left><Left><Left>
 
 " hack
 nnoremap <up>    :echoe "please use 'k' key"<CR>
