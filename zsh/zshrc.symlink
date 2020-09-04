@@ -163,3 +163,4 @@ fi
 if [ -z "$TMUX" ]; then
   tmux attach -t imlong -d
 fi
+
