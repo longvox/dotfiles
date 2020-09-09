@@ -43,7 +43,7 @@ set -g base-index 1
 setw -g pane-base-index 1
 
 set-option -g set-titles on
-set-option -g set-titles-string "#T - #W"
+set-option -g set-titles-string "#S ♥ #W"
 set-window-option -g automatic-rename on
 
 ######################
@@ -118,10 +118,11 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 #   - Exit if there's no match (--exit-0)
 
 # Auto restore session 
-# set -g @continuum-restore 'on'
+set -g @continuum-restore 'on'
 # Start tmux when computer start
-# set -g @continuum-boot 'on'
-# set -g @continuum-boot-options 'iterm'
+set -g @continuum-boot 'on'
+set -g @continuum-boot-options 'Terminal.app'
+set -g @continuum-save-interval '0'
 
  # restore neovim session for neovim
  set -g @resurrect-strategy-nvim 'session'
