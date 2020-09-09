@@ -46,7 +46,7 @@ if !exists('g:vscode')
   set foldmethod=manual
   au BufWinLeave * silent! mkview
   au BufWinEnter * silent! loadview
-  match WarningMsg '\%>80v.\+'
+  match WarningMsg '\%>100v.\+'
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
   " You can't stop me
