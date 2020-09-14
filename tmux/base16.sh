@@ -29,7 +29,7 @@ set-window-option -g window-status-format " #I #W"
 
 # active window title colors
 set-window-option -g window-status-current-style fg=$base0C,bg=$base00
-set-window-option -g window-status-current-format " #[bold]#W"
+set-window-option -g window-status-current-format " #[bold][#I] #W"
 
 # pane border colors
 set-window-option -g pane-active-border-style fg=$base0C
@@ -48,8 +48,8 @@ set-window-option -g clock-mode-colour $base0C
 tm_session_name="#[default,bg=$base00,fg=$base0E] #S "
 set -g status-left "$tm_session_name"
 
-tm_tunes="#[bg=$base00,fg=$base0D] ♫ #(osascript -l JavaScript ~/.dotfiles/applescripts/tunes.js)"
-tm_battery="#[fg=$base0F,bg=$base00] ♥ #(battery)"
+tm_artist="#[fg=$base0F,bg=$base00] ♥ #(spotifycli --artist)"
+tm_song="#[bg=$base00,fg=$base0D] ♫ #(spotifycli --song)"
 tm_date="#[default,bg=$base00,fg=$base0C] %R"
 tm_host="#[fg=$base0E,bg=$base00] #h "
-set -g status-right "$tm_tunes $tm_battery $tm_date $tm_host"
+set -g status-right "$tm_artist $tm_song $tm_date $tm_host"
