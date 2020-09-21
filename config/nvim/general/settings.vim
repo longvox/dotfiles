@@ -5,7 +5,8 @@ if !exists('g:vscode')
   syntax enable                           " Enables syntax highlighing
   set hidden                              " Required to keep multiple buffers open multiple buffers
   set nowrap                              " Display long lines as just one line
-  set encoding=utf-8                      " The encoding displayed 
+  set noswapfile
+  set encoding=utf-8                      " The encoding displayed
   set pumheight=10                        " Makes popup menu smaller
   set fileencoding=utf-8                  " The encoding written to file
   set ruler              			            " Show the cursor position all the time
@@ -25,16 +26,22 @@ if !exists('g:vscode')
   set number                              " Line numbers
   set cursorline                          " Enable highlighting of the current line
   set background=dark                     " tell vim what the background color looks like
-  set showtabline=2                       " Always show tabs 
+  set showtabline=2                       " Always show tabs
   set noshowmode                          " We don't need to see things like -- INSERT -- anymore
   set nobackup                            " This is recommended by coc
   set nowritebackup                       " This is recommended by coc
   set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
+  set history=50                          " Keep 50 lines of command line history
   set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
   set updatetime=300                      " Faster completion
   set timeoutlen=100                      " By default timeoutlen is 1000 ms
   set clipboard=unnamedplus               " Copy paste between vim and everything else
-  set incsearch
+  set hlsearch                            " Enable Highlight Search
+  set incsearch                           " Highlight while search
+  set ignorecase                          " Case Insensitivity Pattern Matching
+  set smartcase                            " Overrides ignorecase if pattern contains upcase
+  set grepprg=ack\ --nogroup\ --column\ $* " Make grep use ack instead
+  set grepformat=%f:%l:%c:%m
   set guifont=Hack\ Nerd\ Font
   set relativenumber
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -46,11 +53,11 @@ if !exists('g:vscode')
   set foldmethod=manual
   au BufWinLeave * silent! mkview
   au BufWinEnter * silent! loadview
-  match WarningMsg '\%>100v.\+'
+  " match WarningMsg '\%>100v.\+'
+  let &colorcolumn=join(range(81,999),'')
+  let &colorcolumn='80,'.join(range(120,999),'')
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
+  autocmd BufWritePre * %s/\s\+$//e
   " You can't stop me
   cmap w!! w !sudo tee %
 endif
-
-

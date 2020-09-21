@@ -39,11 +39,45 @@ vmap } S}
 vmap ] S]
 vmap ) S)
 
+" Select all text
+nnoremap vA ggVG
+
+" Delete current line n insert mode
+inoremap <c-d> <esc>ddi
+
+" Uppercase current word
+inoremap <c-u> <esc>viwUA
+
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+"Delete to the end of line
+nnoremap D d$
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+
+" Keep search results at the center of screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+" Home & End should be placed next to each other
+nnoremap - $
+
 " Don't use recording now
 map q <Nop>
 
 " Add simple hightlight removal
 nnoremap <ESC><ESC> :nohlsearch<cr>
+
+" You can't stop me
+cmap w!! w !sudo tee %
 
 " move left/right in insert mode
 inoremap <M-h> <left>
@@ -95,7 +129,7 @@ else
   " Better nav for omnicomplete
   inoremap <expr> <M-j> '<C-n>'
   inoremap <expr> <M-k> '<C-p>'
- 
+
   " I hate escape more than anything else
   inoremap jk <Esc>
   inoremap kj <Esc>
@@ -160,7 +194,7 @@ else
 
   " save file sudo
   cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-  
+
   " set time
   nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
   imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
