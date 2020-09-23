@@ -70,10 +70,10 @@ bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
 # Resize pane shortcuts
-bind -n M-C-h resize-pane -L 2
-bind -n M-C-j resize-pane -D 2
-bind -n M-C-k resize-pane -U 2
-bind -n M-C-l resize-pane -R 2
+bind -n M-C-h resize-pane -L 1
+bind -n M-C-j resize-pane -D 1
+bind -n M-C-k resize-pane -U 1
+bind -n M-C-l resize-pane -R 1
 
 # enable mouse support for switching panes/windows
 setw -g mouse on
@@ -117,7 +117,7 @@ set -g @plugin 'christoomey/vim-tmux-navigator'
 #   - Bypass fuzzy finder if there's only one match (--select-1)
 #   - Exit if there's no match (--exit-0)
 
-# Auto restore session 
+# Auto restore session
 set -g @continuum-restore 'on'
 # Start tmux when computer start
 set -g @continuum-boot 'on'
