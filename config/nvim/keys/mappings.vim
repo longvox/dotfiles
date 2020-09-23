@@ -79,6 +79,8 @@ nnoremap <ESC><ESC> :nohlsearch<cr>
 " You can't stop me
 cmap w!! w !sudo tee %
 
+nnoremap <C+/> :Commentary<CR>
+
 " move left/right in insert mode
 inoremap <M-h> <left>
 inoremap <M-l> <right>

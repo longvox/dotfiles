@@ -53,9 +53,7 @@ if !exists('g:vscode')
   set foldmethod=manual
   au BufWinLeave * silent! mkview
   au BufWinEnter * silent! loadview
-  " match WarningMsg '\%>100v.\+'
-  let &colorcolumn=join(range(81,999),'')
-  let &colorcolumn='80,'.join(range(120,999),'')
+  match WarningMsg '\%>100v.\+'
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   autocmd BufWritePre * %s/\s\+$//e
   " You can't stop me
