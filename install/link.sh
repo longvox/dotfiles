@@ -65,5 +65,5 @@ echo -e "${green}\\n\\nCopy bin${reset}"
 echo "${green}==============================${reset}"
 
 path_bin="$DOTFILES/bin/*"
-cp "$path_bin" "~/.local/bin"
+cp $path_bin ~/.local/bin/
 

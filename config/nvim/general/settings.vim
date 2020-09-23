@@ -100,4 +100,34 @@ if !exists('g:vscode')
   set wildignore+=*.*~,*~
   set wildignore+=*.swp,.lock,.DS_Store,._*,tags.lock
 
+  " Render all comments in italic
+  highlight Comment gui=italic
+
+  " Special highlighting for HTML
+  " HTML arguments such as id, class, attribute
+  highlight htmlArg gui=italic
+  highlight xmlAttrib gui=italic
+
+  " HTML title
+  highlight htmlTitle gui=italic
+  " HTML anchor
+  highlight htmlLink gui=italic
+
+  " Special highlighting for Javascript
+  " Identifier
+  highlight javaScriptIdentifier gui=italic
+  " This keyword
+  highlight jsThis gui=italic
+  " Undefined keyword
+  highlight jsUndefined gui=italic
+  " Reserved words
+  highlight javaScriptReserved gui=italic
+  " Null
+  highlight javaScriptNull gui=italic
+  " Numbers
+  highlight javaScriptNumber gui=italic
+  " Function Arguments
+  highlight javaScriptFuncArg gui=italic
+  " Function Keyword
+  highlight javaScriptFuncKeyword gui=italic
 endif

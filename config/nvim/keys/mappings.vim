@@ -189,6 +189,19 @@ else
   inoremap <C-l> <C-\><C-N><C-w>l
   tnoremap <Esc> <C-\><C-n>
 
+  " Markdown Settings
+  vnoremap <D-j> gj
+  vnoremap <D-k> gk
+  vnoremap <D-4> g$
+  vnoremap <D-6> g^
+  vnoremap <D-0> g^
+  nnoremap <D-j> gj
+  nnoremap <D-k> gk
+  nnoremap <D-4> g$
+  nnoremap <D-6> g^
+  nnoremap <D-0> g^
+  " }}}
+
   " Use alt + hjkl to resize windows
   nnoremap <silent> <M-k>    :resize -1<CR>
   nnoremap <silent> <M-j>    :resize +1<CR>
