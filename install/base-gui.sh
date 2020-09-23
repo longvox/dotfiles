@@ -2,7 +2,7 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-if [[ $(whoami) == "administrator" ]];
+if [[ $(whoami) == "administrator" || $(whoami) == "imlong" ]];
 then
     echo "${green}Install GUI application!${reset}"
 
@@ -21,7 +21,7 @@ then
 
     echo "${green}Installing vlc!${reset}"
     sudo apt-get install vlc -y
-    
+
     echo "${green}Installing skype!${reset}"
     wget https://repo.skype.com/latest/skypeforlinux-64.deb
     sudo dpkg -i skypeforlinux-64.deb
@@ -31,17 +31,17 @@ then
     sudo snap install mailspring
 
     sudo apt-get install -y ubuntu-restricted-extras
-    
+
     echo "${green}Installing google chrome!${reset}"
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo gdebi google-chrome-stable_current_amd64.deb
-    
+
     echo "${green}Installing firefox${reset}"
     sudo apt install -y firefox
 
     echo "${green}Installing spotify!${reset}"
     sudo snap install spotify
-    
+
     echo "${green}Installing onlyoffice!${reset}"
     sudo snap install onlyoffice-desktopeditors
 
@@ -53,6 +53,10 @@ then
 
     echo "${green}Installing caprine!${reset}"
     sudo snap install caprine
+
+    echo "${green}Installing alacritty!${reset}"
+    sudo add-apt-repository ppa:mmstick76/alacritty
+    sudo apt install alacritty
 else
     echo "${red}Not available GUI!${reset}"
 fi

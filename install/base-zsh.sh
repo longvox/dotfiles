@@ -21,7 +21,7 @@ then
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
    echo "${red}Installed oh my zsh!${reset}"
-fi   
+fi
 
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
@@ -45,7 +45,7 @@ fi
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-history-substring-search ];
 then
-   echo "${red}Installed zsh history substring search!${reset}" 
+   echo "${red}Installed zsh history substring search!${reset}"
 else
    echo "${green}Installing zsh history substring search!${reset}"
    git clone https://github.com/zsh-users/zsh-history-substring-search \
@@ -55,7 +55,7 @@ fi
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-completions ];
 then
-   echo "${red}Installed zsh completions!${reset}" 
+   echo "${red}Installed zsh completions!${reset}"
 else
     echo "${green}Installing zsh completions!${reset}"
     git clone https://github.com/zsh-users/zsh-completions \
@@ -64,7 +64,7 @@ fi
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-nvm ];
 then
-   echo "${red}Installed zsh nvm!${reset}" 
+   echo "${red}Installed zsh nvm!${reset}"
 else
     echo "${green}Installing zsh nvm!${reset}"
     git clone https://github.com/lukechilds/zsh-nvm \
@@ -72,7 +72,7 @@ else
 fi
 
 # echo "Installing ruby!"
-# sudo apt-get install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
+sudo apt-get install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
 
 # echo "Installing colorls!"
-# gem install colorls
+gem install colorls

@@ -47,15 +47,57 @@ if !exists('g:vscode')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   set mmp=1300
   set autochdir                           " Your working directory will always be the same as your working directory
+
+  set fileformats=unix,mac,dos
+  " don't create backups for these paths
+  set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
+  " Make Vim able to edit crontab files again.
+  set backupskip+=/private/tmp/*"
+  set backupskip+=~/.secret/*
+
   set foldcolumn=2                        " Folding abilities
   set wrap linebreak                      " wrap by window
   au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
   set foldmethod=manual
+
   au BufWinLeave * silent! mkview
   au BufWinEnter * silent! loadview
-  match WarningMsg '\%>100v.\+'
+
+  " show rule
+  call matchadd("WarningMsg", "\\%>80v.\\+")
+  call matchadd("ErrorMsg", "\\%>120v.\\+")
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   autocmd BufWritePre * %s/\s\+$//e
-  " You can't stop me
-  cmap w!! w !sudo tee %
+
+  " no beeps or flashes
+  set novisualbell
+  set noerrorbells
+
+  " Typing key combos
+  set notimeout
+  set ttimeout
+
+  set browsedir=buffer                  " browse files in same dir as open file
+  set wildmode=list:longest,full
+  let &wildignorecase = v:version >= 704
+
+  " Binary
+  set wildignore+=*.aux,*.out,*.toc
+  set wildignore+=*.o,*.obj,*.exe,*.dll,*.jar,*.pyc,*.rbc,*.class
+  set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+  set wildignore+=*.avi,*.m4a,*.mp3,*.oga,*.ogg,*.wav,*.webm
+  set wildignore+=*.eot,*.otf,*.ttf,*.woff
+  set wildignore+=*.doc,*.pdf
+  set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+  " Cache
+  set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*.gem
+  set wildignore+=.sass-cache
+  set wildignore+=npm-debug.log
+  " Compiled
+  set wildignore+=*.marko.js
+  set wildignore+=*.min.*,*-min.*
+  " Temp/System
+  set wildignore+=*.*~,*~
+  set wildignore+=*.swp,.lock,.DS_Store,._*,tags.lock
+
 endif

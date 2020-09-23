@@ -66,6 +66,7 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
+nnoremap gd gdzz
 
 " Home & End should be placed next to each other
 nnoremap - $
@@ -189,10 +190,10 @@ else
   tnoremap <Esc> <C-\><C-n>
 
   " Use alt + hjkl to resize windows
-  nnoremap <silent> <M-k>    :resize -2<CR>
-  nnoremap <silent> <M-j>    :resize +2<CR>
-  nnoremap <silent> <M-l>    :vertical resize -2<CR>
-  nnoremap <silent> <M-h>    :vertical resize +2<CR>
+  nnoremap <silent> <M-k>    :resize -1<CR>
+  nnoremap <silent> <M-j>    :resize +1<CR>
+  nnoremap <silent> <M-l>    :vertical resize -1<CR>
+  nnoremap <silent> <M-h>    :vertical resize +1<CR>
 
   " save file sudo
   cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!

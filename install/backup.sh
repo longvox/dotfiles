@@ -28,7 +28,7 @@ for file in $linkables; do
     fi
 done
 
-for filename in "$HOME/.config/nvim" "$HOME/.vim" "$HOME/.vimrc"; do
+for filename in "$HOME/.config/nvim" "$HOME/.config/alacritty" "$HOME/.vim" "$HOME/.vimrc"; do
     if [[ ! -L "$filename" && -d "$filename" ]]; then
         echo "${green}backing up $filename${reset}"
         cp -rf "$filename" "$BACKUP_DIR"
