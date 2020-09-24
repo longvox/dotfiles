@@ -2,15 +2,15 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/
+cd ~/Work/Office/backend-ms-wisere-target
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 .dotfiles/config/nvim/init.vim
+badd +0 ~/Work/Office/backend-ms-wisere-target/src/services/chatbot-service/controllers/botBooking-controller.ts
 argglobal
 %argdel
-edit .dotfiles/config/nvim/init.vim
+edit ~/Work/Office/backend-ms-wisere-target/src/services/chatbot-service/controllers/botBooking-controller.ts
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -27,13 +27,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 54 - ((29 * winheight(0) + 29) / 59)
+let s:l = 249 - ((27 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-54
-normal! 0
-lcd ~/.dotfiles/config/nvim
+249
+normal! 07|
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
