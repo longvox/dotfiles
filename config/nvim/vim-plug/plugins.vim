@@ -43,16 +43,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot'
     " Cool Icons
     Plug 'ryanoasis/vim-devicons'
-    " Auto pairs for '(' '[' '{' 
+    " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
     " Closetags
     Plug 'alvan/vim-closetag'
     " Themes
-    Plug 'christianchiarulli/onedark.vim'
-    " Plug 'kaicataldo/material.vim'
-    " Plug 'NLKNguyen/papercolor-theme'
-    " Plug 'tomasiser/vim-code-dark'
-    " Plug 'morhetz/gruvbox'
+    Plug 'joshdick/onedark.vim'
+    Plug 'kaicataldo/material.vim'
+    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'tomasiser/vim-code-dark'
+    Plug 'morhetz/gruvbox'
     Plug 'jacoborus/tender.vim'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -110,6 +110,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc-tslint'
     " mutile cursor
     Plug 'terryma/vim-multiple-cursors'
+    " tmux navigator
+    Plug 'christoomey/vim-tmux-navigator'
   endif
 
 

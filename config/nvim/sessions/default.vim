@@ -32,7 +32,7 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFcI
 let s:sx = expand("<sfile>:p:r")."x.vim"
-if file_readable(s:sx)
+if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
