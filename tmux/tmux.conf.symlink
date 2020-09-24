@@ -124,11 +124,17 @@ set -g @continuum-boot 'on'
 set -g @continuum-boot-options 'Terminal.app'
 set -g @continuum-save-interval '1'
 
- # restore neovim session for neovim
- set -g @resurrect-strategy-nvim 'session'
+set-option -g status-interval 1
+set-window-option -g automatic-rename on
+set-option -g allow-rename on
+set -g pane-border-format "#P: #{pane_current_command}"
+
+# restore neovim session for neovim
+set -g @resurrect-strategy-nvim 'session'
 
 # fzf-locate
 bind-key -n 'M-`' run "tmux split-window -p 40 'tmux send-keys -t #{pane_id} \"$(locate / | fzf -m | paste -sd\\  -)\"'"
+
 
 # Index starts from 1
 # set-option -g base-index 1
