@@ -51,7 +51,6 @@ endif
 if !empty(glob("./paths.vim"))
   source $HOME/.config/nvim/paths.vim
 endif
-let g:polyglot_disabled = ['csv']
 
 " Python
 " https://realpython.com/python-debugging-pdb/ " breakpoint syntax is really cool
