@@ -112,6 +112,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'terryma/vim-multiple-cursors'
     " tmux navigator
     Plug 'christoomey/vim-tmux-navigator'
+    " close buffer
+    Plug 'Asheq/close-buffers.vim'
   endif
 
 
