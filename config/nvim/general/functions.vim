@@ -25,6 +25,14 @@ function! RotateRight()
     exe 'buf' l:curbuf
 endfunc
 
+function! CloseAllBuffers()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+
+  if curr > 1    | silent! execute "1,".(curr-1)."bd"     | endif
+  if curr < last | silent! execute (curr+1).",".last."bd" | endif
+endfunction
+
 
 " Remove trailing whitespaces automatically before save
 " augroup strip_ws
