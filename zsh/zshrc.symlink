@@ -143,6 +143,8 @@ if [ -f '/home/imlong/google-cloud-sdk/path.zsh.inc' ]; then . '/home/imlong/goo
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/imlong/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/imlong/google-cloud-sdk/completion.zsh.inc'; fi
 
+export PATH=$PATH:/usr/local/ruby/bin
+
 alias evrasa="conda activate rasa"
 alias tmximlong="tmux attach -t imlong -d"
 alias tmxbackend="tmux attach -t backend -d"
@@ -164,3 +166,6 @@ if [ -z "$TMUX" ]; then
   tmux attach -t imlong -d
 fi
 
+alias vim="nvim"
+alias vimsv="vim scp://root@office:22//root/"
+alias vimsvbs="vim scp://root@office:22//root/backend-search/"

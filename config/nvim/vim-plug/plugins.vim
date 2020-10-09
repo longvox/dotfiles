@@ -114,6 +114,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'christoomey/vim-tmux-navigator'
     " close buffer
     Plug 'Asheq/close-buffers.vim'
+    " vim image
+    Plug 'ashisha/image.vim'
   endif
 
 

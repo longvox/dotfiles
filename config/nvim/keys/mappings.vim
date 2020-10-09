@@ -103,11 +103,6 @@ nnoremap <down>  :echoe "please use 'j' key"<CR>
 nnoremap <left>  :echoe "please use 'h' key"<CR>
 nnoremap <right> :echoe "please use 'l' key"<CR>
 
-" " hack
-" inoremap <up>    <ESC>:echoe "please use 'Alt + k' key"<CR>:append<CR>
-" inoremap <down>  <ESC>:echoe "please use 'Alt + j' key"<CR>:append<CR>
-" inoremap <left>  <ESC>:echoe "please use 'Alt + h' key"<CR>:append<CR>
-" inoremap <right> <ESC>:echoe "please use 'Alt + l' key"<CR>:append<CR>
 " g Leader key
 let mapleader=" "
 
