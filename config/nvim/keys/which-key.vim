@@ -30,7 +30,7 @@ let g:which_key_map['.'] = [ ':e $MYVIMRC'              , 'open init'           
 let g:which_key_map[';'] = [ ':Commands'                , 'commands'             ]
 let g:which_key_map['='] = [ '<C-W>='                   , 'balance windows'      ]
 let g:which_key_map[','] = [ 'Startify'                 , 'start screen'         ]
-let g:which_key_map['`'] = [ ':Bdelete other'           , 'close all buffer'     ]
+let g:which_key_map['`'] = [ ':Bdelete hidden'          , 'close all buffer'     ]
 let g:which_key_map['c'] = [ ':Codi!!'                  , 'virtual repl'         ]
 let g:which_key_map['d'] = [ ':bd'                      , 'delete buffer'        ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'     , 'explorer'             ]
@@ -42,7 +42,6 @@ let g:which_key_map['S'] = [ ':SSave'                   , 'save session'        
 let g:which_key_map['T'] = [ ':Rg'                      , 'search text'          ]
 let g:which_key_map['v'] = [ '<C-W>v'                   , 'split right'          ]
 let g:which_key_map['W'] = [ 'w'                        , 'write'                ]
-let g:which_key_map['z'] = [ 'Goyo'                     , 'zen'                  ]
 let g:which_key_map['R'] = [ ':source $MYVIMRC'         , 'reload source'        ]
 " Group mappings
 
@@ -61,8 +60,6 @@ let g:which_key_map.a = {
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffer' ,
-      \ '1' : ['b1'                                     , 'buffer 1'             ],
-      \ '2' : ['b2'                                     , 'buffer 2'             ],
       \ 'd' : ['bd'                                     , 'delete-buffer'        ],
       \ 'f' : ['bfirst'                                 , 'first-buffer'         ],
       \ 'h' : ['Startify'                               , 'home-buffer'          ],
@@ -136,7 +133,7 @@ let g:which_key_map.g.t = {
       \ 'p' : [':TigOpenProjectRootDir'                 , 'project root path'    ],
       \ 'g' : [':TigGrep'                               , 'tig grep'             ],
       \ 'r' : [':TigGrepResume'                         , 'resume last grep'     ],
-      \ 's' : ['y:TigGrep<Space><C-R>"'                 , 'grep with select word'],
+      \ 's' : [':TigGrep<Space><C-R>"'                  , 'grep with select word'],
       \ 'u' : [':<C-u>:TigGrep<Space><C-R><C-W>'        , 'grep word in cursor'  ],
       \ 'b' : [':TigBlame'                              , 'tig blame'            ],
       \}

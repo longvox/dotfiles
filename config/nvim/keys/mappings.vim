@@ -39,6 +39,13 @@ vmap } S}
 vmap ] S]
 vmap ) S)
 
+" Autocompletion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Quickly put double quotes around a word
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+
 " Select all text
 nnoremap vA ggVG
 
@@ -80,12 +87,8 @@ nnoremap <ESC><ESC> :nohlsearch<cr>
 " Saves the file (handling the permission-denied error)
 cnoremap w!! w !sudo tee % >/dev/null
 
-" comment code
-nnoremap <C+/> :Commentary<CR>
-
 " Quickly add empty lines
-nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+nnoremap <C-o>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 " move left/right in insert mode
 inoremap <M-h> <left>
