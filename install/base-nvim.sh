@@ -5,19 +5,28 @@ reset=`tput sgr0`
 
 set -eE
 
-# add  apt-repository 
+# add  apt-repository
 # lazygit
 echo "${green}Add apt-repository!!!!${reset}"
 
 sudo add-apt-repository ppa:lazygit-team/release -y
 sudo apt-get update -y
 
-echo "${green}[Done] Add apt-repository${reset}" 
+echo "${green}[Done] Add apt-repository${reset}"
 # ##################################
 sudo apt-get install curl wget -y
-sudo apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo -y
+sudo apt-get install -y \
+    ranger \
+    caca-utils \
+    highlight \
+    atool \
+    w3m \
+    poppler-utils \
+    mediainfo
 
 # Überzug is a command line util which allows to draw images on terminals by using child windows.
+sudo pip3 install ueberzug
+sudo pip3 install neovim-remote
 sudo pip3 install ueberzug
 
 # ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
@@ -34,7 +43,7 @@ sudo pip3 install ueberzug
     echo "${red}Intall siliversearcher-ag failed!${reset}"
 }
 
-# A simple, fast and user-friendly alternative to 'find' 
+# A simple, fast and user-friendly alternative to 'find'
 {
     sudo apt install -y fd-find
 } || {
@@ -54,5 +63,5 @@ sudo pip3 install ueberzug
 } || {
     echo "${red}Install lazagit failed!${reset}"
 }
-# lazydocker: The lazier way to manage everything docker 
+# lazydocker: The lazier way to manage everything docker
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash

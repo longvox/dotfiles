@@ -129,7 +129,7 @@ if exists('g:vscode')
   nmap <Tab> :Tabnext<CR>
   nmap <S-Tab> :Tabprev<CR>
 else
-  " Better nav for omnicomplete
+  " Better nav for omniComplete
   inoremap <expr> <M-j> '<C-n>'
   inoremap <expr> <M-k> '<C-p>'
 
@@ -142,6 +142,10 @@ else
   onoremap in( :<c-u>normal! f(vi(<cr>
   onoremap il( :<c-u>normal! F(vi(<cr>
   onoremap p i(
+
+  " AutoCompletion
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
   " Easy CAPS
   inoremap <c-u> <ESC>viwUi

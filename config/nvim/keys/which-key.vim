@@ -75,7 +75,7 @@ let g:which_key_map.b = {
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
-      \ '/' : [':History/'                              , 'history'              ],
+      \ '/' : [':History'                               , 'history'              ],
       \ ';' : [':Commands'                              , 'commands'             ],
       \ 'a' : [':Ag'                                    , 'text Ag'              ],
       \ 'b' : [':BLines'                                , 'current buffer'       ],
@@ -133,7 +133,7 @@ let g:which_key_map.g = {
 let g:which_key_map.g.t = {
       \ 'name' : '+tig',
       \ 'c' : [':TigOpenCurrentFile'                    , 'current file'         ],
-      \ 'p' : [':TigOpenProjectRootDir'                 , 'prioject root path'   ],
+      \ 'p' : [':TigOpenProjectRootDir'                 , 'project root path'    ],
       \ 'g' : [':TigGrep'                               , 'tig grep'             ],
       \ 'r' : [':TigGrepResume'                         , 'resume last grep'     ],
       \ 's' : ['y:TigGrep<Space><C-R>"'                 , 'grep with select word'],
@@ -196,53 +196,6 @@ let g:which_key_map.t = {
       \ 'n' : [':tabnew'                                , 'tab new'              ],
       \ 'c' : [':tabclose'                              , 'tab close'            ]
       \ }
-
-
-" w is for wiki
-let g:which_key_map.w = {
-      \ 'name' : '+wiki' ,
-      \ 'n' : ['<plug>(wiki-open)'                      , 'open'                 ],
-      \ 'j' : ['<plug>(wiki-journal)'                   , 'journal'              ],
-      \ 'R' : ['<plug>(wiki-reload)'                    , 'reload'               ],
-      \ 'c' : ['<plug>(wiki-code-run)'                  , 'code run'             ],
-      \ 'b' : ['<plug>(wiki-graph-find-backlinks)'      , 'graph find backlinks' ],
-      \ 'g' : ['<plug>(wiki-graph-in)'                  , 'graph in'             ],
-      \ 'G' : ['<plug>(wiki-graph-out)'                 , 'graph out'            ],
-      \ 'l' : ['<plug>(wiki-link-toggle)'               , 'link toggle'          ],
-      \ 'd' : ['<plug>(wiki-page-delete)'               , 'page delete'          ],
-      \ 'r' : ['<plug>(wiki-page-rename)'               , 'page rename'          ],
-      \ 't' : ['<plug>(wiki-page-toc)'                  , 'page toc'             ],
-      \ 'T' : ['<plug>(wiki-page-toc-local)'            , 'page toc local'       ],
-      \ 'e' : ['<plug>(wiki-export)'                    , 'export'               ],
-      \ 'u' : ['<plug>(wiki-list-uniq)'                 , 'list uniq'            ],
-      \ 'U' : ['<plug>(wiki-list-uniq-local)'           , 'list uniq local'      ],
-      \ }
-
-" Global
-" <Plug>VimwikiIndex
-" <Plug>VimwikiTabIndex
-" <Plug>VimwikiUISelect
-" <Plug>VimwikiDiaryIndex
-" <Plug>VimwikiMakeDiaryNote
-" <Plug>VimwikiTabMakeDiaryNote
-" <Plug>VimwikiMakeYesterdayDiaryNote
-" <Plug>VimwikiMakeTomorrowDiaryNote
-"
-" " Local
-" <Plug>Vimwiki2HTML
-" <Plug>Vimwiki2HTMLBrowse
-" <Plug>VimwikiDiaryGenerateLinks
-" <Plug>VimwikiFollowLink
-" <Plug>VimwikiSplitLink
-" <Plug>VimwikiVSplitLink
-" <Plug>VimwikiTabnewLink
-" <Plug>VimwikiGoBackLink
-" <Plug>VimwikiNextLink
-" <Plug>VimwikiPrevLink
-" <Plug>VimwikiGoto
-" <Plug>VimwikiDeleteLink
-" <Plug>VimwikiRenameLink
-" <Plug>VimwikiAddHeaderLevel
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

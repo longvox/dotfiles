@@ -26,6 +26,7 @@ sudo apt install -y \
    zlib1g-dev \
    libxi-dev \
    libxext-dev \
+   libxtst-dev \
    curl \
    wget \
    git \
