@@ -116,6 +116,20 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Asheq/close-buffers.vim'
     " vim image
     Plug 'ashisha/image.vim'
+    " opening selected content
+    Plug 'kristijanhusak/vim-carbon-now-sh'
+    " Vim plugin that provides additional text objects
+    Plug 'wellle/targets.vim'
+    " Make the yanked region apparent!
+    Plug 'machakann/vim-highlightedyank'
+    " A vim plugin that simplifies the transition between multiline and single-line code
+    Plug 'AndrewRadev/splitjoin.vim'
+    " Better whitespace highlighting for Vim
+    Plug 'ntpeters/vim-better-whitespace'
+    " A Vim plugin for TypeScript
+    Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+    " Improved vim spelling plugin (with camel case support)!
+    Plug 'kamykn/spelunker.vim'
   endif
 
 

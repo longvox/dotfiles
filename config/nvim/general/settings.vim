@@ -47,7 +47,7 @@ if !exists('g:vscode')
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   set mmp=1300
   set autochdir                           " Your working directory will always be the same as your working directory
-
+  set nospell
   set fileformats=unix,mac,dos
   " don't create backups for these paths
   set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*

@@ -38,6 +38,7 @@ else
   source $HOME/.config/nvim/plug-config/markdown.vim
   source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/closetags.vim
+  source $HOME/.config/nvim/plug-config/spelunker.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
   source $HOME/.config/nvim/plug-config/vim-rooter.vim
   source $HOME/.config/nvim/plug-config/quickscope.vim
