@@ -77,10 +77,15 @@ map q <Nop>
 " Add simple hightlight removal
 nnoremap <ESC><ESC> :nohlsearch<cr>
 
-" You can't stop me
-cmap w!! w !sudo tee %
+" Saves the file (handling the permission-denied error)
+cnoremap w!! w !sudo tee % >/dev/null
 
+" comment code
 nnoremap <C+/> :Commentary<CR>
+
+" Quickly add empty lines
+nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 " move left/right in insert mode
 inoremap <M-h> <left>
@@ -209,4 +214,10 @@ else
   " set time
   nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
   imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+  " CarbonNowSh
+  vnoremap <F5> :CarbonNowSh<CR>
+
+  " Start tracking Vim session
+  nnoremap <leader>o :Obsession<CR>
 endif
