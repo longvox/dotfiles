@@ -79,13 +79,18 @@ nnoremap gd gdzz
 nnoremap - $
 
 " Don't use recording now
-map q <Nop>
+nnoremap Q @@
+vnoremap Q :norm @@<cr>
 
 " Add simple hightlight removal
 nnoremap <ESC><ESC> :nohlsearch<cr>
 
 " Saves the file (handling the permission-denied error)
 cnoremap w!! w !sudo tee % >/dev/null
+
+" map jk
+nnoremap j gj
+nnoremap k gk
 
 " Quickly add empty lines
 nnoremap <C-o>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>

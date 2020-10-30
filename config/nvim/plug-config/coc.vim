@@ -20,6 +20,8 @@
     \ 'coc-yank',
     \ 'coc-json',
     \ 'coc-marketplace',
+    \ 'coc-solargraph',
+    \ 'coc-sql'
     \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.

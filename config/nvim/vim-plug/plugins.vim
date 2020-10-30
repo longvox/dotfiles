@@ -130,6 +130,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
     " Improved vim spelling plugin (with camel case support)!
     Plug 'kamykn/spelunker.vim'
+    " highlight logstash
+    Plug 'robbles/logstash.vim'
   endif
 
 

@@ -100,6 +100,7 @@ set -g @plugin 'nhdaly/tmux-scroll-copy-mode'
 set -g @plugin 'seebi/tmux-colors-solarized'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-urlview'
 # for neovim
 set -g @resurrect-strategy-nvim 'session'
 
