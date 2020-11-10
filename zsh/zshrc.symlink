@@ -163,13 +163,9 @@ if [ $? != 0 ]; then
   tmux -2 new-session -s elactic -D -d
 fi
 
-if [ -z "$TMUX" ]; then
-  tmux attach -t imlong -d
-fi
-
 alias vim="nvim"
 alias vimsv="vim scp://root@office:22//root/"
 alias vimsvbs="vim scp://root@office:22//root/backend-search/"
 alias ccode="yarn prettier --write && yarn lint && yarn run typecheck"
 alias logstash="sudo /usr/share/logstash/bin/logstash"
-
+alias tmux="[ -z '${TMUX}' ] && (tmux attach -t default || tmux new -s default) || tmux"

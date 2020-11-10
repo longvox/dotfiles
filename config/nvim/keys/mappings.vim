@@ -17,16 +17,6 @@ nnoremap <C-j> <C-d>
 " Switch between tabs
 map <M-=> :tabnext<CR>
 map <M--> :tabprevious<CR>
-nnoremap <M-1> 1gt<CR>
-nnoremap <M-2> 2gt<CR>
-nnoremap <M-3> 3gt<CR>
-nnoremap <M-4> 4gt<CR>
-nnoremap <M-5> 5gt<CR>
-nnoremap <M-6> 6gt<CR>
-nnoremap <M-7> 7gt<CR>
-nnoremap <M-8> 8gt<CR>
-nnoremap <M-9> 9gt<CR>
-nnoremap <M-0> 10gt<CR>
 
 " simple surround
 vmap " S"

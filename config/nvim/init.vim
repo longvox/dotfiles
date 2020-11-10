@@ -26,7 +26,6 @@ else
   source $HOME/.config/nvim/themes/airline.vim
   source $HOME/.config/nvim/plug-config/fzf.vim
   source $HOME/.config/nvim/plug-config/coc.vim
-  source $HOME/.config/nvim/plug-config/codi.vim
   source $HOME/.config/nvim/plug-config/goyo.vim
   source $HOME/.config/nvim/plug-config/vista.vim
   source $HOME/.config/nvim/plug-config/sneak.vim
@@ -39,7 +38,6 @@ else
   source $HOME/.config/nvim/plug-config/markdown.vim
   source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/closetags.vim
-  source $HOME/.config/nvim/plug-config/spelunker.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
   source $HOME/.config/nvim/plug-config/vim-rooter.vim
   source $HOME/.config/nvim/plug-config/quickscope.vim

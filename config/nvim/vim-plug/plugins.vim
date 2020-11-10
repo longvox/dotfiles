@@ -89,12 +89,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/emmet-vim'
     " Better Comments
     Plug 'jbgutierrez/vim-better-comments'
-    " Echo doc
-    Plug 'Shougo/echodoc.vim'
-    " Interactive code
-    Plug 'ChristianChiarulli/codi.vim'
-    " Vim Wiki
-    Plug 'https://github.com/vimwiki/vimwiki.git'
     " Vim tig
     Plug 'iberianpig/tig-explorer.vim'
     " mutiple  cursor
@@ -128,8 +122,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ntpeters/vim-better-whitespace'
     " A Vim plugin for TypeScript
     Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-    " Improved vim spelling plugin (with camel case support)!
-    Plug 'kamykn/spelunker.vim'
     " highlight logstash
     Plug 'robbles/logstash.vim'
   endif
