@@ -119,7 +119,16 @@
     "cSpell.ignoreWords": ["behaviour"],
 
     // User words to add to dictionary.  Should only be in the user settings.
-    "cSpell.userWords": [],
+    "cSpell.userWords": [
+      "Không",
+      "Rasa",
+      "consts",
+      "khác",
+      "lịch",
+      "mailgun",
+      "postgres",
+      "thúc"
+    ],
 
     // Specify paths/files to ignore.
     "cSpell.ignorePaths": [

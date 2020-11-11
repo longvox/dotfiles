@@ -79,6 +79,7 @@ let g:which_key_map.s = {
       \ 'B' : [':Buffers'                               , 'open buffers'         ],
       \ 'c' : [':Commits'                               , 'commits'              ],
       \ 'C' : [':BCommits'                              , 'buffer commits'       ],
+      \ 'e' : ['<Plug>(coc-codeaction-selected)'        , 'spell'                ],
       \ 'f' : [':Files'                                 , 'files'                ],
       \ 'g' : [':GFiles'                                , 'git files'            ],
       \ 'G' : [':GFiles?'                               , 'modified git files'   ],
