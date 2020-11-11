@@ -122,12 +122,22 @@
     "cSpell.userWords": [
       "Không",
       "Rasa",
+      "Tiếng",
+      "Việt",
+      "cateservice",
       "consts",
       "khác",
       "lịch",
       "mailgun",
+      "nhận",
+      "otplib",
       "postgres",
-      "thúc"
+      "thay",
+      "thúc",
+      "tiên",
+      "totp",
+      "Đúng",
+      "Đồng"
     ],
 
     // Specify paths/files to ignore.

@@ -78,6 +78,9 @@ nnoremap <ESC><ESC> :nohlsearch<cr>
 " Saves the file (handling the permission-denied error)
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Save the file with readonly
+cnoremap w w!
+
 " map jk
 nnoremap j gj
 nnoremap k gk
