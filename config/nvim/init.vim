@@ -31,7 +31,6 @@ else
   source $HOME/.config/nvim/plug-config/sneak.vim
   source $HOME/.config/nvim/plug-config/blame.vim
   source $HOME/.config/nvim/plug-config/rnvimr.vim
-  luafile $HOME/.config/nvim/lua/plug-colorizer.lua
   source $HOME/.config/nvim/plug-config/rainbow.vim
   source $HOME/.config/nvim/plug-config/floaterm.vim
   source $HOME/.config/nvim/plug-config/vim-wiki.vim

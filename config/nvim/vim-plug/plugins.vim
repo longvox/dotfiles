@@ -8,8 +8,6 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-  " Change dates fast
-  Plug 'tpope/vim-speeddating'
   " Convert binary, hex, etc..
   Plug 'glts/vim-radical'
   " Files
@@ -37,7 +35,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'unblevable/quick-scope'
     Plug 'easymotion/vim-easymotion'
     " Add some color
-    Plug 'norcalli/nvim-colorizer.lua'
     Plug 'junegunn/rainbow_parentheses.vim'
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
@@ -49,10 +46,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'joshdick/onedark.vim'
-    Plug 'kaicataldo/material.vim'
-    Plug 'NLKNguyen/papercolor-theme'
     Plug 'tomasiser/vim-code-dark'
-    Plug 'morhetz/gruvbox'
     Plug 'jacoborus/tender.vim'
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -62,7 +56,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Ranger
     Plug 'francoiscabrol/ranger.vim'
     Plug 'rbgrouleff/bclose.vim'
-    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -70,8 +63,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-signify'
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-rhubarb'
-    Plug 'junegunn/gv.vim'
     " Terminal
     Plug 'voldikss/vim-floaterm'
     " Start Screen
@@ -96,8 +87,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " vim tsx
     Plug 'ianks/vim-tsx'
     Plug 'leafgarland/typescript-vim'
-    " rename
-    Plug 'neoclide/rename.nvim'
+    Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
     " show author git commit in line
     Plug 'apzelos/blamer.nvim'
     " check tslint
@@ -108,8 +98,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'christoomey/vim-tmux-navigator'
     " close buffer
     Plug 'Asheq/close-buffers.vim'
-    " vim image
-    Plug 'ashisha/image.vim'
     " opening selected content
     Plug 'kristijanhusak/vim-carbon-now-sh'
     " Vim plugin that provides additional text objects
@@ -120,8 +108,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'AndrewRadev/splitjoin.vim'
     " Better whitespace highlighting for Vim
     Plug 'ntpeters/vim-better-whitespace'
-    " A Vim plugin for TypeScript
-    Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
     " highlight logstash
     Plug 'robbles/logstash.vim'
   endif

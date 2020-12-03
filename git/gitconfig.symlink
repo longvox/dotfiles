@@ -1,9 +1,9 @@
 # gitconfig
 [user]
-	name = imlong
-	email = longvox98@gmail.com
+	name = Long Vo
+    email = longvox98@gmail.com
 [github]
-	user = longvox
+    user = longvox
 [init]
     templatedir = ~/.dotfiles/git/templates
 [include]
@@ -52,7 +52,6 @@
 
     # current branch
     cbr = rev-parse --abbrev-ref HEAD
-
     # submodule shortcuts
     si = submodule init
     su = submodule update
@@ -79,7 +78,7 @@
     assumed = "!git ls-files -v | grep ^h | cut -c 3-"
     unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
 
-    # clean up all 
+    # clean up all
     forget = "!git fetch -p origin && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
 
     # show the most recently touched branches
@@ -152,23 +151,24 @@
     pager = less -FXRS -x2
     editor = vim
     whitespace = cr-at-eol
+    ignorehook = false
 [rerere]
-    enabled = true
+	enabled = true
 [grep]
     extendRegexp = true
     lineNumber = true
 [credential]
-	helper = cache --timeout 3600
+    helper = cache --timeout 3600
 [difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustexitcode = true
 [rebase]
-	instructionFormat = "[%an - %ar] %s"
-	autoStash = true
+    instructionFormat = "[%an - %ar] %s"
+    autoStash = true
 [pager]
     diff = "diff-so-fancy | less --tabs=4 -RFX"
     show = "diff-so-fancy | less --tabs=4 -RFX"
 [cola]
-	spellcheck = false
+    spellcheck = false

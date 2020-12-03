@@ -27,17 +27,14 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['/'] = [ ':Commentary'              , 'comment'              ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'              , 'open init'            ]
-let g:which_key_map[';'] = [ ':Commands'                , 'commands'             ]
 let g:which_key_map['='] = [ '<C-W>='                   , 'balance windows'      ]
 let g:which_key_map[','] = [ 'Startify'                 , 'start screen'         ]
 let g:which_key_map['`'] = [ ':Bdelete hidden'          , 'close all buffer'     ]
-let g:which_key_map['c'] = [ ':Codi!!'                  , 'virtual repl'         ]
 let g:which_key_map['d'] = [ ':bd'                      , 'delete buffer'        ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'     , 'explorer'             ]
 let g:which_key_map['f'] = [ ':Files'                   , 'search files'         ]
 let g:which_key_map['h'] = [ '<C-W>s'                   , 'split below'          ]
 let g:which_key_map['q'] = [ 'q'                        , 'quit'                 ]
-let g:which_key_map['r'] = [ ':RnvimrToggle'            , 'ranger'               ]
 let g:which_key_map['S'] = [ ':SSave'                   , 'save session'         ]
 let g:which_key_map['T'] = [ ':Rg'                      , 'search text'          ]
 let g:which_key_map['v'] = [ '<C-W>v'                   , 'split right'          ]
@@ -72,7 +69,6 @@ let g:which_key_map.b = {
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
-      \ '/' : [':History'                               , 'history'              ],
       \ ';' : [':Commands'                              , 'commands'             ],
       \ 'a' : [':Ag'                                    , 'text Ag'              ],
       \ 'b' : [':BLines'                                , 'current buffer'       ],
@@ -83,8 +79,6 @@ let g:which_key_map.s = {
       \ 'f' : [':Files'                                 , 'files'                ],
       \ 'g' : [':GFiles'                                , 'git files'            ],
       \ 'G' : [':GFiles?'                               , 'modified git files'   ],
-      \ 'h' : [':History'                               , 'file history'         ],
-      \ 'H' : [':History:'                              , 'command history'      ],
       \ 'l' : [':Lines'                                 , 'lines'                ],
       \ 'm' : [':Marks'                                 , 'marks'                ],
       \ 'M' : [':Maps'                                  , 'normal maps'          ],
@@ -98,7 +92,6 @@ let g:which_key_map.s = {
       \ 'y' : [':Filetypes'                             , 'file types'           ],
       \ 'z' : [':FZF'                                   , 'FZF'                  ],
       \ }
-      " \ 's' : [':Snippets'     , 'snippets'],
 
 " g is for git
 let g:which_key_map.g = {
@@ -128,7 +121,7 @@ let g:which_key_map.g = {
       \ }
 
 " t in g for tig
-let g:which_key_map.g.t = {
+let g:which_key_map.T = {
       \ 'name' : '+tig',
       \ 'c' : [':TigOpenCurrentFile'                    , 'current file'         ],
       \ 'p' : [':TigOpenProjectRootDir'                 , 'project root path'    ],
@@ -168,7 +161,7 @@ let g:which_key_map.l = {
       \ 'q' : ['<Plug>(coc-fix-current)'                , 'quickfix'             ],
       \ 'r' : ['<Plug>(coc-rename)'                     , 'rename'               ],
       \ 'R' : ['<Plug>(coc-references)'                 , 'references'           ],
-      \ 's' : [':CocList -I symbols'                    , 'references'           ],
+      \ 's' : [':CocList -I symbols'                    , 'symbols'              ],
       \ 'S' : [':CocList snippets'                      , 'snippets'             ],
       \ 't' : ['<Plug>(coc-type-definition)'            , 'type definition'      ],
       \ 'u' : [':CocListResume'                         , 'resume list'          ],
@@ -185,12 +178,9 @@ let g:which_key_map.t = {
       \ 'f' : [':FloatermNew fzf'                       , 'fzf'                  ],
       \ 'g' : [':FloatermNew lazygit'                   , 'git'                  ],
       \ 'd' : [':FloatermNew lazydocker'                , 'docker'               ],
-      \ 'N' : [':FloatermNew nnn'                       , 'nnn'                  ],
       \ 'p' : [':FloatermNew python'                    , 'python'               ],
-      \ 'r' : [':FloatermNew ranger'                    , 'ranger'               ],
       \ 't' : [':FloatermToggle'                        , 'toggle'               ],
-      \ 'y' : [':FloatermNew ytop'                      , 'ytop'                 ],
-      \ 's' : [':FloatermNew ncdu'                      , 'ncdu'                 ],
+      \ 'h' : [':FloatermNew htop'                      , 'htop'                 ],
       \ 'n' : [':tabnew'                                , 'tab new'              ],
       \ 'c' : [':tabclose'                              , 'tab close'            ]
       \ }

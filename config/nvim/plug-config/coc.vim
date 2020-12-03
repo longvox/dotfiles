@@ -1,5 +1,4 @@
   let g:coc_global_extensions = [
-    \ 'coc-snippets',
     \ 'coc-sql',
     \ 'coc-css',
     \ 'coc-svg',
@@ -16,12 +15,12 @@
     \ 'coc-vimlsp',
     \ 'coc-actions',
     \ 'coc-tsserver',
-    \ 'coc-floaterm',
+    \ 'coc-snippets',
     \ 'coc-explorer',
     \ 'coc-prettier',
+    \ 'coc-highlight',
     \ 'coc-cssmodules',
     \ 'coc-solargraph',
-    \ 'coc-marketplace',
     \ 'coc-spell-checker'
     \ ]
 

@@ -92,4 +92,6 @@ if !exists('g:vscode')
   " Temp/System
   set wildignore+=*.*~,*~
   set wildignore+=*.swp,.lock,.DS_Store,._*,tags.lock
+
+  set tabpagemax=7
 endif
