@@ -1,78 +1,89 @@
-red=`tput setaf 1`
-green=`tput setaf 2`
-reset=`tput sgr0`
-set +e
+source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/log.sh
+source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/install.sh
+
+tryInstall install zsh
+
 # autojump - a faster way to navigate your filesystem
 BASEDIR=$(dirname "$0")
-if [ ! -d "${BASEDIR}/autojump" ];
+if [ ! -d "/home/$USER/.autojump" ];
 then
-   echo "Installing autojump!"
+   log "Installing autojump!"
    git clone git://github.com/wting/autojump.git
-   cd autojump
+   cd "/home/$USER/.autojump"
    ./install.py
    cd $BASEDIR
 else
-   echo "${green}Installed autojump!${reset}"
+   silly "Installed autojump!"
 fi
 
 if [ ! -d ~/.oh-my-zsh ];
 then
-   echo "${green}Installing oh-my-zsh!${reset}"
+   info "Installing oh-my-zsh!"
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
-   echo "${red}Installed oh my zsh!${reset}"
+   silly "Installed oh my zsh!}"
 fi
 
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting ];
 then
-   echo "${red}Installed zsh syntax highlighting!${reset}"
+   silly "Installed zsh syntax highlighting!"
 else
-   echo "${greeen}Installing zsh syntax highlighting!${reset}"
+   info "Installing zsh syntax highlighting!"
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
       ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
 fi
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-autosuggestions ];
 then
-   echo "${red}Installed zsh autosuggestions${reset}"
+   silly "Installed zsh autosuggestions"
 else
-   echo "${green}Installing zsh autosuggestions!${reset}"
+   info "Installing zsh autosuggestions!"
    git clone https://github.com/zsh-users/zsh-autosuggestions \
       ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 fi
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-history-substring-search ];
 then
-   echo "${red}Installed zsh history substring search!${reset}"
+   silly "Installed zsh history substring search!"
 else
-   echo "${green}Installing zsh history substring search!${reset}"
+   info "Installing zsh history substring search!"
    git clone https://github.com/zsh-users/zsh-history-substring-search \
-        ${ZSH_CUSTOM}/plugins/zsh-history-substring-search
+      ${ZSH_CUSTOM}/plugins/zsh-history-substring-search
 fi
 
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-completions ];
 then
-   echo "${red}Installed zsh completions!${reset}"
+   silly "Installed zsh completions!"
 else
-    echo "${green}Installing zsh completions!${reset}"
-    git clone https://github.com/zsh-users/zsh-completions \
-        ${ZSH_CUSTOM}/plugins/zsh-completions
+   info "Installing zsh completions!"
+   git clone https://github.com/zsh-users/zsh-completions \
+      ${ZSH_CUSTOM}/plugins/zsh-completions
 fi
 
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-nvm ];
 then
-   echo "${red}Installed zsh nvm!${reset}"
+   silly "Installed zsh nvm!"
 else
-    echo "${green}Installing zsh nvm!${reset}"
-    git clone https://github.com/lukechilds/zsh-nvm \
-       ${ZSH_CUSTOM}/plugins/zsh-nvm
+   info "Installing zsh nvm!"
+   git clone https://github.com/lukechilds/zsh-nvm \
+      ${ZSH_CUSTOM}/plugins/zsh-nvm
+fi
+
+if [ -d ${ZSH_CUSTOM}/plugins/zsh-nvm ];
+then
+   silly "Installed spaceship zsh!"
+else
+   info "Installing spaceship zsh!"
+   git clone https://github.com/denysdovhan/spaceship-prompt.git \
+      "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+   ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
 fi
 
 # echo "Installing ruby!"
-sudo apt-get install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
+tryInstall install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
 
 # echo "Installing colorls!"
-gem install colorls
+tryInstall installGem colorls
