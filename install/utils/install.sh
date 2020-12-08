@@ -5,6 +5,10 @@ isInstall() {
     dpkg-query -Wf'${db:Status-abbrev}' "$1" 2>/dev/null | grep -q '^i'
 }
 
+command_exists() {
+    type "$1" > /dev/null 2>&1
+}
+
 install() {
     for package in "$@"
     do
@@ -17,6 +21,10 @@ installPip() {
     do
         pip3 list | grep $package > /dev/null && silly "$package installed, moving on..." || pip3 install $package
     done
+}
+
+installGem() {
+    gem install $1
 }
 
 installSnap() {
@@ -60,4 +68,3 @@ tryInstall() {
     }
 }
 
-tryInstall install silversearcher-ag
