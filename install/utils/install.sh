@@ -1,5 +1,7 @@
 #!/bin/bash
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/log.sh
+PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
+source $PATH_CURRENT/log.sh
+chmod +x $PATH_CURRENT/install-gnome-shell.sh
 
 isInstall() {
     dpkg-query -Wf'${db:Status-abbrev}' "$1" 2>/dev/null | grep -q '^i'
@@ -31,6 +33,13 @@ installSnap() {
     for package in "$@"
     do
         sudo snap install $package
+    done
+}
+
+installGnomeShellEx() {
+    for id in "$@"
+    do
+        $PATH_CURRENT/install-gnome-shell.sh -o $id
     done
 }
 
@@ -67,3 +76,6 @@ tryInstall() {
         error "Install $2 failed!"
     }
 }
+
+
+tryInstall installGnomeShellEx 1401

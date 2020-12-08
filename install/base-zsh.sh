@@ -1,5 +1,7 @@
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/log.sh
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/install.sh
+#!/usr/bin/env bash
+PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
+source $PATH_CURRENT/utils/log.sh
+source $PATH_CURRENT/utils/install.sh 
 
 tryInstall install zsh
 

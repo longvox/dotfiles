@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/log.sh
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/install.sh
+PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
+source $PATH_CURRENT/utils/log.sh
+source $PATH_CURRENT/utils/install.sh 
 
 DOTFILES=$HOME/.dotfiles
 

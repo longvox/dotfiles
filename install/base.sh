@@ -29,6 +29,9 @@ tryInstall install libxext-dev
 tryInstall install libxtst-dev
 tryInstall install curl
 tryInstall install wget
+tryInstall install jq
+tryInstall install sed
+tryInstall install unzip
 tryInstall install git
 tryInstall install ruby
 tryInstall install htop

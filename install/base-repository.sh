@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/log.sh
+PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
+source $PATH_CURRENT/utils/log.sh
+
 info "Add apt-repository!!!!${reset}"
 
 info "Add-apt-repository alacritty!"
