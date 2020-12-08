@@ -7,20 +7,23 @@ then
     echo "${green}Install GUI application!${reset}"
 
     echo "${green}Installing gnome  tweak tool!${reset}"
-    sudo apt install gnome-tweak-tool -y
+    dpkg -s gnome-tweak-tool &> /dev/null || sudo apt install gnome-tweak-tool -y
 
-    sudo apt install gufw -y
+    echo "${green}Installing Gufw Firewall!${reset}"
+    dpkg -s gufw &> /dev/null || sudo apt install gufw -y
 
-    sudo apt install gdebi-core -y
+    dpkg -s gdebi-core &> /dev/null || sudo apt install gdebi-core -y
+
+    dpkg -s ubuntu-restricted-extras &> /dev/null || sudo apt-get install -y ubuntu-restricted-extras
 
     echo "${green}Installing kazam!${reset}"
-    sudo apt-get install kazam -y
+    dpkg -s kazam &> /dev/null || sudo apt-get install kazam -y
 
     echo "${green}Install flameshot!${reset}"
-    sudo apt-get install flameshot
+    dpkg -s flameshot &> /dev/null || sudo apt-get install -y flameshot
 
     echo "${green}Installing vlc!${reset}"
-    sudo apt-get install vlc -y
+    dpkg -s vlc &> /dev/null || sudo apt-get install vlc -y
 
     echo "${green}Installing skype!${reset}"
     wget https://repo.skype.com/latest/skypeforlinux-64.deb
@@ -30,14 +33,12 @@ then
     echo "${green}Installing mailspring!${reset}"
     sudo snap install mailspring
 
-    sudo apt-get install -y ubuntu-restricted-extras
-
     echo "${green}Installing google chrome!${reset}"
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo gdebi google-chrome-stable_current_amd64.deb
 
     echo "${green}Installing firefox${reset}"
-    sudo apt install -y firefox
+    dpkg -s firefox &> /dev/null || sudo apt install -y firefox
 
     echo "${green}Installing spotify!${reset}"
     sudo snap install spotify
@@ -56,7 +57,7 @@ then
 
     echo "${green}Installing alacritty!${reset}"
     sudo add-apt-repository ppa:mmstick76/alacritty
-    sudo apt install alacritty
+    dpkg -s alacritty &> /dev/null || sudo apt install alacritty
 else
     echo "${red}Not available GUI!${reset}"
 fi

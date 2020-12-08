@@ -1,9 +1,9 @@
 # gitconfig
 [user]
 	name = Long Vo
-    email = longvox98@gmail.com
+	email = longvox98@gmail.com
 [github]
-    user = longvox
+	user = longvox
 [init]
     templatedir = ~/.dotfiles/git/templates
 [include]
@@ -158,7 +158,7 @@
     extendRegexp = true
     lineNumber = true
 [credential]
-    helper = cache --timeout 3600
+	helper = cache --timeout 3600
 [difftool "Kaleidoscope"]
     cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
