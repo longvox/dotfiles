@@ -17,6 +17,7 @@ then
     tryInstall install vlc
     tryInstall installDeb https://repo.skype.com/latest/skypeforlinux-64.deb
     tryInstall installDeb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    tryInstall installSh https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh
     tryInstall install firefox
     tryInstall installSnap spotify
     tryInstall installSnap mailspring
