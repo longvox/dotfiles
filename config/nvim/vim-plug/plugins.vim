@@ -110,6 +110,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ntpeters/vim-better-whitespace'
     " highlight logstash
     Plug 'robbles/logstash.vim'
+
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   endif
 
 

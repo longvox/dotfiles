@@ -81,6 +81,11 @@ cnoremap w w!
 " map jk
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" map find
+nnoremap <C-f> /
 
 " Quickly add empty lines
 nnoremap <C-o>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
@@ -138,7 +143,6 @@ else
 
   " Operation mapping
   onoremap in( :<c-u>normal! f(vi(<cr>
-  onoremap il( :<c-u>normal! F(vi(<cr>
   onoremap p i(
 
   " AutoCompletion
