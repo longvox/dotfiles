@@ -76,6 +76,3 @@ tryInstall() {
         error "Install $2 failed!"
     }
 }
-
-
-tryInstall installGnomeShellEx 1401
