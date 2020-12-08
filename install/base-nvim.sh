@@ -1,67 +1,36 @@
-# colors output
-red=`tput setaf 1`
-green=`tput setaf 2`
-reset=`tput sgr0`
+#!/usr/bin/env bash
+source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/log.sh
+source $(dirname "$(readlink -f "$BASH_SOURCE")")/utils/install.sh
 
-set -eE
-
-# add  apt-repository
-# lazygit
-echo "${green}Add apt-repository!!!!${reset}"
-
-sudo add-apt-repository ppa:lazygit-team/release -y
-sudo apt-get update -y
-
-echo "${green}[Done] Add apt-repository${reset}"
-# ##################################
-sudo apt-get install curl wget -y
-sudo apt-get install -y \
-    ranger \
-    caca-utils \
-    highlight \
-    atool \
-    w3m \
-    poppler-utils \
-    mediainfo
+tryInstall install curl
+tryInstall install wget
+tryInstall install ranger 
+tryInstall install caca-utils 
+tryInstall install highlight 
+tryInstall install atool 
+tryInstall install w3m 
+tryInstall install poppler-utils 
+tryInstall install mediainfo
 
 # Überzug is a command line util which allows to draw images on terminals by using child windows.
-sudo pip3 install ueberzug
-sudo pip3 install neovim-remote
-sudo pip3 install ueberzug
+tryInstall installPip ueberzug
+tryInstall installPip neovim-remote
+tryInstall installPip pynvim
 
 # ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
-{
-    sudo apt install -y ripgrep
-} || {
-    echo "${red}Install rigrep error failed!${reset}"
-}
+tryInstall install ripgrep
 
 # A code searching tool similar to ack, with a focus on speed
-{
-    sudo apt install -y silversearcher-ag
-} || {
-    echo "${red}Intall siliversearcher-ag failed!${reset}"
-}
+tryInstall install silversearcher-ag
 
 # A simple, fast and user-friendly alternative to 'find'
-{
-    sudo apt install -y fd-find
-} || {
-    echo "${red}Install fd-find failed!${reset}"
-}
+tryInstall install fd-find
 
 # install ndcu
-{
-    sudo apt install -y ncdu
-} || {
-    echo "${red}Install ncdu failed!${reset}"
-}
+tryInstall isntall ncdu
 
 # lazygit: simple terminal UI for git commands
-{
-    sudo apt install -y lazygit
-} || {
-    echo "${red}Install lazagit failed!${reset}"
-}
+tryInstall install lazygit
+
 # lazydocker: The lazier way to manage everything docker
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+tryInstall installSh https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh
