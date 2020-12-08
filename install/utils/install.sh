@@ -49,3 +49,15 @@ installSh() {
     fi
     bash $SOURCE_FILE
 }
+
+tryInstall() {
+    {
+        SCRIPT="$1 $2"
+        info "Installing $2!"
+        eval $SCRIPT
+    } || {
+        error "Install $2 failed!"
+    }
+}
+
+tryInstall install silversearcher-ag
