@@ -37,6 +37,10 @@ silly() {
     echo -e "$HC$SILLY[SILLY]$RS $SILLY$1$RS"
 }
 
+log() {
+    echo -e "$HC[LOG]$RS $1"
+}
+
 underline() {
     echo -e "$HC$UL$1$RS"
 }
