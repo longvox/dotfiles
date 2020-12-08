@@ -10,6 +10,8 @@ then
     info "Install GUI application!"
 
     tryInstall install gnome-tweak-tool
+    tryInstall installGnomeShellEx 1401 # Bluetooth quick connect
+    tryInstall installGnomeShellEx 307  # Dash to Dock 
     tryInstall install gufw
     tryInstall install gdebi-core
     tryInstall install ubuntu-restricted-extras
