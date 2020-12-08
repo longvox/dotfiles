@@ -19,6 +19,13 @@ installPip() {
     done
 }
 
+installSnap() {
+    for package in "$@"
+    do
+        sudo snap install $package
+    done
+}
+
 installDeb() {
     URL=$1
     BASE=$(basename ${URL})
