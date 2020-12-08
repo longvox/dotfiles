@@ -67,9 +67,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 echo "${green}Done install node, npm, nvm, yarn!${reset}"
 
-echo "${green}Installing vim!${reset}"
-sudo add-apt-repository ppa:jonathonf/vim -y
-sudo apt install -y vim
+# echo "${green}Installing vim!${reset}"
+# sudo add-apt-repository ppa:jonathonf/vim -y
+# sudo apt install -y vim
 
 echo "${green}Installing neovim!${reset}"
 curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
