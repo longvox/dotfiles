@@ -28,7 +28,11 @@ info "Add-apt-repository vim!"
 sudo add-apt-repository ppa:jonathonf/vim -y
 
 info "Add-apt-repository neovim!"
-sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:neovim-ppa/stable -y
+
+info "Add-apt-repository neovim!"
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 
 info "[Done] Add apt-repository"
 sudo apt-get update -y

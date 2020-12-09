@@ -40,7 +40,12 @@ tryInstall install              \
     python-dev                  \
     python3-dev                 \
     python3-pip                 \
-    tmux
+    tmux                        \
+    mongodb-org                 \
+    mongodb-org-server          \
+    mongodb-org-mongos          \
+    mongodb-org-shell           \
+    mongodb-org-tools
 
 tryInstall install \
     docker-ce      \
