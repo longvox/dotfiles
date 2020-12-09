@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
 PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
 source $PATH_CURRENT/utils/log.sh
-source $PATH_CURRENT/utils/install.sh 
+source $PATH_CURRENT/utils/install.sh
 
-tryInstall install curl
-tryInstall install wget
-tryInstall install ranger 
-tryInstall install caca-utils 
-tryInstall install highlight 
-tryInstall install atool 
-tryInstall install w3m 
-tryInstall install poppler-utils 
-tryInstall install mediainfo
+tryInstall install \
+    curl \
+    wget \
+    ranger \
+    caca-utils \
+    highlight \
+    atool \
+    w3m \
+    poppler-utils \
+    mediainfo
 
 # Überzug is a command line util which allows to draw images on terminals by using child windows.
-tryInstall installPip ueberzug
-tryInstall installPip neovim-remote
-tryInstall installPip pynvim
+tryInstall installPip \
+    ueberzug \
+    neovim-remote \
+    pynvim
 
 # ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
 tryInstall install ripgrep
@@ -28,7 +30,7 @@ tryInstall install silversearcher-ag
 tryInstall install fd-find
 
 # install ndcu
-tryInstall isntall ncdu
+tryInstall install ncdu
 
 # lazygit: simple terminal UI for git commands
 tryInstall install lazygit

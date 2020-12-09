@@ -10,44 +10,49 @@ sudo apt dist-upgrade -y
 
 info "Installing base app!"
 
-tryInstall install software-properties-common
-tryInstall install apt-transport-https
-tryInstall install ca-certificates
-tryInstall install gnupg-agent
-tryInstall install build-essential
-tryInstall install mesa-common-dev
-tryInstall install libglu1-mesa-dev
-tryInstall install libxrandr-dev
-tryInstall install libssl-dev
-tryInstall install libffi-dev
-tryInstall install libxml2-dev
-tryInstall install libx11-dev
-tryInstall install libxslt1-dev
-tryInstall install zlib1g-dev
-tryInstall install libxi-dev
-tryInstall install libxext-dev
-tryInstall install libxtst-dev
-tryInstall install curl
-tryInstall install wget
-tryInstall install jq
-tryInstall install sed
-tryInstall install unzip
-tryInstall install git
-tryInstall install ruby
-tryInstall install htop
-tryInstall install python-dev
-tryInstall install python3-dev
-tryInstall install python3-pip
+tryInstall install \
+    software-properties-common \
+    apt-transport-https \
+    ca-certificates \
+    gnupg-agent \
+    build-essential \
+    mesa-common-dev \
+    libglu1-mesa-dev \
+    libxrandr-dev \
+    libssl-dev \
+    libffi-dev \
+    libxml2-dev \
+    libx11-dev \
+    libxslt1-dev \
+    zlib1g-dev \
+    libxi-dev \
+    libxext-dev \
+    libxtst-dev \
+    curl \
+    wget \
+    jq \
+    sed \
+    unzip \
+    git \
+    ruby \
+    htop \
+    python-dev \
+    python3-dev \
+    python3-pip \
 
-tryInstall install docker-ce
-tryInstall install docker-ce-cli
-tryInstall install containerd.io
+tryInstall install \
+    docker-ce \
+    docker-ce-cli \
+    containerd.io
 
 echo "Installing node, npm, nvm, yarn!"
-tryInstall install nodejs
-tryInstall install npm
-tryInstall install yarn
+tryInstall install \
+    nodejs \
+    npm \
+    yarn
+
 tryInstall installSh https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
 
-tryInstall install vim
-tryInstall install neovim
+tryInstall install \
+    vim \
+    neovim
