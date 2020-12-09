@@ -9,15 +9,15 @@ if [[ $(whoami) == "administrator"
 then
     info "Install GUI application!"
 
-    tryInstall install \
-        gnome-tweak-tool \
-        gufw \
-        debi-core \
-        ubuntu-restricted-extras \
-        kazam \
-        flameshot \
-        vlc \
-        alacritty \
+    tryInstall install            \
+        gnome-tweak-tool          \
+        gufw                      \
+        debi-core                 \
+        ubuntu-restricted-extras  \
+        kazam                     \
+        flameshot                 \
+        vlc                       \
+        alacritty                 \
         firefox
 
     # 1401: Bluetooth quick connect
@@ -34,13 +34,15 @@ then
     tryInstall installSh \
         https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh
 
-    tryInstall installSnap \
-        spotify \
-        mailspring \
-        onlyoffice-desktopeditors \
-        postman \
-        zoom-client \
-        caprine
+    tryInstall installSnap         \
+        spotify                    \
+        mailspring                 \
+        onlyoffice-desktopeditors  \
+        postman                    \
+        zoom-client                \
+        caprine                    \
+        wps-2019-snap
+
 else
     error "Not available GUI!"
 fi

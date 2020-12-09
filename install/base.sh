@@ -10,49 +10,49 @@ sudo apt dist-upgrade -y
 
 info "Installing base app!"
 
-tryInstall install \
-    software-properties-common \
-    apt-transport-https \
-    ca-certificates \
-    gnupg-agent \
-    build-essential \
-    mesa-common-dev \
-    libglu1-mesa-dev \
-    libxrandr-dev \
-    libssl-dev \
-    libffi-dev \
-    libxml2-dev \
-    libx11-dev \
-    libxslt1-dev \
-    zlib1g-dev \
-    libxi-dev \
-    libxext-dev \
-    libxtst-dev \
-    curl \
-    wget \
-    jq \
-    sed \
-    unzip \
-    git \
-    ruby \
-    htop \
-    python-dev \
-    python3-dev \
-    python3-pip \
+tryInstall install              \
+    software-properties-common  \
+    apt-transport-https         \
+    ca-certificates             \
+    gnupg-agent                 \
+    build-essential             \
+    mesa-common-dev             \
+    libglu1-mesa-dev            \
+    libxrandr-dev               \
+    libssl-dev                  \
+    libffi-dev                  \
+    libxml2-dev                 \
+    libx11-dev                  \
+    libxslt1-dev                \
+    zlib1g-dev                  \
+    libxi-dev                   \
+    libxext-dev                 \
+    libxtst-dev                 \
+    curl                        \
+    wget                        \
+    jq                          \
+    sed                         \
+    unzip                       \
+    git                         \
+    ruby                        \
+    htop                        \
+    python-dev                  \
+    python3-dev                 \
+    python3-pip
 
 tryInstall install \
-    docker-ce \
-    docker-ce-cli \
+    docker-ce      \
+    docker-ce-cli  \
     containerd.io
 
 echo "Installing node, npm, nvm, yarn!"
 tryInstall install \
-    nodejs \
-    npm \
+    nodejs         \
+    npm            \
     yarn
 
 tryInstall installSh https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
 
 tryInstall install \
-    vim \
+    vim            \
     neovim

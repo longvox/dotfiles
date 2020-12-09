@@ -4,20 +4,20 @@ source $PATH_CURRENT/utils/log.sh
 source $PATH_CURRENT/utils/install.sh
 
 tryInstall install \
-    curl \
-    wget \
-    ranger \
-    caca-utils \
-    highlight \
-    atool \
-    w3m \
-    poppler-utils \
+    curl           \
+    wget           \
+    ranger         \
+    caca-utils     \
+    highlight      \
+    atool          \
+    w3m            \
+    poppler-utils  \
     mediainfo
 
 # Überzug is a command line util which allows to draw images on terminals by using child windows.
 tryInstall installPip \
-    ueberzug \
-    neovim-remote \
+    ueberzug          \
+    neovim-remote     \
     pynvim
 
 # ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.
