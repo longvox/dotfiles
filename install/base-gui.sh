@@ -12,7 +12,7 @@ then
     tryInstall install            \
         gnome-tweak-tool          \
         gufw                      \
-        debi-core                 \
+        gdebi-core                \
         ubuntu-restricted-extras  \
         kazam                     \
         flameshot                 \
@@ -42,7 +42,6 @@ then
         zoom-client                \
         caprine                    \
         wps-2019-snap
-
 else
-    error "Not available GUI!"
+    warning "Not available GUI!"
 fi
