@@ -67,7 +67,6 @@ installSh() {
         file=$(printf '%b' ${base//%/\\x})
         source_file="/home/$USER/.dotfiles/.temp-install/$file"
         download_folder="/home/$USER/.dotfiles/.temp-install"
-
         if [ ! -f "$source_file" ]; then
             wget -P $download_folder $url
         fi
@@ -91,4 +90,4 @@ tryInstall() {
 }
 
 
-tryInstall install libxext-dev libxtst-dev
+
