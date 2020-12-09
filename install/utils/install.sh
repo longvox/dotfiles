@@ -26,7 +26,10 @@ installPip() {
 }
 
 installGem() {
-    gem install $1
+    for package in "$@"
+    do
+        gem install $package
+    done
 }
 
 installSnap() {
@@ -44,35 +47,48 @@ installGnomeShellEx() {
 }
 
 installDeb() {
-    URL=$1
-    BASE=$(basename ${URL})
-    FILE=$(printf '%b' ${BASE//%/\\x})
-    SOURCE_FILE="/home/$USER/.dotfiles/.temp-install/$FILE"
-    DOWNLOAD_FOLDER="/home/$USER/.dotfiles/.temp-install"
-    if [ ! -f "$SOURCE_FILE" ]; then 
-        wget -P $DOWNLOAD_FOLDER $URL
-    fi
-    sudo dpkg -i $SOURCE_FILE
+    for url in "$@"
+    do
+        base=$(basename ${url})
+        file=$(printf '%b' ${base//%/\\x})
+        source_file="/home/$USER/.dotfiles/.temp-install/$file"
+        download_folder="/home/$USER/.dotfiles/.temp-install"
+        if [ ! -f "$source_file" ]; then
+            wget -P $download_folder $url
+        fi
+        sudo dpkg -i $source_file
+    done
 }
 
 installSh() {
-    URL=$1
-    BASE=$(basename ${URL})
-    FILE=$(printf '%b' ${BASE//%/\\x})
-    SOURCE_FILE="/home/$USER/.dotfiles/.temp-install/$FILE"
-    DOWNLOAD_FOLDER="/home/$USER/.dotfiles/.temp-install"
-    if [ ! -f "$SOURCE_FILE" ]; then 
-        wget -P $DOWNLOAD_FOLDER $URL
-    fi
-    bash $SOURCE_FILE
+    for url in "$@"
+    do
+        base=$(basename ${url})
+        file=$(printf '%b' ${base//%/\\x})
+        source_file="/home/$USER/.dotfiles/.temp-install/$file"
+        download_folder="/home/$USER/.dotfiles/.temp-install"
+
+        if [ ! -f "$source_file" ]; then
+            wget -P $download_folder $url
+        fi
+        bash $source_file
+    done
 }
 
 tryInstall() {
+    function_install=$1
+    array_package=${@:2}
+    for package in $array_package
+    do
     {
-        SCRIPT="$1 $2"
-        info "Installing $2!"
-        eval $SCRIPT
+        script="$function_install $package"
+        info "Installing $package!"
+        eval $script
     } || {
-        error "Install $2 failed!"
+        error "Install $package failed!"
     }
+    done
 }
+
+
+tryInstall install libxext-dev libxtst-dev
