@@ -28,7 +28,7 @@ installPip() {
 installGem() {
     for package in "$@"
     do
-        gem install $package
+        sudo gem install $package
     done
 }
 
