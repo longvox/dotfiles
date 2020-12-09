@@ -18,7 +18,8 @@ then
         flameshot                 \
         vlc                       \
         alacritty                 \
-        firefox
+        firefox                   \
+        stacer
 
     # 1401: Bluetooth quick connect
     # 307 : Dash to Dock
