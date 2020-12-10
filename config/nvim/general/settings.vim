@@ -55,6 +55,7 @@ if !exists('g:vscode')
   set backupskip+=/private/tmp/*"
   set backupskip+=~/.secret/*
 
+  set maxmempattern=5000
   set foldcolumn=2                        " Folding abilities
   set wrap linebreak                      " wrap by window
   au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC

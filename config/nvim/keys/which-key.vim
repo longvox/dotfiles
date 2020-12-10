@@ -30,15 +30,10 @@ let g:which_key_map['.'] = [ ':e $MYVIMRC'              , 'open init'           
 let g:which_key_map['='] = [ '<C-W>='                   , 'balance windows'      ]
 let g:which_key_map[','] = [ 'Startify'                 , 'start screen'         ]
 let g:which_key_map['`'] = [ ':Bdelete hidden'          , 'close all buffer'     ]
-let g:which_key_map['d'] = [ ':bd'                      , 'delete buffer'        ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'     , 'explorer'             ]
-let g:which_key_map['f'] = [ ':Files'                   , 'search files'         ]
+let g:which_key_map['f'] = [ ':CocList outline'         , 'find outline'         ]
 let g:which_key_map['h'] = [ '<C-W>s'                   , 'split below'          ]
-let g:which_key_map['q'] = [ 'q'                        , 'quit'                 ]
-let g:which_key_map['S'] = [ ':SSave'                   , 'save session'         ]
-let g:which_key_map['T'] = [ ':Rg'                      , 'search text'          ]
 let g:which_key_map['v'] = [ '<C-W>v'                   , 'split right'          ]
-let g:which_key_map['W'] = [ 'w'                        , 'write'                ]
 let g:which_key_map['R'] = [ ':source $MYVIMRC'         , 'reload source'        ]
 " Group mappings
 
@@ -71,23 +66,18 @@ let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ ';' : [':Commands'                              , 'commands'             ],
       \ 'a' : [':Ag'                                    , 'text Ag'              ],
-      \ 'b' : [':BLines'                                , 'current buffer'       ],
-      \ 'B' : [':Buffers'                               , 'open buffers'         ],
+      \ 'b' : [':Buffers'                               , 'open buffers'         ],
       \ 'c' : [':Commits'                               , 'commits'              ],
-      \ 'C' : [':BCommits'                              , 'buffer commits'       ],
       \ 'e' : ['<Plug>(coc-codeaction-selected)'        , 'spell'                ],
       \ 'f' : [':Files'                                 , 'files'                ],
-      \ 'g' : [':GFiles'                                , 'git files'            ],
-      \ 'G' : [':GFiles?'                               , 'modified git files'   ],
+      \ 'g' : [':GFiles?'                               , 'git files'            ],
       \ 'l' : [':Lines'                                 , 'lines'                ],
       \ 'm' : [':Marks'                                 , 'marks'                ],
       \ 'M' : [':Maps'                                  , 'normal maps'          ],
       \ 'p' : [':Helptags'                              , 'help tags'            ],
       \ 'P' : [':Tags'                                  , 'project tags'         ],
       \ 's' : [':CocList snippets'                      , 'snippets'             ],
-      \ 'S' : [':Colors'                                , 'color schemes'        ],
       \ 't' : [':Rg'                                    , 'text Rg'              ],
-      \ 'T' : [':BTags'                                 , 'buffer tags'          ],
       \ 'w' : [':Windows'                               , 'search windows'       ],
       \ 'y' : [':Filetypes'                             , 'file types'           ],
       \ 'z' : [':FZF'                                   , 'FZF'                  ],
@@ -112,26 +102,10 @@ let g:which_key_map.g = {
       \ 'l' : [':Git log'                               , 'log'                  ],
       \ 'p' : [':Git push origin HEAD'                  , 'push'                 ],
       \ 'P' : [':Git pull'                              , 'pull'                 ],
-      \ 'r' : [':GRemove'                               , 'remove'               ],
-      \ 's' : ['<Plug>(GitGutterStageHunk)'             , 'stage hunk'           ],
       \ 'T' : [':GitGutterSignsToggle'                  , 'toggle signs'         ],
-      \ 'u' : ['<Plug>(GitGutterUndoHunk)'              , 'undo hunk'            ],
       \ 'v' : [':GV'                                    , 'view commits'         ],
       \ 'V' : [':GV!'                                   , 'view buffer commits'  ],
       \ }
-
-" t in g for tig
-let g:which_key_map.T = {
-      \ 'name' : '+tig',
-      \ 'c' : [':TigOpenCurrentFile'                    , 'current file'         ],
-      \ 'p' : [':TigOpenProjectRootDir'                 , 'project root path'    ],
-      \ 'g' : [':TigGrep'                               , 'tig grep'             ],
-      \ 'r' : [':TigGrepResume'                         , 'resume last grep'     ],
-      \ 's' : [':TigGrep<Space><C-R>"'                  , 'grep with select word'],
-      \ 'u' : [':<C-u>:TigGrep<Space><C-R><C-W>'        , 'grep word in cursor'  ],
-      \ 'b' : [':TigBlame'                              , 'tig blame'            ],
-      \}
-
 " l is for language server protocol
 let g:which_key_map.l = {
       \ 'name' : '+lsp' ,
@@ -141,34 +115,21 @@ let g:which_key_map.l = {
       \ 'A' : ['<Plug>(coc-codeaction-selected)'        , 'selected action'      ],
       \ 'b' : [':CocNext'                               , 'next action'          ],
       \ 'B' : [':CocPrev'                               , 'prev action'          ],
-      \ 'c' : [':CocList commands'                      , 'commands'             ],
-      \ 'd' : ['<Plug>(coc-definition)'                 , 'definition'           ],
-      \ 'D' : ['<Plug>(coc-declaration)'                , 'declaration'          ],
-      \ 'e' : [':CocList extensions'                    , 'extensions'           ],
       \ 'f' : ['<Plug>(coc-format)'                     , 'format'               ],
-      \ 'F' : ['<Plug>(coc-format-selected)'            , 'format selected'      ],
       \ 'h' : ['<Plug>(coc-float-hide)'                 , 'hide'                 ],
-      \ 'i' : ['<Plug>(coc-implementation)'             , 'implementation'       ],
-      \ 'I' : [':CocList diagnostics'                   , 'diagnostics'          ],
+      \ 'i' : [':CocList diagnostics'                   , 'diagnostics'          ],
       \ 'j' : ['<Plug>(coc-float-jump)'                 , 'float jump'           ],
       \ 'l' : ['<Plug>(coc-codelens-action)'            , 'code lens'            ],
       \ 'n' : ['<Plug>(coc-diagnostic-next)'            , 'next diagnostic'      ],
-      \ 'N' : ['<Plug>(coc-diagnostic-next-error)'      , 'next error'           ],
+      \ 'N' : ['<Plug>(coc-diagnostic-prev)'            , 'prev diagnostic'      ],
+      \ 'e' : ['<Plug>(coc-diagnostic-next-error)'      , 'next error'           ],
+      \ 'E' : ['<Plug>(coc-diagnostic-prev-error)'      , 'prev error'           ],
       \ 'o' : ['<Plug>(coc-openlink)'                   , 'open link'            ],
-      \ 'O' : [':CocList outline'                       , 'outline'              ],
-      \ 'p' : ['<Plug>(coc-diagnostic-prev)'            , 'prev diagnostic'      ],
-      \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'      , 'prev error'           ],
-      \ 'q' : ['<Plug>(coc-fix-current)'                , 'quickfix'             ],
+      \ 'q' : ['<Plug>(coc-fix-current)'                , 'quick fix'            ],
       \ 'r' : ['<Plug>(coc-rename)'                     , 'rename'               ],
       \ 'R' : ['<Plug>(coc-references)'                 , 'references'           ],
       \ 's' : [':CocList -I symbols'                    , 'symbols'              ],
       \ 'S' : [':CocList snippets'                      , 'snippets'             ],
-      \ 't' : ['<Plug>(coc-type-definition)'            , 'type definition'      ],
-      \ 'u' : [':CocListResume'                         , 'resume list'          ],
-      \ 'U' : [':CocUpdate'                             , 'update CoC'           ],
-      \ 'v' : [':Vista!!'                               , 'tag viewer'           ],
-      \ 'z' : [':CocDisable'                            , 'disable CoC'          ],
-      \ 'Z' : [':CocEnable'                             , 'enable CoC'           ],
       \ }
 
 " t is for terminal
@@ -184,6 +145,18 @@ let g:which_key_map.t = {
       \ 'n' : [':tabnew'                                , 'tab new'              ],
       \ 'c' : [':tabclose'                              , 'tab close'            ]
       \ }
+
+" t in t for tig
+let g:which_key_map.t.i = {
+      \ 'name' : '+tig',
+      \ 'c' : [':TigOpenCurrentFile'                    , 'current file'         ],
+      \ 'p' : [':TigOpenProjectRootDir'                 , 'project root path'    ],
+      \ 'g' : [':TigGrep'                               , 'tig grep'             ],
+      \ 'r' : [':TigGrepResume'                         , 'resume last grep'     ],
+      \ 's' : [':TigGrep<Space><C-R>"'                  , 'grep with select word'],
+      \ 'u' : [':<C-u>:TigGrep<Space><C-R><C-W>'        , 'grep word in cursor'  ],
+      \ 'b' : [':TigBlame'                              , 'tig blame'            ],
+      \}
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
