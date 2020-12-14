@@ -2,7 +2,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$(whoami)/.oh-my-zsh"
-
 ZSH_THEME="spaceship"
 
 plugins=(
@@ -18,17 +17,15 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 # export MANPATH="/usr/local/man:$MANPATH"
-
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -89,6 +86,13 @@ if [ $? != 0 ]; then
   tmux -2 new-session -s novo -D -d
   tmux -2 new-session -s elactic -D -d
 fi
+# alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+# alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias gut='git'
+alias shs='ssh'
+alias 'git stauts'='git status'
+alias 'git chekcout'='git checkout'
+command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell zsh)"
 
 alias vim="nvim"
 alias vimsv="vim scp://root@office:22//root/"

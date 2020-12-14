@@ -8,6 +8,7 @@
 " Always source these
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
+source $HOME/.config/nvim/general/ignore.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/general/autocomand.vim
@@ -41,6 +42,7 @@ else
   source $HOME/.config/nvim/plug-config/vim-rooter.vim
   source $HOME/.config/nvim/plug-config/quickscope.vim
   source $HOME/.config/nvim/plug-config/start-screen.vim
+  source $HOME/.config/nvim/plug-config/tig-explorer.vim
   source $HOME/.config/nvim/plug-config/nerd-commenter.vim
   source $HOME/.config/nvim/plug-config/multiple-cursors.vim
 endif

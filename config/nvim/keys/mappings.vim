@@ -1,9 +1,3 @@
-" vim tig mapping keys
-let g:tig_explorer_keymap_edit    = '<C-o>'
-let g:tig_explorer_keymap_tabedit = '<C-t>'
-let g:tig_explorer_keymap_split   = '<C-s>'
-let g:tig_explorer_keymap_vsplit  = '<C-v>'
-
 " map hjkl
 nnoremap L l
 nnoremap H h
@@ -161,11 +155,11 @@ else
   " Move selected line / block of text in visual mode
   " shift + k to move up
   " shift + j to move down
-  nnoremap <M-J> :m .+2<CR>==
+  nnoremap <M-J> :m .+1<CR>==
   nnoremap <M-K> :m .-2<CR>==
-  inoremap <M-J> <Esc>:m .+2<CR>==gi
+  inoremap <M-J> <Esc>:m .+1<CR>==gi
   inoremap <M-K> <Esc>:m .-2<CR>==gi
-  vnoremap <M-J> :m '>+2<CR>gv=gv
+  vnoremap <M-J> :m '>+1<CR>gv=gv
   vnoremap <M-K> :m '<-2<CR>gv=gv
 
   " Alternate way to save
@@ -177,6 +171,7 @@ else
   " <TAB>: completion.
   inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
+  nmap <silent> <Esc><Esc><Esc> :q!<CR>
 
   " Better window navigation
   nnoremap <C-h> <C-w>h
@@ -216,6 +211,7 @@ else
 
   " save file sudo
   cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+  cnoremap we w
 
   " set time
   nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>

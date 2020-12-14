@@ -14,7 +14,6 @@
     \ 'coc-emoji',
     \ 'coc-python',
     \ 'coc-vimlsp',
-    \ 'coc-actions',
     \ 'coc-tsserver',
     \ 'coc-snippets',
     \ 'coc-explorer',

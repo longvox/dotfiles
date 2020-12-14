@@ -1,3 +1,10 @@
+au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
+au BufWinLeave * silent! mkview
+au BufWinEnter * silent! loadview
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd BufWritePre * %s/\s\+$//e
+
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
 au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 autocmd CursorHold * silent call CocActionAsync('highlight')
