@@ -110,7 +110,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'robbles/logstash.vim'
     " vim go
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-  endif
+    " vim debug string
+    Plug 'https://github.com/longvox/vim-debugstring'
+
+endif
 
 
 call plug#end()

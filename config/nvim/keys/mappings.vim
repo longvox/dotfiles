@@ -1,3 +1,5 @@
+map ; :
+
 " map hjkl
 nnoremap L l
 nnoremap H h
@@ -96,6 +98,10 @@ imap <C-j> <C-w>j
 imap <C-k> <C-w>k
 imap <C-l> <C-w>l
 
+nnoremap [[ [[zz
+
+nmap <silent>' <Plug>DumpDebugStringCexpr
+
 " replace
 nnoremap <M-C-r> :%s//gI<Left><Left><Left>
 
@@ -120,9 +126,12 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+" Set as toggle foldcomment
+nnoremap zc @=((foldclosed(line('.')) < 0) ? 'zc' :'zo')<CR>
+nnoremap zr zR
 
 if exists('g:vscode')
-  " Simulate same TAB behavior in VSCode
+  " Simulate same TAB behavior in VSCod
   nmap <Tab> :Tabnext<CR>
   nmap <S-Tab> :Tabprev<CR>
 else

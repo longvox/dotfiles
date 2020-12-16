@@ -25,3 +25,4 @@ endfunc
 " augroup strip_ws
 "   autocmd BufWritePre * call utils#stripTrailingWhitespaces()
 " augroup END
+

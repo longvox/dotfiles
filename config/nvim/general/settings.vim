@@ -24,7 +24,10 @@ if !exists('g:vscode')
   set autoindent                          " Good auto indent
   set laststatus=2                        " Always display the status line
   set number                              " Line numbers
-  set cursorline                          " Enable highlighting of the current line
+  set cursorline!                         " Enable highlighting of the current line
+  set lazyredraw
+  set synmaxcol=128
+  syntax sync minlines=256
   set background=dark                     " tell vim what the background color looks like
   set showtabline=2                       " Always show tabs
   set noshowmode                          " We don't need to see things like -- INSERT -- anymore
@@ -56,9 +59,9 @@ if !exists('g:vscode')
   set backupskip+=~/.secret/*
 
   set maxmempattern=5000
-  set foldcolumn=2                        " Folding abilities
   set wrap linebreak                      " wrap by window
-  set foldmethod=manual
+  set foldcolumn=2                        " Folding abilities
+  set foldmethod=syntax
 
   " show rule
   call matchadd("WarningMsg", "\\%>80v.\\+")
