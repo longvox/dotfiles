@@ -61,7 +61,9 @@ if !exists('g:vscode')
   set maxmempattern=5000
   set wrap linebreak                      " wrap by window
   set foldcolumn=2                        " Folding abilities
-  set foldmethod=syntax
+  set foldmethod=manual
+  set foldnestmax=4
+  set foldminlines=5
 
   " show rule
   call matchadd("WarningMsg", "\\%>80v.\\+")

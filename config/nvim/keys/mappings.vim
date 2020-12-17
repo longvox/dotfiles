@@ -127,8 +127,9 @@ vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
 " Set as toggle foldcomment
-nnoremap zc @=((foldclosed(line('.')) < 0) ? 'zc' :'zo')<CR>
+map e @=(foldlevel('.') ? ((foldclosed(line('.')) < 0) ? 'zc' :'zo' ) : 'zf')<CR>
 nnoremap zr zR
+nnoremap za zA
 
 if exists('g:vscode')
   " Simulate same TAB behavior in VSCod
