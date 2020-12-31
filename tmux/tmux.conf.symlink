@@ -3,11 +3,14 @@ set -g default-shell /usr/bin/zsh
 # tmux display things in 256 colors
 set -g default-terminal "tmux-256color"
 set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
-
 set -g history-limit 200000
 
 # automatically renumber tmux windows
 set -g renumber-windows on
+
+# enable activity alerts
+setw -g monitor-activity on
+set -g visual-activity on
 
 # unbind default prefix and set it to Ctrl+a
 unbind C-b
@@ -16,6 +19,12 @@ bind C-a send-prefix
 
 # for nested tmux sessions
 bind-key a send-prefix
+
+# bind a for copy mode
+bind a copy-mode
+bind C-a copy-mode
+
+unbind C-c
 
 # Activity Monitoring
 setw -g monitor-activity off
@@ -82,7 +91,6 @@ setw -g mouse on
 setw -g mode-keys vi
 # more settings to make copy-mode more vim-like
 unbind [
-bind Escape copy-mode
 unbind p
 bind p paste-buffer
 bind -Tcopy-mode-vi 'v' send -X begin-selection

@@ -33,7 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Text Navigation
     Plug 'justinmk/vim-sneak'
     Plug 'unblevable/quick-scope'
-    Plug 'easymotion/vim-easymotion'
+    " Plug 'easymotion/vim-easymotion'
     " Add some color
     Plug 'junegunn/rainbow_parentheses.vim'
     " Better Syntax Support
@@ -112,7 +112,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " vim debug string
     Plug 'https://github.com/longvox/vim-debugstring'
-
+    " vim-expand-region
+    Plug 'terryma/vim-expand-region'
 endif
 
 

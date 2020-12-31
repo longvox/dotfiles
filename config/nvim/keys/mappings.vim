@@ -25,6 +25,19 @@ vmap } S}
 vmap ] S]
 vmap ) S)
 
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
+map q: :q
+
 " Autocompletion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -126,6 +139,11 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
+" Hit Enter to go to end of file.
+" Hit Backspace to go to beginning of file.
+nnoremap <CR> G
+nnoremap <BS> gg
+
 " Set as toggle foldcomment
 map e @=(foldlevel('.') ? ((foldclosed(line('.')) < 0) ? 'zc' :'zo' ) : 'zf')<CR>
 nnoremap zr zR
@@ -212,6 +230,13 @@ else
   nnoremap <D-6> g^
   nnoremap <D-0> g^
   " }}}
+
+  vmap v <Plug>(expand_region_expand)
+  vmap <C-v> <Plug>(expand_region_shrink)
+
+  vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+  omap s :normal vs<CR>
 
   " Use alt + hjkl to resize windows
   nnoremap <silent> <M-k>    :resize -1<CR>
