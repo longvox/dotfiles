@@ -20,12 +20,6 @@ bind C-a send-prefix
 # for nested tmux sessions
 bind-key a send-prefix
 
-# bind a for copy mode
-bind a copy-mode
-bind C-a copy-mode
-
-unbind C-c
-
 # Activity Monitoring
 setw -g monitor-activity off
 set -g visual-activity off
@@ -92,6 +86,9 @@ setw -g mode-keys vi
 # more settings to make copy-mode more vim-like
 unbind [
 unbind p
+# bind a for copy mode
+bind a copy-mode
+bind C-a copy-mode
 bind p paste-buffer
 bind -Tcopy-mode-vi 'v' send -X begin-selection
 bind -Tcopy-mode-vi 'y' send -X copy-pipe-and-cancel "tmux save-buffer - | reattach-to-user-namespace pbcopy"

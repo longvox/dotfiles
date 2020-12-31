@@ -1,5 +1,3 @@
-map ; :
-
 " map hjkl
 nnoremap L l
 nnoremap H h
@@ -149,112 +147,109 @@ map e @=(foldlevel('.') ? ((foldclosed(line('.')) < 0) ? 'zc' :'zo' ) : 'zf')<CR
 nnoremap zr zR
 nnoremap za zA
 
-if exists('g:vscode')
-  " Simulate same TAB behavior in VSCod
-  nmap <Tab> :Tabnext<CR>
-  nmap <S-Tab> :Tabprev<CR>
-else
-  " Better nav for omniComplete
-  inoremap <expr> <M-j> '<C-n>'
-  inoremap <expr> <M-k> '<C-p>'
+" Simulate same TAB behavior in VSCod
+nmap <Tab> :Tabnext<CR>
+nmap <S-Tab> :Tabprev<CR>
+" Better nav for omniComplete
+inoremap <expr> <M-j> '<C-n>'
+inoremap <expr> <M-k> '<C-p>'
 
-  " I hate escape more than anything else
-  inoremap jk <Esc>
-  inoremap kj <Esc>
-  inoremap jj <Esc>
+" I hate escape more than anything else
+inoremap jk <Esc>
+inoremap kj <Esc>
+inoremap jj <Esc>
 
-  " Operation mapping
-  onoremap in( :<c-u>normal! f(vi(<cr>
-  onoremap p i(
+" Operation mapping
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap p i(
 
-  " AutoCompletion
-  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" AutoCompletion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-  " Easy CAPS
-  inoremap <c-u> <ESC>viwUi
-  nnoremap <c-u> viwU<Esc>
+" Easy CAPS
+inoremap <c-u> <ESC>viwUi
+nnoremap <c-u> viwU<Esc>
 
-  " TAB in general mode will move to text buffer
-  nnoremap <silent> <TAB> :bnext<CR>
-  " SHIFT-TAB will go back
-  nnoremap <silent> <S-TAB> :bprevious<CR>
+" TAB in general mode will move to text buffer
+nnoremap <silent> <TAB> :bnext<CR>
+" SHIFT-TAB will go back
+nnoremap <silent> <S-TAB> :bprevious<CR>
 
-  " Move selected line / block of text in visual mode
-  " shift + k to move up
-  " shift + j to move down
-  nnoremap <M-J> :m .+1<CR>==
-  nnoremap <M-K> :m .-2<CR>==
-  inoremap <M-J> <Esc>:m .+1<CR>==gi
-  inoremap <M-K> <Esc>:m .-2<CR>==gi
-  vnoremap <M-J> :m '>+1<CR>gv=gv
-  vnoremap <M-K> :m '<-2<CR>gv=gv
+" Move selected line / block of text in visual mode
+" shift + k to move up
+" shift + j to move down
+nnoremap <M-J> :m .+1<CR>==
+nnoremap <M-K> :m .-2<CR>==
+inoremap <M-J> <Esc>:m .+1<CR>==gi
+inoremap <M-K> <Esc>:m .-2<CR>==gi
+vnoremap <M-J> :m '>+1<CR>gv=gv
+vnoremap <M-K> :m '<-2<CR>gv=gv
 
-  " Alternate way to save
-  nnoremap <silent> <C-s> :w<CR>
-  " Alternate way to quit
-  nnoremap <silent> <C-Q> :wq!<CR>
-  " Use control-c instead of escape
-  nnoremap <silent> <C-c> <Esc>
-  " <TAB>: completion.
-  inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Alternate way to save
+nnoremap <silent> <C-s> :w<CR>
+" Alternate way to quit
+nnoremap <silent> <C-Q> :wq!<CR>
+" Use control-c instead of escape
+nnoremap <silent> <C-c> <Esc>
+" <TAB>: completion.
+inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-  nmap <silent> <Esc><Esc><Esc> :q!<CR>
+nmap <silent> <Esc><Esc><Esc> :q!<CR>
 
-  " Better window navigation
-  nnoremap <C-h> <C-w>h
-  nnoremap <C-j> <C-w>j
-  nnoremap <C-k> <C-w>k
-  nnoremap <C-l> <C-w>l
+" Better window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-  " Terminal window navigation
-  tnoremap <C-h> <C-\><C-N><C-w>h
-  tnoremap <C-j> <C-\><C-N><C-w>j
-  tnoremap <C-k> <C-\><C-N><C-w>k
-  tnoremap <C-l> <C-\><C-N><C-w>l
-  inoremap <C-h> <C-\><C-N><C-w>h
-  inoremap <C-j> <C-\><C-N><C-w>j
-  inoremap <C-k> <C-\><C-N><C-w>k
-  inoremap <C-l> <C-\><C-N><C-w>l
-  tnoremap <Esc> <C-\><C-n>
+" Terminal window navigation
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
+inoremap <C-h> <C-\><C-N><C-w>h
+inoremap <C-j> <C-\><C-N><C-w>j
+inoremap <C-k> <C-\><C-N><C-w>k
+inoremap <C-l> <C-\><C-N><C-w>l
+tnoremap <Esc> <C-\><C-n>
 
-  " Markdown Settings
-  vnoremap <D-j> gj
-  vnoremap <D-k> gk
-  vnoremap <D-4> g$
-  vnoremap <D-6> g^
-  vnoremap <D-0> g^
-  nnoremap <D-j> gj
-  nnoremap <D-k> gk
-  nnoremap <D-4> g$
-  nnoremap <D-6> g^
-  nnoremap <D-0> g^
-  " }}}
+" Markdown Settings
+vnoremap <D-j> gj
+vnoremap <D-k> gk
+vnoremap <D-4> g$
+vnoremap <D-6> g^
+vnoremap <D-0> g^
+nnoremap <D-j> gj
+nnoremap <D-k> gk
+nnoremap <D-4> g$
+nnoremap <D-6> g^
+nnoremap <D-0> g^
+" }}}
 
-  vmap v <Plug>(expand_region_expand)
-  vmap <C-v> <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
-  vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-  omap s :normal vs<CR>
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+  \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
 
-  " Use alt + hjkl to resize windows
-  nnoremap <silent> <M-k>    :resize -1<CR>
-  nnoremap <silent> <M-j>    :resize +1<CR>
-  nnoremap <silent> <M-l>    :vertical resize -1<CR>
-  nnoremap <silent> <M-h>    :vertical resize +1<CR>
+" Use alt + hjkl to resize windows
+nnoremap <silent> <M-k>    :resize -1<CR>
+nnoremap <silent> <M-j>    :resize +1<CR>
+nnoremap <silent> <M-l>    :vertical resize -1<CR>
+nnoremap <silent> <M-h>    :vertical resize +1<CR>
 
-  " save file sudo
-  cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-  cnoremap we w
+" save file sudo
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+cnoremap we w
 
-  " set time
-  nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-  imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+" set time
+nmap <F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
-  " CarbonNowSh
-  vnoremap <F5> :CarbonNowSh<CR>
+" CarbonNowSh
+vnoremap <F5> :CarbonNowSh<CR>
 
-  " Start tracking Vim session
-  nnoremap <leader>o :Obsession<CR>
-endif
+" Start tracking Vim session
+nnoremap <leader>o :Obsession<CR>
