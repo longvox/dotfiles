@@ -137,11 +137,6 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-" Hit Enter to go to end of file.
-" Hit Backspace to go to beginning of file.
-nnoremap <CR> G
-nnoremap <BS> gg
-
 " Set as toggle foldcomment
 map e @=(foldlevel('.') ? ((foldclosed(line('.')) < 0) ? 'zc' :'zo' ) : 'zf')<CR>
 nnoremap zr zR
