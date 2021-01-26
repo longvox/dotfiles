@@ -98,7 +98,10 @@ alias 'git stauts'='git status'
 alias 'git chekcout'='git checkout'
 command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell zsh)"
 
-alias vim="nvim"
+alias reload="source ~/.zshrc"
+alias build7k='ssh office7k "~/pull-7000.sh"'
+alias build8k='ssh office "~/pull-8000.sh"'
+alias build9k='ssh office "~/pull-9000.sh"'
 alias vimsv="vim scp://root@office:22//root/"
 alias vimsvbs="vim scp://root@office:22//root/backend-search/"
 alias ccode="yarn prettier --write && yarn lint && yarn run typecheck"
