@@ -40,6 +40,7 @@ tryInstall install              \
     python-dev                  \
     python3-dev                 \
     python3-pip                 \
+    python3-setuptools          \
     tmux                        \
     mongodb-org                 \
     mongodb-org-server          \
@@ -63,3 +64,5 @@ tryInstall installSh https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/instal
 tryInstall install \
     vim            \
     neovim
+
+tryInstall installPip thefuck

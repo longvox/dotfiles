@@ -79,12 +79,6 @@ vnoremap Q :norm @@<cr>
 " Add simple hightlight removal
 nnoremap <ESC><ESC> :nohlsearch<cr>
 
-" Saves the file (handling the permission-denied error)
-cnoremap w!! w !sudo tee % >/dev/null
-
-" Save the file with readonly
-cnoremap w w!
-
 " map jk
 nnoremap j gj
 nnoremap k gk
@@ -248,3 +242,18 @@ vnoremap <F5> :CarbonNowSh<CR>
 
 " Start tracking Vim session
 nnoremap <leader>o :Obsession<CR>
+
+if has("nvim")
+  cnoremap w! execute 'silent! write !SUDO_ASKPASS=`which ssh-askpass` sudo tee % >/dev/null' <bar> edit!
+else
+  cnoremap w! w !sudo tee % > /dev/null
+end
+
+" " Saves the file (handling the permission-denied error)
+" cnoremap w!! w !sudo tee % >/dev/null
+
+
+" " Save the file with readonly
+" cnoremap w w!
+
+

@@ -106,6 +106,8 @@ alias logstash="sudo /usr/share/logstash/bin/logstash"
 alias tmux="[ -z '${TMUX}' ] && (tmux attach -t default || tmux new -s default) || tmux"
 
 alias oops='sudo $(fc -ln -1)'
+alias mapkey='gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"'
+eval $(thefuck --alias)
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
 fancy-ctrl-z () {
@@ -119,4 +121,3 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
