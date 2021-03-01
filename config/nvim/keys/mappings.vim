@@ -5,8 +5,8 @@ nnoremap l w
 nnoremap h b
 
 " scroll 1 page up/down
-nnoremap <C-k> <C-u>
-nnoremap <C-j> <C-d>
+nnoremap <C-M-k> <C-u>
+nnoremap <C-M-j> <C-d>
 
 " Switch between tabs
 map <M-=> :tabnext<CR>
