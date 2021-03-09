@@ -25,96 +25,98 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-sleuth'
   " wakatime
   Plug 'wakatime/vim-wakatime'
-  if exists('g:vscode')
-    " Easy motion for VSCode
-    Plug 'asvetliakov/vim-easymotion'
-
-  else
-    " Text Navigation
-    Plug 'justinmk/vim-sneak'
-    Plug 'unblevable/quick-scope'
-    " Plug 'easymotion/vim-easymotion'
-    " Add some color
-    Plug 'junegunn/rainbow_parentheses.vim'
-    " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
-    " Cool Icons
-    Plug 'ryanoasis/vim-devicons'
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
-    " Closetags
-    Plug 'alvan/vim-closetag'
-    " Themes
-    Plug 'joshdick/onedark.vim'
-    Plug 'tomasiser/vim-code-dark'
-    Plug 'jacoborus/tender.vim'
-    " Intellisense
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Status Line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    " Ranger
-    Plug 'francoiscabrol/ranger.vim'
-    Plug 'rbgrouleff/bclose.vim'
-    " FZF
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    " Git
-    Plug 'mhinz/vim-signify'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'tpope/vim-fugitive'
-    " Terminal
-    Plug 'voldikss/vim-floaterm'
-    " Start Screen
-    Plug 'mhinz/vim-startify'
-    " Vista
-    Plug 'liuchengxu/vista.vim'
-    " See what keys do like in emacs
-    Plug 'liuchengxu/vim-which-key'
-    " Making stuff
-    Plug 'neomake/neomake'
-    " Snippets
-    Plug 'honza/vim-snippets'
-    Plug 'mattn/emmet-vim'
-    " Better Comments
-    Plug 'jbgutierrez/vim-better-comments'
-    " Vim tig
-    Plug 'iberianpig/tig-explorer.vim'
-    " mutiple  cursor
-    Plug 'terryma/vim-multiple-cursors'
-    " vim tsx
-    Plug 'ianks/vim-tsx'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
-    " show author git commit in line
-    Plug 'apzelos/blamer.nvim'
-    " check tslint
-    Plug 'neoclide/coc-tslint'
-    " mutile cursor
-    Plug 'terryma/vim-multiple-cursors'
-    " tmux navigator
-    Plug 'christoomey/vim-tmux-navigator'
-    " close buffer
-    Plug 'Asheq/close-buffers.vim'
-    " opening selected content
-    Plug 'kristijanhusak/vim-carbon-now-sh'
-    " Vim plugin that provides additional text objects
-    Plug 'wellle/targets.vim'
-    " Make the yanked region apparent!
-    Plug 'machakann/vim-highlightedyank'
-    " A vim plugin that simplifies the transition between multiline and single-line code
-    Plug 'AndrewRadev/splitjoin.vim'
-    " Better whitespace highlighting for Vim
-    Plug 'ntpeters/vim-better-whitespace'
-    " highlight logstash
-    Plug 'robbles/logstash.vim'
-    " vim go
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-    " vim debug string
-    Plug 'https://github.com/longvox/vim-debugstring'
-    " vim-expand-region
-    Plug 'terryma/vim-expand-region'
-endif
+  " Easy motion for VSCode
+  Plug 'asvetliakov/vim-easymotion'
+  " react
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'jparise/vim-graphql'
+  " Text Navigation
+  Plug 'justinmk/vim-sneak'
+  Plug 'unblevable/quick-scope'
+  " Plug 'easymotion/vim-easymotion'
+  " Add some color
+  Plug 'junegunn/rainbow_parentheses.vim'
+  " Better Syntax Support
+  Plug 'sheerun/vim-polyglot'
+  " Cool Icons
+  Plug 'ryanoasis/vim-devicons'
+  " Auto pairs for '(' '[' '{'
+  Plug 'jiangmiao/auto-pairs'
+  " Closetags
+  Plug 'alvan/vim-closetag'
+  " Themes
+  Plug 'joshdick/onedark.vim'
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'jacoborus/tender.vim'
+  " Intellisense
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Status Line
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  " Ranger
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
+  " FZF
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  " Git
+  Plug 'mhinz/vim-signify'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
+  " Terminal
+  Plug 'voldikss/vim-floaterm'
+  " Start Screen
+  Plug 'mhinz/vim-startify'
+  " Vista
+  Plug 'liuchengxu/vista.vim'
+  " See what keys do like in emacs
+  Plug 'liuchengxu/vim-which-key'
+  " Making stuff
+  Plug 'neomake/neomake'
+  " Snippets
+  Plug 'honza/vim-snippets'
+  Plug 'mattn/emmet-vim'
+  " Better Comments
+  Plug 'jbgutierrez/vim-better-comments'
+  " Vim tig
+  Plug 'iberianpig/tig-explorer.vim'
+  " mutiple  cursor
+  Plug 'terryma/vim-multiple-cursors'
+  " vim tsx
+  Plug 'ianks/vim-tsx'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+  " show author git commit in line
+  Plug 'apzelos/blamer.nvim'
+  " check tslint
+  Plug 'neoclide/coc-tslint'
+  " mutile cursor
+  Plug 'terryma/vim-multiple-cursors'
+  " tmux navigator
+  Plug 'christoomey/vim-tmux-navigator'
+  " close buffer
+  Plug 'Asheq/close-buffers.vim'
+  " opening selected content
+  Plug 'kristijanhusak/vim-carbon-now-sh'
+  " Vim plugin that provides additional text objects
+  Plug 'wellle/targets.vim'
+  " Make the yanked region apparent!
+  Plug 'machakann/vim-highlightedyank'
+  " A vim plugin that simplifies the transition between multiline and single-line code
+  Plug 'AndrewRadev/splitjoin.vim'
+  " Better whitespace highlighting for Vim
+  Plug 'ntpeters/vim-better-whitespace'
+  " highlight logstash
+  Plug 'robbles/logstash.vim'
+  " vim go
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  " vim debug string
+  Plug 'https://github.com/longvox/vim-debugstring'
+  " vim-expand-region
+  Plug 'terryma/vim-expand-region'
 
 
 call plug#end()

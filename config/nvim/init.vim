@@ -21,10 +21,12 @@ if exists('g:vscode')
   source $HOME/.config/nvim/vscode/windows.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
 else
-  " ordinary neovim
+  "themes neovim
   source $HOME/.config/nvim/themes/syntax.vim
   source $HOME/.config/nvim/themes/onedark.vim
   source $HOME/.config/nvim/themes/airline.vim
+
+  " plugin
   source $HOME/.config/nvim/plug-config/fzf.vim
   source $HOME/.config/nvim/plug-config/coc.vim
   source $HOME/.config/nvim/plug-config/vista.vim

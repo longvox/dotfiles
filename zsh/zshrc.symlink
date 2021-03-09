@@ -107,7 +107,7 @@ alias vimsvbs="vim scp://root@office:22//root/backend-search/"
 alias ccode="yarn prettier --write && yarn lint && yarn run typecheck"
 alias logstash="sudo /usr/share/logstash/bin/logstash"
 alias tmux="[ -z '${TMUX}' ] && (tmux attach -t default || tmux new -s default) || tmux"
-
+alias "typescript-opps"="npx typac ini -i"
 alias oops='sudo $(fc -ln -1)'
 alias mapkey='gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"'
 eval $(thefuck --alias)

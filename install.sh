@@ -29,7 +29,6 @@ info "Installing dotfiles."
 info "After install dotfiles."
 . install/after-install.sh
 
-# only perform macOS-specific install
 # after the install, install neovim python libraries
 info "Running Neovim Python install"
 info "${green}==============================${reset}"

@@ -1,16 +1,12 @@
-" map hjkl
-nnoremap L l
-nnoremap H h
-nnoremap l w
-nnoremap h b
-
-" scroll 1 page up/down
-nnoremap <C-M-k> <C-u>
-nnoremap <C-M-j> <C-d>
 
 " Switch between tabs
 map <M-=> :tabnext<CR>
 map <M--> :tabprevious<CR>
+
+" TAB in general mode will move to text buffer
+nnoremap <silent> <TAB> :bnext<CR>
+" SHIFT-TAB will go back
+nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " simple surround
 vmap " S"
@@ -44,10 +40,14 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 nnoremap va ggVG
 
 " Delete current line n insert mode
-inoremap <c-d> <esc>ddi
+inoremap <M-d> <esc>ddi
 
 " Uppercase current word
-inoremap <c-u> <esc>viwUA
+inoremap <M-u> <esc>viwUA
+
+" Easy CAPS
+inoremap <M-u> <ESC>viwUi
+nnoremap <M-u> viwU<Esc>
 
 " move to beginning/end of line
 nnoremap B ^
@@ -68,6 +68,7 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 nnoremap gd gdzz
+nnoremap [[ [[zz
 
 " Home & End should be placed next to each other
 nnoremap - $
@@ -78,32 +79,11 @@ vnoremap Q :norm @@<cr>
 
 " Add simple hightlight removal
 nnoremap <ESC><ESC> :nohlsearch<cr>
-
-" map jk
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
-" map find
-nnoremap <C-f> /
+" " map find
+" nnoremap <C-f> /
 
 " Quickly add empty lines
 nnoremap <C-o>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-
-" move left/right in insert mode
-inoremap <M-h> <left>
-inoremap <M-l> <right>
-inoremap <M-k> <up>
-inoremap <M-j> <down>
-
-" switch window in vim
-imap <C-h> <C-w>h
-imap <C-j> <C-w>j
-imap <C-k> <C-w>k
-imap <C-l> <C-w>l
-
-nnoremap [[ [[zz
 
 nmap <silent>' <Plug>DumpDebugStringCexpr
 
@@ -156,14 +136,27 @@ onoremap p i(
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Easy CAPS
-inoremap <c-u> <ESC>viwUi
-nnoremap <c-u> viwU<Esc>
+" move left/right in insert mode
+inoremap <M-h> <left>
+inoremap <M-l> <right>
+inoremap <M-k> <up>
+inoremap <M-j> <down>
 
-" TAB in general mode will move to text buffer
-nnoremap <silent> <TAB> :bnext<CR>
-" SHIFT-TAB will go back
-nnoremap <silent> <S-TAB> :bprevious<CR>
+" switch window in vim
+imap <C-h> <C-w>h
+imap <C-j> <C-w>j
+imap <C-k> <C-w>k
+imap <C-l> <C-w>l
+
+" map hjkl
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap H h
+nnoremap L l
+nnoremap l w
+nnoremap h b
 
 " Move selected line / block of text in visual mode
 " shift + k to move up
@@ -184,7 +177,7 @@ nnoremap <silent> <C-c> <Esc>
 " <TAB>: completion.
 inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-nmap <silent> <Esc><Esc><Esc> :q!<CR>
+nmap <silent><Esc><Esc><Esc> :q!<CR>
 
 " Better window navigation
 nnoremap <C-h> <C-w>h

@@ -15,6 +15,9 @@ autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
 autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
 au BufNewFile,BufRead *.vue set ft=html
 au BufNewFile,BufRead *.cubec,*.ax,*.handlebar,*.mustache,*.tpl set ft=mustache
 au BufNewFile,BufRead *.vm,*.stm set ft=velocity
