@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
 source $PATH_CURRENT/utils/log.sh
-source $PATH_CURRENT/utils/install.sh 
+source $PATH_CURRENT/utils/install.sh
 
 tryInstall install zsh
 
@@ -74,14 +74,14 @@ else
       ${ZSH_CUSTOM}/plugins/zsh-nvm
 fi
 
-if [ -d ${ZSH_CUSTOM}/plugins/zsh-nvm ];
+if [ -d ${ZSH_CUSTOM}/themes/spaceship-prompt ];
 then
    silly "Installed spaceship zsh!"
 else
    info "Installing spaceship zsh!"
    git clone https://github.com/denysdovhan/spaceship-prompt.git \
-      "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-   ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
+      "$ZSH_CUSTOM/themes/spaceship-prompt --depth=1
+   ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 fi
 
 # echo "Installing ruby!"

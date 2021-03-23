@@ -129,7 +129,6 @@ inoremap kj <Esc>
 inoremap jj <Esc>
 
 " Operation mapping
-onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap p i(
 
 " AutoCompletion

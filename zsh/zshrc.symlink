@@ -1,7 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/$(whoami)/.oh-my-zsh"
 ZSH_THEME="spaceship"
 
 plugins=(
@@ -14,122 +11,40 @@ plugins=(
     zsh-nvm
 )
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-# export MANPATH="/usr/local/man:$MANPATH"
-export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
+# running fzf.zsh
 [ -f ~/.dotfiles/.fzf.zsh ] && source ~/.dotfiles/.fzf.zsh
-# source $(dirname $(gem which colorls))/tab_complete.sh
-export JAVA_HOME=$(dirname $(dirname $(readlink -f  /usr/bin/java)))
 
-alias ls="colorls --sd -A"
-alias robo3t="~/.robo3t/bin/robo3t"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="~/.sdkman"
-[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
-
-[[ -s "~/.autojump/etc/profile.d/autojump.sh" ]] && source "~/.autojump/etc/profile.d/autojump.sh"
-
-autoload -U compinit && compinit -u
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/$(whoami)/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/$(whoami)/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/$(whoami)/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/$(whoami)/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-alias ngrok="~/.ngrok"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/imlong/google-cloud-sdk/path.zsh.inc' ]; then
-  . '/home/imlong/google-cloud-sdk/path.zsh.inc';
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/imlong/google-cloud-sdk/completion.zsh.inc' ]; then
-  . '/home/imlong/google-cloud-sdk/completion.zsh.inc';
-fi
-
-export PATH=$PATH:/usr/local/ruby/bin
-
-alias evrasa="conda activate rasa"
-alias tmximlong="tmux attach -t imlong -d"
-alias tmxbackend="tmux attach -t backend -d"
-alias tmxvibot="tmux attach -t vibot -d"
-alias tmxenbot="tmux attach -t enbot -d"
-alias tmxnovo="tmux attach -t novo -d"
-alias tmxelastic="tmux attach -t elactic -d"
-tmux has -t imlong &> /dev/null
-
-if [ $? != 0 ]; then
-  tmux -2 new-session -s imlong -D -d
-  tmux -2 new-session -s backend -D -d
-  tmux -2 new-session -s vibot -D -d
-  tmux -2 new-session -s enbot -D -d
-  tmux -2 new-session -s novo -D -d
-  tmux -2 new-session -s elactic -D -d
-fi
-alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
-alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
-alias gut='git'
-alias shs='ssh'
-alias 'git stauts'='git status'
-alias 'git chekcout'='git checkout'
-command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell zsh)"
-
-alias reload="source ~/.zshrc"
-alias build7k='ssh office7k "~/pull-7000.sh"'
-alias build8k='ssh office "~/pull-8000.sh"'
-alias build9k='ssh office "~/pull-9000.sh"'
-alias vimsv="vim scp://root@office:22//root/"
-alias vimsvbs="vim scp://root@office:22//root/backend-search/"
-alias ccode="yarn prettier --write && yarn lint && yarn run typecheck"
-alias logstash="sudo /usr/share/logstash/bin/logstash"
-alias tmux="[ -z '${TMUX}' ] && (tmux attach -t default || tmux new -s default) || tmux"
-alias "typescript-opps"="npx typac ini -i"
-alias oops='sudo $(fc -ln -1)'
-alias mapkey='gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"'
-eval $(thefuck --alias)
+# running ~/.profile
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
-fancy-ctrl-z () {
-  if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-  else
-    zle push-input
-    zle clear-screen
-  fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
-#determines search program for fzf
-if type ag &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
+# running vg
+command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell zsh)"
+
+# running thefuck
+eval $(thefuck --alias)
+
+
+# Load the Valiables file
+if [ -e ~/.dotfiles/zsh/zsh_files/variables.zsh ]; then
+     source ~/.dotfiles/zsh/zsh_files/variables.zsh
 fi
-#refer rg over ag
-if type rg &> /dev/null; then
-    export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+# Load the Aliases file
+if [ -e ~/.dotfiles/zsh/zsh_files/aliases.zsh ]; then
+     source ~/.dotfiles/zsh/zsh_files/aliases.zsh
 fi
+
+# Load the Functions file
+if [ -e ~/.dotfiles/zsh/zsh_files/functions.zsh ]; then
+     source ~/.dotfiles/zsh/zsh_files/functions.zsh
+fi
+
+# Load the Tmux file
+if [ -e ~/.dotfiles/zsh/zsh_files/tmux.zsh ]; then
+     source ~/.dotfiles/zsh/zsh_files/tmux.zsh
+fi
+
+# Path to your oh-my-zsh installation.
+source $ZSH/oh-my-zsh.sh
+
 

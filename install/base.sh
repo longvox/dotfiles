@@ -46,7 +46,9 @@ tryInstall install              \
     mongodb-org-server          \
     mongodb-org-mongos          \
     mongodb-org-shell           \
-    mongodb-org-tools
+    mongodb-org-tools           \
+    xdotool                     \
+    wmctrl
 
 tryInstall install \
     docker-ce      \

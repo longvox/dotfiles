@@ -60,6 +60,8 @@ bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
 bind -n M-| split-window -h -c "#{pane_current_path}"
 bind -n M-_ split-window -v -c "#{pane_current_path}"
 
+bind -n F11 run-shell 'wmctrl -ir `xdotool getwindowfocus` -b toggle,fullscreen'
+
 # synchronize all panes in a window
 bind y setw synchronize-panes
 
