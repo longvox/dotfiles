@@ -74,4 +74,6 @@ if !exists('g:vscode')
   set noerrorbells
 
   set tabpagemax=7
+
+  set list lcs=trail:·,tab:»·
 endif

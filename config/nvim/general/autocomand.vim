@@ -29,3 +29,31 @@ augroup every
   au InsertEnter * set norelativenumber
   au InsertLeave * set relativenumber
 augroup END
+
+augroup FileType_Local_tabwidth
+  autocmd!
+  au FileType typescriptreact setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType scheme setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType typescript setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType json setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType yml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType vim setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType sh setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType zsh setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType javascript setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType pegjs setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType javascript.jsx setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType pug setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType html setlocal tabstop=2 shiftwidth=2 expandtab
+  au FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
+  au FileType eruby setlocal tabstop=2 shiftwidth=2 expandtab
+  au FileType scss setlocal tabstop=2 shiftwidth=2 expandtab iskeyword+=@-@
+  au FileType ruby setlocal tabstop=2 shiftwidth=2 expandtab
+  au FileType cs setlocal tabstop=4 shiftwidth=4 expandtab
+  au FileType html.erb setlocal tabstop=2 shiftwidth=2 expandtab
+  au FileType html.handlebars setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType apache setlocal commentstring=#\ %s
+  au FileType gitconfig setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+  au FileType php setlocal tabstop=2 shiftwidth=2 expandtab
+augroup END

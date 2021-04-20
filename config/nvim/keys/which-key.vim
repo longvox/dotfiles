@@ -27,11 +27,9 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Single mappings
 let g:which_key_map['/'] = [ ':Commentary'              , 'comment'              ]
 let g:which_key_map['.'] = [ ':e $MYVIMRC'              , 'open init'            ]
-let g:which_key_map['='] = [ '<C-W>='                   , 'balance windows'      ]
 let g:which_key_map[','] = [ 'Startify'                 , 'start screen'         ]
 let g:which_key_map['`'] = [ ':Bdelete hidden'          , 'close all buffer'     ]
 let g:which_key_map['e'] = [ ':CocCommand explorer'     , 'explorer'             ]
-let g:which_key_map['f'] = [ ':CocList outline'         , 'find outline'         ]
 let g:which_key_map['h'] = [ '<C-W>s'                   , 'split below'          ]
 let g:which_key_map['v'] = [ '<C-W>v'                   , 'split right'          ]
 let g:which_key_map['R'] = [ ':source $MYVIMRC'         , 'reload source'        ]
@@ -126,6 +124,7 @@ let g:which_key_map.l = {
       \ 'E' : ['<Plug>(coc-diagnostic-prev-error)'      , 'prev error'           ],
       \ 'o' : ['<Plug>(coc-openlink)'                   , 'open link'            ],
       \ 'q' : ['<Plug>(coc-fix-current)'                , 'quick fix'            ],
+      \ 'p' : [':PhpFmt'                                , 'quick fix php'        ],
       \ 'r' : ['<Plug>(coc-rename)'                     , 'rename'               ],
       \ 'R' : ['<Plug>(coc-references)'                 , 'references'           ],
       \ 's' : [':CocList -I symbols'                    , 'symbols'              ],

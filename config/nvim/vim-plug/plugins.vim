@@ -7,7 +7,7 @@ if empty(glob('~/.dotfiles/config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
+  Plug 'editorconfig/editorconfig-vim'
   " Convert binary, hex, etc..
   Plug 'glts/vim-radical'
   " Files
@@ -51,6 +51,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'joshdick/onedark.vim'
   Plug 'tomasiser/vim-code-dark'
   Plug 'jacoborus/tender.vim'
+  Plug 'ntk148v/vim-horizon'
   " Intellisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Status Line
@@ -89,6 +90,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'ianks/vim-tsx'
   Plug 'leafgarland/typescript-vim'
   Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+  Plug 'othree/javascript-libraries-syntax.vim'
+  Plug 'ap/vim-css-color'
+  " vim php
+  Plug 'dsawardekar/wordpress.vim'
+  Plug 'shawncplus/phpcomplete.vim'
+  Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+  Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
+  Plug 'jwalton512/vim-blade'
+  Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
   " show author git commit in line
   Plug 'apzelos/blamer.nvim'
   " check tslint

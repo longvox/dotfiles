@@ -12,6 +12,7 @@
     \ 'coc-emmet',
     \ 'coc-pairs',
     \ 'coc-emoji',
+    \ 'coc-phpls',
     \ 'coc-python',
     \ 'coc-vimlsp',
     \ 'coc-tsserver',

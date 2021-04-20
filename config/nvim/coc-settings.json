@@ -15,10 +15,10 @@
     "diagnostic.hintSign": " ",
     "diagnostic.virtualText": true, // this won't work with codelens when error on same line
 
-    // "diagnostic.displayByAle": true,
+    "diagnostic.displayByAle": true,
 
     // codelens TODO what does this get me?
-    // "codeLens.enable": true,
+    "codeLens.enable": true,
 
     // list
     "list.indicator": ">",
@@ -84,10 +84,10 @@
     "cSpell.enabledLanguageIds": [
         "csharp",
         "go",
-        "javascript",
-        "javascriptreact",
+        // "javascript",
+        // "javascriptreact",
         "markdown",
-        "php",
+        // "php",
         "plaintext",
         "typescript",
         "typescriptreact",
@@ -142,6 +142,7 @@
       "Sharemedia",
       "Sharepopover",
       "Storaged",
+      "TINYINT",
       "Tiếng",
       "UUIDV",
       "Unavail",
@@ -166,6 +167,7 @@
       "chào",
       "chối",
       "clsx",
+      "cmnd",
       "codemirror",
       "consts",
       "deliveried",
@@ -192,6 +194,7 @@
       "khách",
       "khấu",
       "labo",
+      "lastdate",
       "layerschange",
       "lightgray",
       "liwei",

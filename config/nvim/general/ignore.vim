@@ -1,3 +1,4 @@
+set wildignore=*/dist*/*,*/target/*,*/builds/*,*/node_modules/*
 " Binary
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.jar,*.pyc,*.rbc,*.class
@@ -16,6 +17,8 @@ set wildignore+=*.min.*,*-min.*
 " Temp/System
 set wildignore+=*.*~,*~
 set wildignore+=*.swp,.lock,.DS_Store,._*,tags.lock
+" javscript project
+set wildignore+=package-lock.json,*.lock
 
 " source from https://www.vim.org/scripts/script.php?script_id=2557
 if exists("g:loaded_gitignore_wildignore")
