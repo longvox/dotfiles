@@ -57,8 +57,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Status Line
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  " Ranger
-  Plug 'francoiscabrol/ranger.vim'
+  " bclose
   Plug 'rbgrouleff/bclose.vim'
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

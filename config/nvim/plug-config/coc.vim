@@ -22,7 +22,8 @@
     \ 'coc-highlight',
     \ 'coc-cssmodules',
     \ 'coc-solargraph',
-    \ 'coc-spell-checker'
+    \ 'coc-spell-checker',
+    \ 'coc-styled-components'
     \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.

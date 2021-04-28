@@ -1,12 +1,10 @@
 
 " Switch between tabs
-map <M-=> :tabnext<CR>
-map <M--> :tabprevious<CR>
+nnoremap <silent> <M-=> :tabnext<CR>
+nnoremap <silent> <M--> :tabprevious<CR>
 
-" TAB in general mode will move to text buffer
-nnoremap <silent> <TAB> :bnext<CR>
-" SHIFT-TAB will go back
-nnoremap <silent> <S-TAB> :bprevious<CR>
+nnoremap <silent> <M-0> :bnext<CR>
+nnoremap <silent> <M-9> :bprevious<CR>
 
 " simple surround
 vmap " S"
@@ -85,7 +83,7 @@ nnoremap <ESC><ESC> :nohlsearch<cr>
 " Quickly add empty lines
 nnoremap <C-o>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-nmap <silent>' <Plug>DumpDebugStringCexpr
+nmap <silent>, <Plug>DumpDebugStringCexpr
 
 " replace
 nnoremap <M-C-r> :%s//gI<Left><Left><Left>
@@ -103,6 +101,12 @@ let mapleader=" "
 nnoremap <Space> <Nop>
 
 " Better indenting
+nnoremap <S-Tab> <<
+nnoremap <Tab> >>
+
+vnoremap <S-Tab> <gv
+vnoremap <Tab> >gv
+
 vnoremap < <gv
 vnoremap > >gv
 
@@ -116,9 +120,6 @@ map e @=(foldlevel('.') ? ((foldclosed(line('.')) < 0) ? 'zc' :'zo' ) : 'zf')<CR
 nnoremap zr zR
 nnoremap za zA
 
-" Simulate same TAB behavior in VSCod
-nmap <Tab> :Tabnext<CR>
-nmap <S-Tab> :Tabprev<CR>
 " Better nav for omniComplete
 inoremap <expr> <M-j> '<C-n>'
 inoremap <expr> <M-k> '<C-p>'
@@ -156,6 +157,10 @@ nnoremap H h
 nnoremap L l
 nnoremap l w
 nnoremap h b
+vnoremap H h
+vnoremap L l
+vnoremap l w
+vnoremap h b
 
 " Move selected line / block of text in visual mode
 " shift + k to move up

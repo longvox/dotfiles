@@ -1,4 +1,5 @@
 set wildignore=*/dist*/*,*/target/*,*/builds/*,*/node_modules/*
+set wildignore+=*/vendors/*
 " Binary
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.jar,*.pyc,*.rbc,*.class

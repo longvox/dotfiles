@@ -68,7 +68,7 @@ font:
         style: Bold Italic
 
     # Point size
-    size: 10.5
+    size: 10
 
     glyph_offset:
         x: 0
@@ -118,7 +118,7 @@ colors:
 
     indexed_colors: []
 
-background_opacity: 0.95
+background_opacity: 0.93
 
 
 mouse_bindings:

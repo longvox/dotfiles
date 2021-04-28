@@ -30,8 +30,11 @@ alias tmxenbot="tmux attach -t enbot -d"
 alias tmxnovo="tmux attach -t novo -d"
 alias tmxelastic="tmux attach -t elactic -d"
 
+alias xampp="sudo /opt/lampp/lampp"
+
 alias ngrok="~/.ngrok"
 alias robo3t="~/.robo3t/bin/robo3t"
+alias buildOffice="scp -r /home/longvox/Work/office/global-care/gcapp officeGlobalCare:/home/ubuntu/app"
 
 alias ls="colorls --sd -A"
 
