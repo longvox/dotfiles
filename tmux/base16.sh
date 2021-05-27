@@ -23,7 +23,6 @@ set -g status-interval 5
 
 # default statusbar colors
 set-option -g status-style fg=$base02,bg=$base00,default
-
 set-window-option -g window-status-style fg=$base03,bg=$base00
 set-window-option -g window-status-format " #I #W"
 

@@ -157,5 +157,19 @@ let g:which_key_map.t.i = {
       \ 'b' : [':TigBlame'                              , 'tig blame'            ],
       \}
 
+" w is for wiki
+let g:which_key_map.w = {
+      \ 'name' : '+wiki' ,
+      \ 'i' : [':VimwikiIndex'                          , 'index'                ],
+      \ 't' : [':VimwikiTabIndex'                       , 'tab index'            ],
+      \ 'u' : [':VimwikiUISelect'                       , 'ui select'            ],
+      \ 'd' : [':VimwikiDiaryIndex'                     , 'diary'                ],
+      \ 'w' : [':VimwikiMakeDiaryNote'                  , 'note today'           ],
+      \ 'e' : [':VimwikiTabMakeDiaryNote'               , 'tab note today'       ],
+      \ 'y' : [':VimwikiMakeYesterdayDiaryNote'         , 'note yesterday'       ],
+      \ 'm' : [':VimwikiMakeTomorrowDiaryNote'          , 'note tomorrow'        ],
+      \ }
+
+
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

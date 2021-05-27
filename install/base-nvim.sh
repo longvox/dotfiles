@@ -14,6 +14,8 @@ tryInstall install \
     poppler-utils  \
     mediainfo
 
+tryInstall installPip spotify-cli-linux
+
 # Überzug is a command line util which allows to draw images on terminals by using child windows.
 tryInstall installPip \
     ueberzug          \

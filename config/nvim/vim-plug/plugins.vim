@@ -52,6 +52,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tomasiser/vim-code-dark'
   Plug 'jacoborus/tender.vim'
   Plug 'ntk148v/vim-horizon'
+  Plug 'morhetz/gruvbox'
   " Intellisense
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Status Line
@@ -126,8 +127,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'https://github.com/longvox/vim-debugstring'
   " vim-expand-region
   Plug 'terryma/vim-expand-region'
-
-
+  " vim-wiki
+  Plug 'vimwiki/vimwiki'
+  " Place deoplete first, then autocomplete-flow
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'wokalski/autocomplete-flow'
+  " You will also need the following for function argument completion:
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
 call plug#end()
 
 " Automatically install missing plugins on startup

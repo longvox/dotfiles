@@ -8,6 +8,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export PATH=$PATH:/usr/local/ruby/bin
 
+export PATH="$PATH:/opt/scripts/killport"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/$(whoami)/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

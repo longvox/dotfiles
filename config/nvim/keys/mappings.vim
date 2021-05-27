@@ -78,7 +78,7 @@ vnoremap Q :norm @@<cr>
 " Add simple hightlight removal
 nnoremap <ESC><ESC> :nohlsearch<cr>
 " " map find
-" nnoremap <C-f> /
+nnoremap <C-f> /
 
 " Quickly add empty lines
 nnoremap <C-o>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
@@ -117,6 +117,7 @@ nnoremap <silent> p p`]
 
 " Set as toggle foldcomment
 map e @=(foldlevel('.') ? ((foldclosed(line('.')) < 0) ? 'zc' :'zo' ) : 'zf')<CR>
+
 nnoremap zr zR
 nnoremap za zA
 
