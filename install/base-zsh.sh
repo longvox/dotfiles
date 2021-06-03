@@ -80,12 +80,10 @@ then
 else
    info "Installing spaceship zsh!"
    git clone https://github.com/denysdovhan/spaceship-prompt.git \
-      "$ZSH_CUSTOM/themes/spaceship-prompt --depth=1
+      "$ZSH_CUSTOM/themes/spaceship-prompt --depth=1"
    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 fi
 
-# echo "Installing ruby!"
 tryInstall install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
 
-# echo "Installing colorls!"
 tryInstall installGem colorls

@@ -131,8 +131,8 @@ mouse:
 
     hide_when_typing: false
 
-    url:
-        modifiers: None
+    # url:
+    #     modifiers: None
 
 selection:
     semantic_escape_chars: ',│`|:"'' ()[]{}<>'
