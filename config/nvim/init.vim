@@ -42,7 +42,6 @@ else
   source $HOME/.config/nvim/plug-config/closetags.vim
   source $HOME/.config/nvim/plug-config/easymotion.vim
   source $HOME/.config/nvim/plug-config/vim-rooter.vim
-  source $HOME/.config/nvim/plug-config/quickscope.vim
   source $HOME/.config/nvim/plug-config/start-screen.vim
   source $HOME/.config/nvim/plug-config/tig-explorer.vim
   source $HOME/.config/nvim/plug-config/nerd-commenter.vim

@@ -148,5 +148,4 @@ run '~/.dotfiles/tmux/plugins/tpm/tpm'
 ##############################
 ### Color & Style Settings ###
 ##############################
-
 source ~/.dotfiles/tmux/base16.sh

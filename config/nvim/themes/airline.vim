@@ -9,6 +9,7 @@ let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 0
 let g:airline#extensions#tabline#close_symbol = '×'
+let g:airline#extensions#tagbar#enabled = 0
 
 " Just show the file name
 let g:airline#extensions#tabline#fnamemod = ':t'

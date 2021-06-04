@@ -7,6 +7,7 @@ if empty(glob('~/.dotfiles/config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+  Plug 'preservim/nerdtree'
   Plug 'editorconfig/editorconfig-vim'
   " Convert binary, hex, etc..
   Plug 'glts/vim-radical'
@@ -35,7 +36,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'jparise/vim-graphql'
   " Text Navigation
   Plug 'justinmk/vim-sneak'
-  Plug 'unblevable/quick-scope'
   " Plug 'easymotion/vim-easymotion'
   " Add some color
   Plug 'junegunn/rainbow_parentheses.vim'

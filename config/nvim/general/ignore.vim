@@ -36,13 +36,16 @@ function s:WildignoreFromGitignore(...)
   if filereadable(gitignore)
     let igstring = ''
     for oline in readfile(gitignore)
-      let line = substitute(oline, '\s|\n|\r', '', "g")
+      let line = substitute(oline, '\n|\r', '', "g")
+      echo line
       if line =~ '^#' | con | endif
       if line == ''   | con | endif
       if line =~ '^!' | con | endif
+      if line =~ '\s' | con | endif
       if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
       let igstring .= "," . line
     endfor
+    echo igstring
     let execstring = "set wildignore+=".substitute(igstring, '^,', '', "g")
     execute execstring
   endif

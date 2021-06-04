@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
 source $PATH_CURRENT/utils/log.sh
-source $PATH_CURRENT/utils/install.sh 
+source $PATH_CURRENT/utils/install.sh
 
 info "Setting up Git...\\n\\n"
 

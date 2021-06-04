@@ -18,7 +18,6 @@ alias 'git chekcout'='git checkout'
 alias tmx="[ -z '${TMUX}' ] && (tmux attach -t default || tmux new -s default) || tmux"
 alias xampp="sudo /opt/lampp/lampp"
 
-alias ngrok="~/.ngrok"
 alias robo3t="~/.robo3t/bin/robo3t"
 alias buildOffice="scp -r /home/longvox/Work/office/global-care/gcapp officeGlobalCare:/home/ubuntu/app"
 
