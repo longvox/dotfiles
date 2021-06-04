@@ -7,7 +7,6 @@ if empty(glob('~/.dotfiles/config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-  Plug 'preservim/nerdtree'
   Plug 'editorconfig/editorconfig-vim'
   " Convert binary, hex, etc..
   Plug 'glts/vim-radical'
