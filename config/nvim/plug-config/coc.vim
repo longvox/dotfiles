@@ -15,6 +15,7 @@
     \ 'coc-phpls',
     \ 'coc-python',
     \ 'coc-vimlsp',
+    \ 'coc-flutter',
     \ 'coc-tsserver',
     \ 'coc-snippets',
     \ 'coc-explorer',
@@ -23,7 +24,7 @@
     \ 'coc-cssmodules',
     \ 'coc-solargraph',
     \ 'coc-spell-checker',
-    \ 'coc-styled-components'
+    \ 'coc-styled-components',
     \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.

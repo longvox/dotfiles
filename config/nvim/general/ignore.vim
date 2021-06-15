@@ -63,3 +63,5 @@ augroup END
 
 let &cpo = s:save_cpo
 " vim:set ft=vim sw=2 sts=2 et:
+
+let g:syntastic_mode_map = { 'passive_filetypes': ['css', 'sass', 'scss'] }

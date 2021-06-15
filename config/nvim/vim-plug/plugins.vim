@@ -10,8 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'editorconfig/editorconfig-vim'
   " Convert binary, hex, etc..
   Plug 'glts/vim-radical'
-  " Files
-  Plug 'tpope/vim-eunuch'
+  " Files Plug 'tpope/vim-eunuch'
   " Repeat stuff
   Plug 'tpope/vim-repeat'
   " Surround
@@ -134,6 +133,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " You will also need the following for function argument completion:
   Plug 'Shougo/neosnippet'
   Plug 'Shougo/neosnippet-snippets'
+  "
+  Plug 'ncm2/ncm2'
+  Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2-bufword'
+  Plug 'ncm2/ncm2-path'
+  " Include Phpactor
+  Plug 'phpactor/phpactor' ,  {'do': 'composer install', 'for': 'php'}
+  " Dart LSC VIM
+  Plug 'dart-lang/dart-vim-plugin'
+  Plug 'thosakwe/vim-flutter'
+  Plug 'natebosch/vim-lsc'
+  Plug 'natebosch/vim-lsc-dart'
 call plug#end()
 
 " Automatically install missing plugins on startup

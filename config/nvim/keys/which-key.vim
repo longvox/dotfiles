@@ -81,6 +81,21 @@ let g:which_key_map.s = {
       \ 'z' : [':FZF'                                   , 'FZF'                  ],
       \ }
 
+" b is for buffer
+let g:which_key_map.f = {
+      \ 'name' : '+flutter' ,
+      \ 'a' : [':FlutterRun'                            , 'flutter run'          ],
+      \ 'q' : [':FlutterQuit'                           , 'flutter quit'         ],
+      \ 'r' : [':FlutterHotReload'                      , 'flutter hot reload'   ],
+      \ 'R' : [':FlutterHotRestart'                     , 'flutter hot restart'  ],
+      \ 'd' : [':FlutterVisualDebug'                    , 'flutter visual debug' ],
+      \ }
+nnoremap <leader>fa :FlutterRun<cr>
+nnoremap <leader>fq :FlutterQuit<cr>
+nnoremap <leader>fr :<cr>
+nnoremap <leader>fR :<cr>
+nnoremap <leader>fD :<cr>
+
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,

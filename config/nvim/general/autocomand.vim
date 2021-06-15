@@ -23,6 +23,10 @@ au BufNewFile,BufRead *.vm,*.stm set ft=velocity
 au BufRead *.ts set ft=typescript
 au BufRead *.rs set ft=rust
 
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=menuone,noselect
+
 augroup every
   autocmd!
   au InsertEnter * set norelativenumber
