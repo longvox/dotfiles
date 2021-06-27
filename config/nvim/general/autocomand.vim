@@ -23,6 +23,8 @@ au BufNewFile,BufRead *.vm,*.stm set ft=velocity
 au BufRead *.ts set ft=typescript
 au BufRead *.rs set ft=rust
 
+au FileType php.wordpress set ft=php
+
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=menuone,noselect
@@ -59,4 +61,5 @@ augroup FileType_Local_tabwidth
   au FileType apache setlocal commentstring=#\ %s
   au FileType gitconfig setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
   au FileType php setlocal tabstop=2 shiftwidth=2 expandtab
+  au FileType dart setlocal tabstop=2 shiftwidth=2 expandtab
 augroup END

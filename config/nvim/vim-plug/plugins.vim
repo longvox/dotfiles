@@ -91,9 +91,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'othree/javascript-libraries-syntax.vim'
   Plug 'ap/vim-css-color'
   " vim php
-  Plug 'dsawardekar/wordpress.vim'
   Plug 'shawncplus/phpcomplete.vim'
-  Plug 'StanAngeloff/php.vim', { 'for': 'php' }
   Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
   Plug 'jwalton512/vim-blade'
   Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}

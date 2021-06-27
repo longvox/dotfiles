@@ -1,5 +1,5 @@
   let g:coc_global_extensions = [
-    \ 'coc-go',
+ \ 'coc-go',
     \ 'coc-sql',
     \ 'coc-css',
     \ 'coc-svg',

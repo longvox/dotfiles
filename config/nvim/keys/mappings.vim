@@ -93,16 +93,16 @@ nnoremap za zA
 
 " Tab && Buffer && Indenting """""""""""""""""""""""""""""""""""""""""""""""""""
 " Switch between tabs
-nnoremap <silent> <M-=> :tabnext<CR>
-nnoremap <silent> <M--> :tabprevious<CR>
+nnoremap <silent> <Tab> :tabnext<CR>
+nnoremap <silent> <S-Tab> :tabprevious<CR>
 
 " Switch between buffers
 nnoremap <silent> <M-0> :bnext<CR>
 nnoremap <silent> <M-9> :bprevious<CR>
 
 " Better indenting
-nnoremap <S-Tab> <<
-nnoremap <Tab> >>
+nnoremap < <<
+nnoremap > >>
 
 vnoremap <S-Tab> <gv
 vnoremap <Tab> >gv
@@ -122,7 +122,8 @@ vmap a ggVG
 nnoremap <C-o> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 " replace
-nnoremap <C-R> :%s//gI<Left><Left><Left>
+nnoremap <C-M-r> :%s//gI<Left><Left><Left>
+
 " move to beginning/end of line
 nnoremap b ^
 nnoremap e $
@@ -133,6 +134,22 @@ nnoremap ^ <nop>
 
 " Find
 nnoremap <C-f> /
+
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
+xnoremap <silent> p :<C-U>call <SID>VisualPasteKeepRegister()<CR>
+function! s:VisualPasteKeepRegister()
+    let l:registerContentBackup = getreg('"')
+    let l:registerTypeBackup = getregtype('"')
+    exec "normal! gv" . v:count1 . "\"" . v:register . "p"
+    call setreg('"', l:registerContentBackup, l:registerTypeBackup)
+endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Text "
 
 " Save && Close """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -153,6 +170,9 @@ nmap <silent><Esc><Esc><Esc> :q!<CR>
 nnoremap <silent> <C-s> :w<CR>
 " Alternate way to quit
 nnoremap <silent> <C-Q> :wq!<CR>
+
+cnoremap w w!
+cnoremap q q!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" Save && Close "
 
 " ESC """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,7 +199,6 @@ vmap ) S)
 " simple region expand
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
-
 
 " Keep search results at the center of screen
 nnoremap n nzz

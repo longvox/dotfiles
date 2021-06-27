@@ -20,6 +20,8 @@ set wildignore+=*.*~,*~
 set wildignore+=*.swp,.lock,.DS_Store,._*,tags.lock
 " javscript project
 set wildignore+=package-lock.json,*.lock
+" dart
+set wildignore+=*.inject.summary;*.inject.dart;*.g.dart;
 
 " source from https://www.vim.org/scripts/script.php?script_id=2557
 if exists("g:loaded_gitignore_wildignore")
