@@ -47,8 +47,7 @@ info "Creating vim symlinks"
 info "=============================="
 
 path_nvim="$HOME/.vim:$DOTFILES/config/nvim"
-path_vim="$HOME/.vimrc:$DOTFILES/config/nvim/init.vim"
-VIMFILES=("$path_nvim" "$path_vim")
+VIMFILES=("$path_nvim")
 
 for file in ${VIMFILES[@]}; do
     KEY=${file%%:*}

@@ -22,7 +22,7 @@ for file in $linkables; do
     fi
 done
 
-for filename in "$HOME/.config/nvim" "$HOME/.config/alacritty" "$HOME/.vim" "$HOME/.vimrc"; do
+for filename in "$HOME/.config/nvim"; do
     if [[ ! -L "$filename" && -d "$filename" ]]; then
         info "backing up $filename"
         cp -rf "$filename" "$BACKUP_DIR"

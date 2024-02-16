@@ -34,20 +34,10 @@ tryInstall install              \
     sed                         \
     unzip                       \
     git                         \
-    ruby                        \
-    ruby-dev                    \
     htop                        \
-    python-dev                  \
-    python3-dev                 \
-    python3-pip                 \
-    python3-setuptools          \
     tmux                        \
-    mongodb-org                 \
-    mongodb-org-server          \
-    mongodb-org-mongos          \
-    mongodb-org-shell           \
-    mongodb-org-tools           \
     xdotool                     \
+    font-manager                \
     wmctrl
 
 tryInstall install \
@@ -55,16 +45,6 @@ tryInstall install \
     docker-ce-cli  \
     containerd.io
 
-echo "Installing node, npm, nvm, yarn!"
-tryInstall install \
-    nodejs         \
-    npm            \
-    yarn
-
-tryInstall installSh https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
-
-tryInstall install \
-    vim            \
-    neovim
-
 tryInstall installPip thefuck
+
+source $(dirname "$(readlink -f "$BASH_SOURCE")")/lang/index.sh

@@ -6,17 +6,17 @@ source $PATH_CURRENT/utils/install.sh
 tryInstall install zsh
 
 # autojump - a faster way to navigate your filesystem
-BASEDIR=$(dirname "$0")
-if [ ! -d "/home/$USER/.autojump" ];
-then
-   log "Installing autojump!"
-   git clone git://github.com/wting/autojump.git
-   cd "/home/$USER/.autojump"
-   ./install.py
-   cd $BASEDIR
-else
-   silly "Installed autojump!"
-fi
+# BASEDIR=$(dirname "$0")
+# if [ ! -d "/home/$USER/.autojump" ];
+# then
+#    log "Installing autojump!"
+#    git clone git://github.com/wting/autojump.git
+#    cd "/home/$USER/.autojump"
+#    ./install.py
+#    cd $BASEDIR
+# else
+#    silly "Installed autojump!"
+# fi
 
 if [ ! -d ~/.oh-my-zsh ];
 then
@@ -74,13 +74,13 @@ else
       ${ZSH_CUSTOM}/plugins/zsh-nvm
 fi
 
-if [ -d ${ZSH_CUSTOM}/themes/spaceship-prompt ];
+if [[ -d ${ZSH_CUSTOM}/themes/spaceship-prompt || -d ${ZSH_CUSTOM}/themes/spaceship.zsh-theme ]];
 then
    silly "Installed spaceship zsh!"
 else
    info "Installing spaceship zsh!"
    git clone https://github.com/denysdovhan/spaceship-prompt.git \
-      "$ZSH_CUSTOM/themes/spaceship-prompt --depth=1"
+      "$ZSH_CUSTOM/themes/spaceship-prompt"
    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 fi
 

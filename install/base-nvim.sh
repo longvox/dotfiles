@@ -18,7 +18,6 @@ tryInstall installPip spotify-cli-linux
 
 # Überzug is a command line util which allows to draw images on terminals by using child windows.
 tryInstall installPip \
-    ueberzug          \
     neovim-remote     \
     pynvim
 
@@ -26,16 +25,16 @@ tryInstall installPip \
 tryInstall install ripgrep
 
 # A code searching tool similar to ack, with a focus on speed
-tryInstall install silversearcher-ag
+# tryInstall install silversearcher-ag
 
 # A simple, fast and user-friendly alternative to 'find'
-tryInstall install fd-find
+# tryInstall install fd-find
 
 # install ndcu
-tryInstall install ncdu
+# tryInstall install ncdu
 
 # lazygit: simple terminal UI for git commands
-tryInstall install lazygit
+# tryInstall install lazygit
 
 # lazydocker: The lazier way to manage everything docker
 tryInstall installSh https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh

@@ -32,10 +32,17 @@ installGem() {
     done
 }
 
+installGo() {
+    for package in "$@"
+    do
+        go install $package
+    done
+}
+
 installSnap() {
     for package in "$@"
     do
-        sudo snap install $package
+        sudo snap install $package --classic
     done
 }
 

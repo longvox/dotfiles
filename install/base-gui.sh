@@ -5,19 +5,18 @@ source $PATH_CURRENT/utils/install.sh
 
 if [[ $(whoami) == "administrator"
     || $(whoami) == "imlong"
-    || $(whoami) == "longvox" ]];
+    || $(whoami) == "longvox" 
+    || $(whoami) == "longvh" ]];
 then
     info "Install GUI application!"
 
     tryInstall install            \
-        gnome-tweak-tool          \
+        gnome-tweaks              \
         gufw                      \
         gdebi-core                \
         ubuntu-restricted-extras  \
-        kazam                     \
         flameshot                 \
         vlc                       \
-        alacritty                 \
         firefox                   \
         stacer
 
@@ -32,17 +31,16 @@ then
         https://repo.skype.com/latest/skypeforlinux-64.deb \
         https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-    tryInstall installSh \
-        https://raw.githubusercontent.com/puneetsl/lotion/master/setup.sh
 
     tryInstall installSnap         \
         spotify                    \
         mailspring                 \
-        onlyoffice-desktopeditors  \
         postman                    \
         zoom-client                \
         caprine                    \
-        wps-2019-snap
+        nvim                       \
+        lotion                 
+        # onlyoffice-desktopeditors  \    
 else
     warning "Not available GUI!"
 fi
