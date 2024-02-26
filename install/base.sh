@@ -45,6 +45,8 @@ tryInstall install \
     docker-ce-cli  \
     containerd.io
 
+sudo usermod -a -G docker $USER
+
 tryInstall installPip thefuck
 
 source $(dirname "$(readlink -f "$BASH_SOURCE")")/lang/index.sh

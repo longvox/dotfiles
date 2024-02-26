@@ -3,7 +3,6 @@ alias reload="source ~/.zshrc"
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 
-
 alias oops='sudo $(fc -ln -1)'
 alias ccode="yarn prettier --write && yarn lint && yarn run typecheck"
 alias "typescript-opps"="npx typac ini -i"
@@ -23,5 +22,5 @@ alias buildOffice="scp -r /home/longvox/Work/office/global-care/gcapp officeGlob
 
 alias ls="colorls --sd -A"
 
-
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
