@@ -24,3 +24,24 @@ alias ls="colorls --sd -A"
 
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
+# reboot / halt / poweroff
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+
+alias root='sudo -i'
+alias su='sudo -i'
+
+# install with apt-get
+alias apt-get="sudo apt-get"
+alias updatey="sudo apt-get --yes"
+ 
+# update on one command
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
+# Stop after sending count ECHO_REQUEST packets #
+alias ping='ping -c 5'
+# Do not wait interval 1 second, go fast #
+alias fastping='ping -c 100 -s.2'
+
