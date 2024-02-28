@@ -84,6 +84,15 @@ else
    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 fi
 
+if [[ -d ~/.fzf ]];
+then
+   silly "Installed fzf zsh!"
+else
+   info "Installing fzf zsh!"
+   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+fi
+
 tryInstall install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
 
 tryInstall installGem colorls

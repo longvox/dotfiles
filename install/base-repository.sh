@@ -17,7 +17,14 @@ info "Add-apt-repository yarn!"
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
+info "Add-apt-repository golang!"
+sudo add-apt-repository ppa:longsleep/golang-backports -y
 
+info "Add-apt-repository PHP!"
+sudo add-apt-repository ppa:ondrej/php -y
+
+info "Add-apt-repository PHP!"
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo -y
 # info "Add-apt-repository lazygit!"
 # sudo add-apt-repository ppa:lazygit-team/daily -y
 

@@ -11,6 +11,7 @@ vim.opt.listchars = "space:·,trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:�
 vim.opt.pumblend = 10
 vim.opt.clipboard = "unnamedplus"
 
+
 vim.opt.swapfile = false
 
 -- disable some extension providers

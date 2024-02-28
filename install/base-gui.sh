@@ -39,7 +39,10 @@ then
         zoom-client                \
         caprine                    \
         nvim                       \
-        lotion                 
+        lotion                     \
+        slack                      \
+        dbeaver-ce                 \
+        code                       \
         # onlyoffice-desktopeditors  \    
 else
     warning "Not available GUI!"

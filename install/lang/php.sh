@@ -5,7 +5,6 @@ PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
 
 info "[PHP] Installing ..."
 # PHP 8.1
-sudo add-apt-repository ppa:ondrej/php -y
 tryInstall install php8.1-cli 
 
 # Composer
