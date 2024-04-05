@@ -11,9 +11,6 @@ plugins=(
     zsh-nvm
 )
 
-# running fzf.zsh
-[ -f ~/.dotfiles/.fzf.zsh ] && source ~/.dotfiles/.fzf.zsh
-
 # running ~/.profile
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
@@ -25,7 +22,7 @@ eval $(thefuck --alias)
 
 
 # Load the exports file
-if [ -e ~/.dotfiles/zsh/zsh_files/exports.zsh ]; then
+if [ -e ~/.dotfiles/zsh/zsh_files/exprts.zsh ]; then
      source ~/.dotfiles/zsh/zsh_files/exports.zsh
 fi
 

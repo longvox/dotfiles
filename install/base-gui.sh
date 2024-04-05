@@ -5,7 +5,7 @@ source $PATH_CURRENT/utils/install.sh
 
 if [[ $(whoami) == "administrator"
     || $(whoami) == "imlong"
-    || $(whoami) == "longvox" 
+    || $(whoami) == "longvox"
     || $(whoami) == "longvh" ]];
 then
     info "Install GUI application!"
@@ -39,11 +39,11 @@ then
         zoom-client                \
         caprine                    \
         nvim                       \
-        lotion                     \
+        notion-snap-reborn         \
         slack                      \
         dbeaver-ce                 \
-        code                       \
-        # onlyoffice-desktopeditors  \    
+        code
+        # onlyoffice-desktopeditors
 else
     warning "Not available GUI!"
 fi
