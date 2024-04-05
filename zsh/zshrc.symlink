@@ -22,7 +22,7 @@ eval $(thefuck --alias)
 
 
 # Load the exports file
-if [ -e ~/.dotfiles/zsh/zsh_files/exprts.zsh ]; then
+if [ -e ~/.dotfiles/zsh/zsh_files/exports.zsh ]; then
      source ~/.dotfiles/zsh/zsh_files/exports.zsh
 fi
 
