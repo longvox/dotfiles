@@ -26,3 +26,5 @@ tryInstall install  \
     php8.1-mysql    \
     imagemagick     \
     php-imagick
+
+composer require laravel/pint --dev
