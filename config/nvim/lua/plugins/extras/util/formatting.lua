@@ -1,13 +1,3 @@
-local function biome_config_exists()
-  local current_dir = vim.fn.getcwd()
-  local config_file = current_dir .. "/biome.json"
-  if vim.fn.filereadable(config_file) == 1 then
-    return true
-  end
-
-  return false
-end
-
 -- formatters
 return {
   { import = "lazyvim.plugins.extras.lsp.none-ls" },
@@ -38,8 +28,6 @@ return {
       -- -- completion sources
       -- local completion = null_ls.builtins.completion
       local sources = {
-        -- common
-        b.code_actions.refactoring,
 
         -- spell check
         b.completion.spell,
@@ -53,36 +41,27 @@ return {
         b.diagnostics.zsh,
         b.formatting.shfmt,
 
-        -- js/ts
+        -- prettier
         b.formatting.prettierd,
         b.formatting.prettier,
-        b.formatting.biome.with({
-          condition = function()
-            return biome_config_exists()
-          end,
-        }),
 
         -- Lua
         b.formatting.stylua,
 
         -- golang
-        b.code_actions.gomodifytags,
-        b.code_actions.impl,
         b.formatting.gofumpt,
         b.formatting.golines,
 
         -- Markdown
-        b.formatting.markdownlint.with({
-          extra_args = { "--config", vim.fn.getcwd() .. "/.markdownlint.json" },
-        }),
-        b.diagnostics.markdownlint.with({
-          extra_args = { "--config", vim.fn.getcwd() .. "/.markdownlint.json" },
-        }),
+        b.diagnostics.write_good,
+        b.diagnostics.markdownlint,
+        b.formatting.markdownlint,
 
-        -- Php
+        -- Php - comment out as I don't use php much
         b.diagnostics.phpcs.with({
           extra_args = { "--standard=PSR12" },
         }),
+
         -- b.formatting.phpcbf.with({
         -- 	prefer_local = "./vendor/bin",
         -- 	condition = function(utils)
@@ -92,6 +71,7 @@ return {
         -- 		return has_phpcbf_installed_locally
         -- 	end,
         -- }),
+
         b.formatting.pint.with({
           condition = function(utils)
             local has_pint_installed_locally = utils.root_has_file({
@@ -100,11 +80,6 @@ return {
             return has_pint_installed_locally
           end,
         }),
-
-        -- env
-        b.diagnostics.dotenv_linter,
-        b.hover.printenv,
-
         -- other stuff
         b.diagnostics.todo_comments,
         b.diagnostics.trail_space,
