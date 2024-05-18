@@ -15,7 +15,7 @@ return {
     end,
   },
   {
-    "jellydn/hurl.nvim",
+    "jellydn/hurl.nvim", 
     ft = "hurl",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
     opts = {

@@ -28,6 +28,7 @@ vim.opt.linebreak = true
 
 vim.opt.swapfile = false
 
+vim.opt.spell = false
 -- disable some extension providers
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
@@ -40,6 +41,7 @@ vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
 vim.g.autoformat = false -- globally
+vim.b.autoformat = false -- buffer-local
 
 -- disable some fanzy UI stuff when run in Neovide
 if vim.g.neovide then

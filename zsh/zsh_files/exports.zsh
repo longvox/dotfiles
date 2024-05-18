@@ -23,3 +23,4 @@ PATH="$PATH:/usr/local/bin/java/bin"
 JAVA_HOME="/usr/lib/jvm/default-java"
 
 export $(xargs < ~/.dotfiles/.env)
+export PATH="$PATH:/opt/nvim-linux64/bin"

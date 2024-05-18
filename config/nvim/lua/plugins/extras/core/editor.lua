@@ -83,4 +83,6 @@ return {
       },
     },
   },
+
+  { "nmac427/guess-indent.nvim", lazy = false, priority = 50, config = true },
 }

@@ -13,20 +13,6 @@ return {
     opts = function()
       local none_ls = require("null-ls")
       local b = none_ls.builtins
-      -- code action sources
-      -- local code_actions = null_ls.builtins.code_actions
-      --
-      -- -- diagnostic sources
-      -- local diagnostics = null_ls.builtins.diagnostics
-      --
-      -- -- formatting sources
-      -- local formatting = null_ls.builtins.formatting
-      --
-      -- -- hover sources
-      -- local hover = null_ls.builtins.hover
-      --
-      -- -- completion sources
-      -- local completion = null_ls.builtins.completion
       local sources = {
 
         -- spell check
@@ -51,11 +37,6 @@ return {
         -- golang
         b.formatting.gofumpt,
         b.formatting.golines,
-
-        -- Markdown
-        b.diagnostics.write_good,
-        b.diagnostics.markdownlint,
-        b.formatting.markdownlint,
 
         -- Php - comment out as I don't use php much
         b.diagnostics.phpcs.with({

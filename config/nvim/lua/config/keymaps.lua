@@ -7,7 +7,6 @@ local map = vim.keymap.set
 if vim.fn.executable("btop") == 1 then
   -- btop
   map("n", "<leader>xb", function() end, { desc = "btop" })
-  require("lazyvim.util").terminal.open({ "btop" }, { esc_esc = false, ctrl_hjkl = false })
 end
 
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
@@ -29,7 +28,6 @@ map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
-
 
 -- Keep cursor in the center line when C-D / C-U
 map("n", "<C-d>", "<C-d>zz", { silent = true })
@@ -75,3 +73,5 @@ map("n", "c", '"_c')
 map("n", "C", '"_C')
 map("v", "c", '"_c')
 map("v", "C", '"_C')
+
+map("n", "<leader>fx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })

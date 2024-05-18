@@ -40,8 +40,7 @@ tryInstall install              \
     font-manager                \
     xclip                       \
     wmctrl                      \
-    fish                        \
-    ibus ibus-bamboo            
+    ibus ibus-bamboo
 
 tryInstall install \
     docker-ce      \
@@ -56,4 +55,4 @@ info "Intall Ibus..."
 ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
 
-# source $(dirname "$(readlink -f "$BASH_SOURCE")")/lang/index.sh
+source $(dirname "$(readlink -f "$BASH_SOURCE")")/lang/index.sh

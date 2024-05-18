@@ -38,7 +38,6 @@ then
         postman                    \
         zoom-client                \
         caprine                    \
-        nvim                       \
         notion-snap-reborn         \
         slack                      \
         dbeaver-ce                 \
