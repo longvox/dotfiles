@@ -20,6 +20,7 @@ return {
         html = {
           filetypes = {
             "html",
+            "blade",
             "javascript",
             "javascriptreact",
             "javascript.jsx",
@@ -40,27 +41,39 @@ return {
           },
         },
         -- CSS
-        cssls = {},
+        -- cssls = {},
       },
     },
   },
+  -- auto pairs
   {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = true,
+  },
+
+  -- auto html tag completion
+  {
+    "windwp/nvim-ts-autotag",
+    event = "InsertEnter",
     opts = {
-      defaults = {
-        ["<leader>lz"] = { name = "+Color" },
+      filetypes = {
+        "html",
+        "vue",
+        "blade",
       },
     },
   },
+
   {
     "uga-rosa/ccc.nvim",
     opts = {},
     cmd = { "CccPick", "CccConvert", "CccHighlighterEnable", "CccHighlighterDisable", "CccHighlighterToggle" },
     keys = {
-      { "<leader>zp", "<cmd>CccPick<cr>", desc = "Pick" },
-      { "<leader>zc", "<cmd>CccConvert<cr>", desc = "Convert" },
-      { "<leader>zh", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle Highlighter" },
+      { "<leader>cz", desc = "Color" },
+      { "<leader>czp", "<cmd>CccPick<cr>", desc = "Pick" },
+      { "<leader>czc", "<cmd>CccConvert<cr>", desc = "Convert" },
+      { "<leader>czh", "<cmd>CccHighlighterToggle<cr>", desc = "Toggle Highlighter" },
     },
   },
 }

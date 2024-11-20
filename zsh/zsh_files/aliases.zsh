@@ -36,7 +36,7 @@ alias su='sudo -i'
 # install with apt-get
 alias apt-get="sudo apt-get"
 alias updatey="sudo apt-get --yes"
- 
+
 # update on one command
 alias update='sudo apt-get update && sudo apt-get upgrade'
 
@@ -47,3 +47,4 @@ alias fastping='ping -c 100 -s.2'
 
 alias aws-local='aws --endpoint-url=http://localhost:4566'
 
+alias docker-compose='docker compose'

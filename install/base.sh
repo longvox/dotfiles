@@ -33,19 +33,24 @@ tryInstall install              \
     jq                          \
     sed                         \
     unzip                       \
+    pass                        \
     git                         \
+    hub                         \
     htop                        \
     tmux                        \
     xdotool                     \
     font-manager                \
+    pandoc                      \
     xclip                       \
     wmctrl                      \
-    ibus ibus-bamboo
+    ibus ibus-bamboo            \
+    mariadb-client
 
 tryInstall install \
     docker-ce      \
     docker-ce-cli  \
-    containerd.io
+    containerd.io  \
+    podman
 
 sudo usermod -a -G docker $USER
 
@@ -53,6 +58,7 @@ tryInstall installPip thefuck
 
 info "Intall Ibus..."
 ibus restart
-env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
+env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" \
+    && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
 
 source $(dirname "$(readlink -f "$BASH_SOURCE")")/lang/index.sh

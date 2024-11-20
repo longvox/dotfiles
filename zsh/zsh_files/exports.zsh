@@ -24,3 +24,28 @@ JAVA_HOME="/usr/lib/jvm/default-java"
 
 export $(xargs < ~/.dotfiles/.env)
 export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:~/.bun/bin"
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export OLLAMA_ORIGINS='*'
+
+
+
+# bun completions
+[ -s "/home/longvh/.bun/_bun" ] && source "/home/longvh/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/longvh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm ed
+#
+#
+export DOCKER_HOST_IP=$(docker network inspect bridge | grep Gateway | grep -o -E '[0-9.]+')
+

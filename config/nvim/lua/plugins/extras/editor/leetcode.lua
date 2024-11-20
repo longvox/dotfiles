@@ -7,19 +7,9 @@ return {
     "nvim-telescope/telescope.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
-
     -- optional
     "rcarriga/nvim-notify",
     "nvim-tree/nvim-web-devicons",
-
-    {
-      "folke/which-key.nvim",
-      opts = {
-        defaults = {
-          ["<leader>l"] = { name = "+leet code" },
-        },
-      },
-    },
   },
   keys = {
     { "<leader>lc", "<cmd>Leet console<cr>", silent = true, noremap = true, desc = "LeetCode console" },

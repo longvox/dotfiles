@@ -25,9 +25,7 @@ then
 else
    silly "Installed oh my zsh!}"
 fi
-
 ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-
 if [ -d ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting ];
 then
    silly "Installed zsh syntax highlighting!"
@@ -73,6 +71,33 @@ else
    git clone https://github.com/lukechilds/zsh-nvm \
       ${ZSH_CUSTOM}/plugins/zsh-nvm
 fi
+
+if [ -d ${ZSH_CUSTOM}/plugins/zsh-vi-mode ];
+then
+   silly "Installed zsh vi mode!"
+else
+   info "Installing zsh vi mode!"
+   git git clone https://github.com/jeffreytse/zsh-vi-mode \
+      ${ZSH_CUSTOM}/plugins/zsh-vi-mode
+fi
+
+if [ -d ${ZSH_CUSTOM}/plugins/zsh-ssh ];
+then
+   silly "Installed zsh ssh!"
+else
+   info "Installing zsh ssh!"
+   git git clone https://github.com/sunlei/zsh-ssh \
+      ${ZSH_CUSTOM}/plugins/zsh-ssh
+fi
+
+if [ -d ${ZSH_CUSTOM}/plugins/nx-completion ];
+then
+   silly "Installed zsh nx-completion!"
+else
+   info "Installing zsh nx-completion!"
+   git clone git@github.com:jscutlery/nx-completion.git \
+      ${ZSH_CUSTOM}/plugins/nx-completion
+if
 
 if [[ -d ${ZSH_CUSTOM}/themes/spaceship-prompt || -d ${ZSH_CUSTOM}/themes/spaceship.zsh-theme ]];
 then

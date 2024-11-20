@@ -152,6 +152,7 @@
     editor = vim
     whitespace = cr-at-eol
     ignorehook = false
+	fileMode = false
 [rerere]
 	enabled = true
 [grep]
@@ -172,3 +173,5 @@
     show = "diff-so-fancy | less --tabs=4 -RFX"
 [cola]
     spellcheck = false
+[http]
+	postBuffer = 157286400

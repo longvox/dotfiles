@@ -6,3 +6,6 @@ if [ $? != 0 ]; then
   tmux -2 new-session -s backend -D -d
   tmux -2 new-session -s frontend -D -d
 fi
+
+
+

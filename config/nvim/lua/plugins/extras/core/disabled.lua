@@ -20,8 +20,30 @@ return {
   },
 
   {
-
     "stevearc/conform.nvim",
+    enabled = false,
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    enabled = false,
+  },
+  -- Disable mini buffer remove and use Snacks buffer delete instead
+  {
+    "echasnovski/mini.bufremove",
+    enabled = false,
+  },
+  -- Disable mini cursor word and use Snacks words instead
+  {
+    "echasnovski/mini.cursorword",
+    enabled = false,
+  },
+  {
+    "nvimdev/dashboard-nvim",
     enabled = false,
   },
 }
