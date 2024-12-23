@@ -18,32 +18,32 @@ plugins=(
 command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell zsh)"
 
 # Load the exports file
-if [ -e ~/.dotfiles/zsh/zsh_files/exports.zsh ]; then
-     source ~/.dotfiles/zsh/zsh_files/exports.zsh
+if [ -e ~/.zsh/zsh_files/exports.zsh ]; then
+     source ~/.zsh/zsh_files/exports.zsh
 fi
 
 # Load the Valiables file
-if [ -e ~/.dotfiles/zsh/zsh_files/variables.zsh ]; then
-     source ~/.dotfiles/zsh/zsh_files/variables.zsh
+if [ -e ~/.zsh/zsh_files/variables.zsh ]; then
+     source ~/.zsh/zsh_files/variables.zsh
 fi
 
 # Load the Aliases file
-if [ -e ~/.dotfiles/zsh/zsh_files/aliases.zsh ]; then
-     source ~/.dotfiles/zsh/zsh_files/aliases.zsh
+if [ -e ~/.zsh/zsh_files/aliases.zsh ]; then
+     source ~/.zsh/zsh_files/aliases.zsh
 fi
 
 # Load the Functions file
-if [ -e ~/.dotfiles/zsh/zsh_files/functions.zsh ]; then
-     source ~/.dotfiles/zsh/zsh_files/functions.zsh
+if [ -e ~/.zsh/zsh_files/functions.zsh ]; then
+     source ~/.zsh/zsh_files/functions.zsh
 fi
 
 # Load the Tmux file
-if [ -e ~/.dotfiles/zsh/zsh_files/tmux.zsh ]; then
-     source ~/.dotfiles/zsh/zsh_files/tmux.zsh
+if [ -e ~/.zsh/zsh_files/tmux.zsh ]; then
+     source ~/.zsh/zsh_files/tmux.zsh
 fi
 
 # Path to your oh-my-zsh installation.
-source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

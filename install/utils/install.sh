@@ -28,28 +28,32 @@ installPip() {
 installGem() {
     for package in "$@"
     do
-        sudo gem install $package
+        gem list | grep $package > /dev/null && silly "$package installed, moving on..." || sudo gem install $package
     done
 }
 
 installGo() {
     for package in "$@"
     do
-        go install $package
+        go list -m $package > /dev/null 2>&1 && silly "$package installed, moving on..." || go install $package
     done
 }
 
 installSnap() {
     for package in "$@"
     do
-        sudo snap install $package --classic
+        snap list | grep $package > /dev/null && silly "$package installed, moving on..." || sudo snap install $package --classic
     done
 }
 
 installGnomeShellEx() {
     for id in "$@"
     do
-        $PATH_CURRENT/install-gnome-shell.sh -o $id
+        if gnome-extensions list | grep -q $id; then
+            silly "$id installed, moving on..."
+        else
+            $PATH_CURRENT/install-gnome-shell.sh -o $id
+        fi
     done
 }
 
