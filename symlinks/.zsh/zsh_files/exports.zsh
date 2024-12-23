@@ -4,6 +4,8 @@ export $(xargs < ~/.dotfiles/.env)
 # Core paths
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+export PATH="$HOME/.local/custom/bin:$PATH"
+
 # Programming languages
 # Go
 export GOPATH=$HOME/go
