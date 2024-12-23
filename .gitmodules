@@ -4,3 +4,6 @@
 [submodule "symlinks/.oh-my-zsh"]
 	path = symlinks/.oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "symlinks/.config/nvim"]
+	path = symlinks/.config/nvim
+	url = https://github.com/longvox/My-Lazyvim.git
