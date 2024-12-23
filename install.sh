@@ -14,14 +14,15 @@ chmod +x install/git.sh
 
 info "Installing dotfiles."
 . install/base.sh
-. install/git.sh
-. install/base-gui.sh
-. install/base-nvim.sh
-. install/base-zsh.sh
 
 info "Link dotfiles."
 . install/link.sh
 
+info "Installing other."
+. install/git.sh
+. install/base-gui.sh
+. install/base-nvim.sh
+. install/base-zsh.sh
 
 info "After install dotfiles."
 . install/after-install.sh
