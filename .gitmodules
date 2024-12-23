@@ -1,3 +1,9 @@
-[submodule "config/nvim"]
-	path = config/nvim
-	url = git@github.com-longvox:longvox/My-Lazyvim.git
+[submodule "symlinks/.fzf"]
+	path = symlinks/.fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "symlinks/.oh-my-zsh"]
+	path = symlinks/.oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "symlinks/.config/nvim"]
+	path = symlinks/.config/nvim
+	url = git@github.com:longvox/My-Lazyvim.git

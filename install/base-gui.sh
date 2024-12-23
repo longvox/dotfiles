@@ -14,17 +14,12 @@ then
         gnome-tweaks              \
         gufw                      \
         gdebi-core                \
-        ubuntu-restricted-extras  \
-        flameshot                 \
-        vlc                       \
-        firefox                   \
-        stacer
+        ubuntu-restricted-extras  \ 
+        vlc
 
-    # 1401: Bluetooth quick connect
     # 307 : Dash to Dock
 
     tryInstall installGnomeShellEx \
-        1401 \
         307
 
     tryInstall installDeb \
@@ -38,7 +33,6 @@ then
         postman                    \
         zoom-client                \
         caprine                    \
-        notion-snap-reborn         \
         slack                      \
         dbeaver-ce                 \
         code

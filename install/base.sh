@@ -45,7 +45,7 @@ tryInstall install              \
     wmctrl                      \
     ibus ibus-bamboo            \
     mariadb-client              \
-    exa
+    stow
 
 tryInstall install \
     docker-ce      \
@@ -60,6 +60,4 @@ ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo']" \
     && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo')]"
 
-bash -c "$(curl -sLo- https://superfile.netlify.app/install.sh)"
-
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/lang/index.sh
+# source $(dirname "$(readlink -f "$BASH_SOURCE")")/lang/index.sh
