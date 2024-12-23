@@ -7,27 +7,27 @@ This repository contains my personal dotfiles for configuring my development env
 To install everything, simply clone this repository and run the install script:
 
 ```bash
-git clone https://github.com/longvox/dotfiles.git
+git clone --recurse-submodules https://github.com/longvox/dotfiles.git
 cd dotfiles
-./install
+./install.sh
 ```
 
 ## Components
 
 The install script will set up the following:
 
-- **Zsh**: Configuration for the Z shell, including Oh My Zsh and custom themes/plugins.
-- **Neovim**: Custom configurations and plugins for Vim/Neovim.
-- **Tmux**: Tmux configuration for managing terminal sessions.
-- **Git**: Custom git configuration and aliases.
-- **Others**: Additional configurations for various tools and utilities.
+-   **Zsh**: Configuration for the Z shell, including Oh My Zsh and custom themes/plugins.
+-   **Neovim**: Custom configurations and plugins for Vim/Neovim.
+-   **Tmux**: Tmux configuration for managing terminal sessions.
+-   **Git**: Custom git configuration and aliases.
+-   **Others**: Additional configurations for various tools and utilities.
 
 ## Updating
 
 To update your dotfiles, pull the latest changes from this repository and re-run the install script:
 
 ```bash
-cd dotfiles
+cd .dotfiles
 git pull
 ./install
 ```
@@ -39,4 +39,3 @@ If you have any suggestions or improvements, feel free to open an issue or submi
 ## License
 
 This project is licensed under the MIT License.
-
