@@ -4,7 +4,7 @@ return {
     event = "VeryLazy",
     build = "make",
     opts = {
-      provider = "claude",
+      provider = "openai",
 
       mappings = {
         ask = "<leader>ra",
@@ -15,6 +15,25 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
+      "stevearc/dressing.nvim",
+      "nvim-tree/nvim-web-devicons",
+      {
+        -- support for image pasting
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+          -- recommended settings
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
+            -- required for Windows users
+            use_absolute_path = true,
+          },
+        },
+      },
     },
     config = function(_, options)
       require("avante").setup(options)

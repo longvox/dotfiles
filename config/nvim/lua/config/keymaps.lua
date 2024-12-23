@@ -46,18 +46,21 @@ if vim.fn.has("macunix") then
 end
 
 if vim.g.vscode then
+  require("config.keymap_vscode")
   -- Only map if that is inside vscode
-  map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
-  map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
-  map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
-  map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+  -- map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+  -- map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+  -- map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+  -- map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+else
+  map("n", "<leader>gd", function()
+    utils.telescope_diff_from_history()
+  end, { desc = "Diff from git history" })
+  map("n", "<leader>gD", function()
+    utils.telescope_diff_file()
+  end, { desc = "Diff file with current buffer" })
+  map("n", "<leader>fx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
 end
-
-map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
-
 -- Keep cursor in the center line when C-D / C-U
 map("n", "<C-d>", "<C-d>zz", { silent = true })
 map("n", "<C-u>", "<C-u>zz", { silent = true })
@@ -121,14 +124,6 @@ map(
 
 -- Define Name group which-key
 map("n", "<leader>ct", "<CMD>NOP<CR>", { desc = "Set Indent", noremap = true, silent = true })
-
-map("n", "<leader>gd", function()
-  utils.telescope_diff_from_history()
-end, { desc = "Diff from git history" })
-map("n", "<leader>gD", function()
-  utils.telescope_diff_file()
-end, { desc = "Diff file with current buffer" })
-
 -- Mixed mode: half-tabs-are-spaces
 map(
   "n",
@@ -157,7 +152,6 @@ map(
   ":set expandtab tabstop=8 shiftwidth=8<CR>",
   { noremap = true, silent = true, desc = "Big Tabs (8 spaces)" }
 )
-map("n", "<leader>fx", require("telescope.builtin").resume, { noremap = true, silent = true, desc = "Resume" })
 
 -- Author: Karl Yngve Lervåg
 --    See: https://github.com/lervag/dotnvim

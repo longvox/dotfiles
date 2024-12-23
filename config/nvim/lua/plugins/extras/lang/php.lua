@@ -61,4 +61,8 @@ return {
       }
     end,
   },
+  {
+    "ricardoramirezr/lali-components.nvim",
+    ft = "blade",
+  },
 }

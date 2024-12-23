@@ -19,10 +19,6 @@ plugins=(
 # running vg
 command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell zsh)"
 
-# running thefuck
-eval $(thefuck --alias)
-
-
 # Load the exports file
 if [ -e ~/.dotfiles/zsh/zsh_files/exports.zsh ]; then
      source ~/.dotfiles/zsh/zsh_files/exports.zsh
@@ -52,3 +48,5 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -1,13 +1,13 @@
 local logo = [[
- ██▓ ███▄ ▄███▓    ██▓     ▒█████   ███▄    █   ▄████ 
+██▓ ███▄ ▄███▓    ██▓     ▒█████   ███▄    █   ▄████ 
 ▓██▒▓██▒▀█▀ ██▒   ▓██▒    ▒██▒  ██▒ ██ ▀█   █  ██▒ ▀█▒
 ▒██▒▓██    ▓██░   ▒██░    ▒██░  ██▒▓██  ▀█ ██▒▒██░▄▄▄░
 ░██░▒██    ▒██    ▒██░    ▒██   ██░▓██▒  ▐▌██▒░▓█  ██▓
 ░██░▒██▒   ░██▒   ░██████▒░ ████▓▒░▒██░   ▓██░░▒▓███▀▒
 ░▓  ░ ▒░   ░  ░   ░ ▒░▓  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ░▒   ▒ 
- ▒ ░░  ░      ░   ░ ░ ▒  ░  ░ ▒ ▒░ ░ ░░   ░ ▒░  ░   ░ 
- ▒ ░░      ░        ░ ░   ░ ░ ░ ▒     ░   ░ ░ ░ ░   ░ 
- ░         ░          ░  ░    ░ ░           ░       ░ 
+▒ ░░  ░      ░   ░ ░ ▒  ░  ░ ▒ ▒░ ░ ░░   ░ ▒░  ░   ░ 
+▒ ░░      ░        ░ ░   ░ ░ ░ ▒     ░   ░ ░ ░ ░   ░ 
+░         ░          ░  ░    ░ ░           ░       ░ 
 ]]
 logo = string.rep("\n", 4) .. logo .. "\n\n"
 
@@ -16,6 +16,9 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    keys = {
+        { "<leader>fo", function() Snacks.terminal("spf") end, desc = "Toggle Terminal" },
+    },
     ---@type snacks.Config
     opts = {
       dashboard = {
@@ -43,13 +46,9 @@ return {
           },
         },
         sections = {
-          { section = "header" },
-          { pane = 2, section = "terminal", cmd = "square", height = 5, padding = 0 },
-          { pane = 2, section = "terminal", cmd = "square", height = 5, padding = 0 },
-          { pane = 2, section = "terminal", cmd = "square", height = 5, padding = 1 },
-          { section = "keys", gap = 1, padding = 1 },
-          { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1, limit = 5 },
-          { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+          { section = "header", padding = 1 },
+          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1, limit = 5 },
+          { section = "keys", padding = 1 },
           { section = "startup" },
         },
       },

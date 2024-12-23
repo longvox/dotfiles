@@ -16,6 +16,8 @@ global.loaded_perl_provider = 0
 
 global.lazyvim_php_lsp = "intelephense"
 
+global.snacks_animate = false
+
 global.autoformat = false -- globally
 buffer.autoformat = false -- buffer-local
 

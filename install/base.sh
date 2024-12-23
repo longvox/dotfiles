@@ -44,7 +44,8 @@ tryInstall install              \
     xclip                       \
     wmctrl                      \
     ibus ibus-bamboo            \
-    mariadb-client
+    mariadb-client              \
+    exa
 
 tryInstall install \
     docker-ce      \
@@ -53,8 +54,6 @@ tryInstall install \
     podman
 
 sudo usermod -a -G docker $USER
-
-tryInstall installPip thefuck
 
 info "Intall Ibus..."
 ibus restart
