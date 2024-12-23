@@ -9,9 +9,7 @@ info "================================================="
 
 cd $SYMLINKS
 
-stow --verbose . -vt $HOME
 
-
-cd $PATH_CURRENT/..
+stow -D . -t $HOME
 
 info "All symlinks created using Stow"

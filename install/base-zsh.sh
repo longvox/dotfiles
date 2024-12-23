@@ -86,7 +86,7 @@ then
    silly "Installed zsh ssh!"
 else
    info "Installing zsh ssh!"
-   git git clone https://github.com/sunlei/zsh-ssh \
+   git clone https://github.com/sunlei/zsh-ssh \
       ${ZSH_CUSTOM}/plugins/zsh-ssh
 fi
 
@@ -97,7 +97,7 @@ else
    info "Installing zsh nx-completion!"
    git clone git@github.com:jscutlery/nx-completion.git \
       ${ZSH_CUSTOM}/plugins/nx-completion
-if
+fi
 
 if [[ -d ${ZSH_CUSTOM}/themes/spaceship-prompt || -d ${ZSH_CUSTOM}/themes/spaceship.zsh-theme ]];
 then
@@ -119,5 +119,5 @@ else
 fi
 
 tryInstall install ruby`ruby -e 'puts RUBY_VERSION[/\d+\.\d+/]'`-dev
-
 tryInstall installGem colorls
+

@@ -22,7 +22,6 @@ tryInstall installPip spotify-cli-linux
 
 # Überzug is a command line util which allows to draw images on terminals by using child windows.
 tryInstall installPip \
-    neovim-remote     \
     pynvim
 
 # ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern.

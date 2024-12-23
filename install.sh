@@ -4,7 +4,6 @@ source $(dirname "$(readlink -f "$BASH_SOURCE")")/install/utils/install.sh
 
 # set policies executable
 info "set policies executable"
-chmod +x install/backup.sh
 chmod +x install/link.sh
 chmod +x install/base-repository.sh
 chmod +x install/base.sh
@@ -13,18 +12,16 @@ chmod +x install/base-nvim.sh
 chmod +x install/base-zsh.sh
 chmod +x install/git.sh
 
-info "Backups dotfiles."
-. install/backup.sh
-
-info "Link dotfiles."
-. install/link.sh
-
 info "Installing dotfiles."
 . install/base.sh
 . install/git.sh
 . install/base-gui.sh
 . install/base-nvim.sh
 . install/base-zsh.sh
+
+info "Link dotfiles."
+. install/link.sh
+
 
 info "After install dotfiles."
 . install/after-install.sh
