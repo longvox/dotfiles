@@ -9,7 +9,7 @@ To install everything, simply clone this repository and run the install script:
 ```bash
 git clone --recurse-submodules https://github.com/longvox/dotfiles.git
 cd dotfiles
-./install.sh
+./bootstrap.sh
 ```
 
 ## Components
@@ -29,7 +29,7 @@ To update your dotfiles, pull the latest changes from this repository and re-run
 ```bash
 cd .dotfiles
 git pull
-./install
+./bootstrap.sh
 ```
 
 ## Contributing

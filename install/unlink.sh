@@ -2,13 +2,12 @@
 PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
 source $PATH_CURRENT/utils/log.sh
 
-SYMLINKS=$HOME/.dotfiles/symlinks
+DOT=$HOME/.dotfiles/dot
 
 info "Using Stow to create symlinks for all directories"
 info "================================================="
 
-cd $SYMLINKS
-
+cd $DOT
 
 stow -D . -t $HOME
 
