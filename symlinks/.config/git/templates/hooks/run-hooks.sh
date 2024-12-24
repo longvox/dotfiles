@@ -3,7 +3,7 @@
 EXIT_CODE=0
 
 hook_type=$( basename "$0" )
-hooks=~/.dotfiles/git/hooks
+hooks=~/.config/git/hooks
 
 shopt -s nullglob
 for hook in "$hooks"/*."$hook_type"; do

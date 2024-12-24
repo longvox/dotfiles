@@ -1,13 +1,135 @@
 # gitconfig
+[core]
+    excludesfile = ~/.gitignore_global
+    pager = less -FXRS -x2
+    editor = vim
+    whitespace = cr-at-eol
+    ignorehook = false
+	fileMode = false
+
 [user]
 	name = Long Vo
 	email = longvox98@gmail.com
+    signingkey = 49CB9C43C9BA247A
+
 [github]
 	user = longvox
+
 [init]
-    templatedir = ~/.dotfiles/git/templates
+    templatedir = ~/.dot/git/templates
+
 [include]
     path = ~/.gitconfig-local
+
+[status]
+	showStash = true
+	submoduleSummary = true
+
+[submodule]
+	fetchJobs = 4
+
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+
+[color "branch"]
+    current = green bold
+    local = green
+    remote = red bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red
+
+[color "sh"]
+    branch = yellow
+
+[push]
+    # push will only do the current branch, not all branches
+    default = current
+
+[branch]
+    # set up 'git pull' to rebase instead of merge
+    autosetuprebase = always
+    autoSetupMerge = always	
+
+[pull]
+    rebase = true
+
+[diff]
+    algorithm = histogram
+    renames = copies
+    mnemonicprefix = true
+    compactionHeuristic = true
+	indentHeuristic = true
+
+[diff "utf-16"]
+	textconv = "iconv -f utf-16 -t utf-8"
+
+[difftool]
+    prompt = false
+
+[filter "file-encoding"]
+	clean = "GIT_TMP=$(mktemp); GIT_FILE_TYPE=$(tee $GIT_TMP | file --brief --mime-encoding -); cat $GIT_TMP | iconv -sc -f $GIT_FILE_TYPE -t utf-8; rm -f $GIT_TMP"
+	smudge = "GIT_TMP=$(mktemp); GIT_FILE_TYPE=$(tee $GIT_TMP | file --brief --mime-encoding -); cat $GIT_TMP | iconv -sc -f utf-8 -t $GIT_FILE_TYPE; rm -f $GIT_TMP"
+	required = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[apply]
+    # do not warn about missing whitespace at EOF
+    whitespace = nowarn
+
+[rerere]
+	enabled = true
+    autoUpdate = true
+
+[grep]
+    extendRegexp = true
+    lineNumber = true
+
+[credential]
+	helper = store
+
+[rebase]
+    instructionFormat = "[%an - %ar] %s"
+    autoStash = true
+
+[pager]
+    diff = "diff-so-fancy | less --tabs=4 -RFX"
+    show = "diff-so-fancy | less --tabs=4 -RFX"
+
+[cola]
+    spellcheck = false
+
+[http]
+	postBuffer = 157286400
+
+
+[url "git@bitbucket.org:"]
+	insteadof = bb:
+
+[url "git@github.com:"]
+	insteadof = gh:
+
+[url "git@gitlab.com:"]
+	insteadof = gl:
+
 [alias]
     # list all aliases
     la = "!git config -l | grep alias | cut -c 7-"
@@ -100,78 +222,6 @@
     # remove grep - Remove found files that are NOT under version control
     rg = "!sh -c 'git ls-files --others --exclude-standard | grep $1 | xargs rm' -"
 
-    # Kaleidoscope commands
-    dkal = difftool -y -t Kaleidoscope
-    mkal = mergetool -y -t Kaleidoscope
     remotes = remote -v
 
-    # check out a local copy of a PR. https://gist.github.com/gnarf/5406589
-    pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
-    pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-[color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = auto
-[color "branch"]
-    current = green bold
-    local = green
-    remote = red bold
-[color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-[color "status"]
-    added = green bold
-    changed = yellow bold
-    untracked = red
-[color "sh"]
-    branch = yellow
-[push]
-    # push will only do the current branch, not all branches
-    default = current
-[branch]
-    # set up 'git pull' to rebase instead of merge
-    autosetuprebase = always
-[pull]
-    rebase = true
-[diff]
-    renames = copies
-    mnemonicprefix = true
-    compactionHeuristic = true
-[difftool]
-    prompt = false
-[apply]
-    # do not warn about missing whitespace at EOF
-    whitespace = nowarn
-[core]
-    excludesfile = ~/.gitignore_global
-    pager = less -FXRS -x2
-    editor = vim
-    whitespace = cr-at-eol
-    ignorehook = false
-	fileMode = false
-[rerere]
-	enabled = true
-[grep]
-    extendRegexp = true
-    lineNumber = true
-[credential]
-	helper = store
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustexitcode = true
-[rebase]
-    instructionFormat = "[%an - %ar] %s"
-    autoStash = true
-[pager]
-    diff = "diff-so-fancy | less --tabs=4 -RFX"
-    show = "diff-so-fancy | less --tabs=4 -RFX"
-[cola]
-    spellcheck = false
-[http]
-	postBuffer = 157286400
+
