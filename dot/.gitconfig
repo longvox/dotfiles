@@ -16,7 +16,7 @@
 	user = longvox
 
 [init]
-    templatedir = ~/.dot/git/templates
+    templatedir = ~/.config//git/templates
 
 [include]
     path = ~/.gitconfig-local
