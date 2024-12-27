@@ -23,6 +23,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$PATH:$BUN_INSTALL/bin
+export PATH=$PATH:/snap/bin
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
 [[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"

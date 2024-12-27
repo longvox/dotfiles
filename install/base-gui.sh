@@ -3,40 +3,33 @@ PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
 source $PATH_CURRENT/utils/log.sh
 source $PATH_CURRENT/utils/install.sh
 
-if [[ $(whoami) == "administrator"
-    || $(whoami) == "imlong"
-    || $(whoami) == "longvox"
-    || $(whoami) == "longvh" ]];
-then
-    info "Install GUI application!"
+info "Install GUI application!"
 
-    tryInstall install            \
-        gnome-tweaks              \
-        gufw                      \
-        gdebi-core                \
-        ubuntu-restricted-extras  \ 
-        vlc
+tryInstall install            \
+    gnome-tweaks              \
+    gufw                      \
+    gdebi-core                \
+    ubuntu-restricted-extras  \ 
+    vlc
 
-    # 307 : Dash to Dock
+# 307 : Dash to Dock
 
-    tryInstall installGnomeShellEx \
-        307
+# tryInstall installGnomeShellEx \
+#     307
 
-    tryInstall installDeb \
-        https://repo.skype.com/latest/skypeforlinux-64.deb \
-        https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+tryInstall installDeb \
+    https://repo.skype.com/latest/skypeforlinux-64.deb \
+    https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 
-    tryInstall installSnap         \
-        spotify                    \
-        mailspring                 \
-        postman                    \
-        zoom-client                \
-        caprine                    \
-        slack                      \
-        dbeaver-ce                 \
-        code
-        # onlyoffice-desktopeditors
-else
-    warning "Not available GUI!"
-fi
+tryInstall installSnap         \
+    spotify                    \
+    mailspring                 \
+    postman                    \
+    zoom-client                \
+    caprine                    \
+    slack                      \
+    dbeaver-ce                 \
+    code                       \
+    zotero-snap
+    # onlyoffice-desktopeditors
