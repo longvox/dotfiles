@@ -9,9 +9,10 @@ export PATH="$HOME/.local/custom/bin:$PATH"
 # Programming languages
 # Go
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
+export GOROOT=$GOPATH
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin:$GOBIN
+
 # Java
 export JAVA_HOME="/usr/lib/jvm/default-java"
 export PATH=$PATH:$JAVA_HOME/bin
@@ -41,3 +42,13 @@ export DOCKER_HOST_IP=$(docker network inspect bridge | grep Gateway | grep -o -
 
 # Ollama
 export OLLAMA_ORIGINS='*'
+
+# Android
+export ANDROID_SDK_ROOT=~/Android/Sdk
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+# flutter
+export PATH="$PATH:/opt/flutter/bin"

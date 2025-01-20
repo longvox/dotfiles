@@ -47,8 +47,8 @@ set-window-option -g clock-mode-colour $base0C
 tm_session_name="#[default,bg=$base00,fg=$base0E] #S "
 set -g status-left "$tm_session_name"
 
-tm_artist="#[fg=$base0F,bg=$base00] ♥ #(spotifycli --artist)"
-tm_song="#[bg=$base00,fg=$base0D] ♫ #(spotifycli --song)"
+tm_artist="#(artist=$(spotifycli --artist); [ -n "$artist" ] && echo "#[fg=$base0F,bg=$base00] ♥ $artist" || echo "")"
+tm_song="#(song=$(spotifycli --song); [ -n "$song" ] && echo "#[bg=$base00,fg=$base0D] ♫ $song" || echo "")"
 tm_date="#[default,bg=$base00,fg=$base0C] %R"
 tm_host="#[fg=$base0E,bg=$base00] #h "
 set -g status-right "$tm_artist $tm_song $tm_date $tm_host"

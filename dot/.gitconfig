@@ -62,7 +62,7 @@
 [branch]
     # set up 'git pull' to rebase instead of merge
     autosetuprebase = always
-    autoSetupMerge = always	
+    autoSetupMerge = always
 
 [pull]
     rebase = true
@@ -200,3 +200,5 @@
     web = "! open \"$(git web-url)\"" # Open repo in browser
     pr = "! open \"$(git web-url)/compare/$(git default-branch)...$(git current-branch)?expand=1\"" # Open PR for current branch
 
+[safe]
+	directory = /opt/flutter
