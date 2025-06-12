@@ -1,4 +1,3 @@
-source "$HOME/.zsh/spaceship/spaceship.zsh"
 
 plugins=(
     git
@@ -22,11 +21,6 @@ if [ -e ~/.zsh/zsh_files/exports.zsh ]; then
      source ~/.zsh/zsh_files/exports.zsh
 fi
 
-# Load the Valiables file
-if [ -e ~/.zsh/zsh_files/variables.zsh ]; then
-     source ~/.zsh/zsh_files/variables.zsh
-fi
-
 # Load the Aliases file
 if [ -e ~/.zsh/zsh_files/aliases.zsh ]; then
      source ~/.zsh/zsh_files/aliases.zsh
@@ -42,9 +36,11 @@ if [ -e ~/.zsh/zsh_files/tmux.zsh ]; then
      source ~/.zsh/zsh_files/tmux.zsh
 fi
 
-# Path to your oh-my-zsh installation.
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(starship init zsh)"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Created by `pipx` on 2025-06-12 15:19:11
+export PATH="$PATH:/home/imlong/.local/bin"

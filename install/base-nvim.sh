@@ -3,9 +3,9 @@ PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
 source $PATH_CURRENT/utils/log.sh
 source $PATH_CURRENT/utils/install.sh
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz
 sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
+sudo tar -C /opt -xzf nvim-linux-arm64.tar.gz 
 
 tryInstall install \
     curl           \

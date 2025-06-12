@@ -12,6 +12,9 @@ chmod +x install/base-nvim.sh
 chmod +x install/base-zsh.sh
 chmod +x install/git.sh
 
+info "Add base repository."
+. install/base-repository.sh
+
 info "Installing dotfiles."
 . install/base.sh
 

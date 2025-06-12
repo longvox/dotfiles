@@ -127,3 +127,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 export PATH="$PATH:/opt/scripts/killport"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+. "$HOME/.cargo/env"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/imlong/.sdkman"
+[[ -s "/home/imlong/.sdkman/bin/sdkman-init.sh" ]] && source "/home/imlong/.sdkman/bin/sdkman-init.sh"

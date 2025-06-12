@@ -2,7 +2,6 @@
 alias reload="source ~/.zshrc"
 alias v='nvim'
 alias vim='nvim'
-alias ls="colorls --sd -A"
 
 # Git fixes
 alias gut='git'
@@ -49,8 +48,6 @@ alias mkdir='mkdir -pv'                     # Create parent dirs
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias ls='exa --icons'                      # Modern ls
-alias ll='exa -lh --icons'                  # List with details
 alias tree='exa --tree --icons'             # Tree view
 alias size='du -sh'                         # Directory size
 alias df='df -h'                            # Human readable sizes

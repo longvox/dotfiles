@@ -12,5 +12,4 @@ config/nvim/autoload/plug.vim
 vim/vim.symlink/spell/
 vim/vim.symlink/plugged/
 
-.temp-install/
-.env
+dot/.tmux/plugins

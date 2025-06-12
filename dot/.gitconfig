@@ -104,7 +104,7 @@
     lineNumber = true
 
 [credential]
-	helper = store
+	helper = cache --timeout 3600
 
 [rebase]
     instructionFormat = "[%an - %ar] %s"
