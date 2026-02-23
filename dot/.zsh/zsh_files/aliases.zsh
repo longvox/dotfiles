@@ -48,7 +48,7 @@ alias mkdir='mkdir -pv'                     # Create parent dirs
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias tree='exa --tree --icons'             # Tree view
+alias tree='eza --tree --icons'            # Tree view (eza is exa fork)
 alias size='du -sh'                         # Directory size
 alias df='df -h'                            # Human readable sizes
 

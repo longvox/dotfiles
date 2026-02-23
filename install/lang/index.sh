@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
-source $PATH_CURRENT/../utils/log.sh
+# Optional language runtimes. Edit to enable/disable (comment = skip).
+LANG_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+# shellcheck source=../lib/env.sh
+source "$LANG_DIR/../lib/env.sh"
 
-info "[Language Programing] Installing...."
-# source $PATH_CURRENT/../lang/javascript.sh
-# source $PATH_CURRENT/../lang/python.sh
-# source $PATH_CURRENT/../lang/ruby.sh
-# source $PATH_CURRENT/../lang/go.sh
-# source $PATH_CURRENT/../lang/php.sh
-# source $PATH_CURRENT/../lang/rust.sh
-# source $PATH_CURRENT/../lang/lua.sh
-# source $PATH_CURRENT/../lang/julia.sh
-source $PATH_CURRENT/../lang/java.sh
+info "[Language] Installing (see index.sh to enable/disable)..."
 
-cd $PATH_CURRENT/../../
-
+source "$LANG_DIR/python.sh"
+source "$LANG_DIR/ruby.sh"
+source "$LANG_DIR/javascript.sh"
+source "$LANG_DIR/java.sh"
+source "$LANG_DIR/go.sh"
+# source "$LANG_DIR/php.sh"
+source "$LANG_DIR/rust.sh"
+# source "$LANG_DIR/lua.sh"
+# source "$LANG_DIR/julia.sh"

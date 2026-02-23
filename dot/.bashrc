@@ -3,7 +3,8 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in *i*) ;;
+case $- in
+    *i*) ;;
       *) return;;
 esac
 
@@ -114,21 +115,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export GOPATH="${HOME}/go"
-export GOROOT="${HOME}/go"
-export GOBIN="${GOPATH}/bin"
-export PATH="${GOPATH}/bin:${PATH}"
-
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-export PATH="$PATH:/opt/scripts/killport"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-. "$HOME/.cargo/env"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/imlong/.sdkman"
-[[ -s "/home/imlong/.sdkman/bin/sdkman-init.sh" ]] && source "/home/imlong/.sdkman/bin/sdkman-init.sh"

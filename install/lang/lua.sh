@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/log.sh
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/install.sh
+# shellcheck source=../lib/env.sh
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../lib/env.sh"
 
-info "[lua] Installing ..."
+info "[Lua] Installing ..."
 
 tryInstall install              \
     lua5.4                      \

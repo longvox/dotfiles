@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/log.sh
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/install.sh
+# shellcheck source=../lib/env.sh
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../lib/env.sh"
 
 info "[Javascript] Installing ..."
 tryInstall install \

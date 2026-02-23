@@ -38,7 +38,7 @@ fi
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
-eval "$(starship init zsh)"
+command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

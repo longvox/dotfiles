@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/log.sh
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/install.sh
-PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
+# shellcheck source=../lib/env.sh
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../lib/env.sh"
 
 info "[Julia] Installing ..."
-cd ~
+cd "$HOME" || exit 1
 curl -fsSL https://install.julialang.org | sh
-cd PATH_CURRENT
+cd "$INSTALL_DIR" || true

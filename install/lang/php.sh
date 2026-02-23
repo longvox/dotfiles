@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/log.sh
-source $(dirname "$(readlink -f "$BASH_SOURCE")")/../utils/install.sh
-PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
+# shellcheck source=../lib/env.sh
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../lib/env.sh"
 
 info "[PHP] Installing ..."
-# PHP 8.1
-tryInstall install php8.1-cli 
+tryInstall install php8.1-cli || true
 
 # Composer
-cd ~
+cd "$HOME" || exit 1
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php
 sudo mv composer.phar /usr/local/bin/composer
-rm composer-setup.php
-cd $PATH_CURRENT
+rm -f composer-setup.php
+cd "$INSTALL_DIR" || true
 
 tryInstall install  \
     php8.1-pgsql    \
@@ -27,4 +25,4 @@ tryInstall install  \
     imagemagick     \
     php-imagick
 
-composer require laravel/pint --dev
+command -v composer &>/dev/null && composer require laravel/pint --dev 2>/dev/null || true

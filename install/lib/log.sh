@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Logging helpers for install scripts. Do not use set -e here; let the caller decide.
+# Logging helpers. Do not use set -e here; let the caller decide.
+[[ -n "${_DOTFILES_LIB_LOG_LOADED:-}" ]] && return
+_DOTFILES_LIB_LOG_LOADED=1
 
 readonly RS="\033[0m"        # reset
 readonly HC="\033[1m"        # hicolor
@@ -7,7 +9,7 @@ readonly UL="\033[4m"        # underline
 readonly ERROR="\033[31m"    # foreground red
 readonly INFO="\033[32m"     # foreground green
 readonly WARNING="\033[33m"  # foreground yellow
-readonly VERBOSE="\033[95m"  # foreground Light magenta
+readonly VERBOSE="\033[95m"   # foreground Light magenta
 readonly DEBUG="\033[96m"    # foreground Light cyan
 readonly SILLY="\033[94m"    # foreground Light blue
 

@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-PATH_CURRENT=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
-# shellcheck source=log.sh
-source "$PATH_CURRENT/log.sh"
-chmod +x "$PATH_CURRENT/install-gnome-shell.sh"
+# Package/install helpers. Requires INSTALL_DIR and TEMP_INSTALL_DIR (from env.sh).
+[[ -n "${_DOTFILES_LIB_INSTALL_LOADED:-}" ]] && return
+_DOTFILES_LIB_INSTALL_LOADED=1
 
-readonly TEMP_INSTALL_DIR="${HOME}/.dotfiles/.temp-install"
+[[ -d "$INSTALL_DIR/utils" ]] && chmod +x "$INSTALL_DIR/utils/install-gnome-shell.sh" 2>/dev/null || true
 
 isInstall() {
     dpkg-query -Wf'${db:Status-abbrev}' "$1" 2>/dev/null | grep -q '^i'
@@ -14,14 +13,20 @@ command_exists() {
     type "$1" &>/dev/null
 }
 
+# Install multiple packages in one apt-get call (optimized for phase 10)
 install() {
-    for package in "$@"; do
-        if isInstall "$package"; then
-            silly "$package installed, moving on..."
+    local to_install=()
+    local p
+    for p in "$@"; do
+        if isInstall "$p"; then
+            silly "$p installed, moving on..."
         else
-            sudo apt-get install -y "$package"
+            to_install+=("$p")
         fi
     done
+    if ((${#to_install[@]} > 0)); then
+        sudo apt-get install -y "${to_install[@]}"
+    fi
 }
 
 installPip() {
@@ -65,11 +70,13 @@ installSnap() {
 }
 
 installGnomeShellEx() {
+    local script="$INSTALL_DIR/utils/install-gnome-shell.sh"
+    [[ -x "$script" ]] || return 1
     for id in "$@"; do
         if gnome-extensions list 2>/dev/null | grep -qF "$id"; then
             silly "$id installed, moving on..."
         else
-            "$PATH_CURRENT/install-gnome-shell.sh" -o "$id"
+            "$script" -o "$id"
         fi
     done
 }
@@ -100,17 +107,26 @@ installSh() {
     done
 }
 
+# install(): single call with all packages (batch). Other funcs: one call per package (for per-item log).
 tryInstall() {
     local func_name="$1"
     shift
-    for package in "$@"; do
-        if info "Installing $package!" && "$func_name" "$package"; then
+    if [[ "$func_name" == "install" ]]; then
+        info "Installing $* ..."
+        if "$func_name" "$@"; then
             : "ok"
         else
-            error "Install $package failed!"
+            error "Install failed for one or more packages."
+            return 1
         fi
-    done
+    else
+        for package in "$@"; do
+            if info "Installing $package!" && "$func_name" "$package"; then
+                : "ok"
+            else
+                error "Install $package failed!"
+                return 1
+            fi
+        done
+    fi
 }
-
-
-

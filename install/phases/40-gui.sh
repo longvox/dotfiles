@@ -1,28 +1,20 @@
 #!/usr/bin/env bash
-PATH_CURRENT=$(dirname "$(readlink -f "$BASH_SOURCE")")
-source $PATH_CURRENT/utils/log.sh
-source $PATH_CURRENT/utils/install.sh
+# Phase 40: GUI applications
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../lib/env.sh"
 
 info "Install GUI application!"
-
 tryInstall install            \
     gnome-tweaks              \
     gufw                      \
     gdebi-core                \
-    ubuntu-restricted-extras  
-
-# 307 : Dash to Dock
-
-# tryInstall installGnomeShellEx \
-#     307
-
+    ubuntu-restricted-extras  \
+    kitty
 
 tryInstall installSnap         \
-    spotify                    \
+    spotify                   \
     mailspring                 \
     postman                    \
     zoom-client                \
     caprine                    \
     slack                      \
     dbeaver-ce
-    # onlyoffice-desktopeditors
