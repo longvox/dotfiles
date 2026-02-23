@@ -5,7 +5,9 @@ source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/../lib/env.sh"
 ZSH_CUSTOM="${HOME}/.oh-my-zsh/custom"
 
 install_zsh_plugin() {
-    local url="$1" name="$2" dest="${ZSH_CUSTOM}/plugins/${name}"
+    local url="$1"
+    local name="$2"
+    local dest="${ZSH_CUSTOM}/plugins/${name}"
     if [[ -d "$dest" ]]; then silly "Installed $name!"; else info "Installing $name!"; git clone "$url" "$dest"; fi
 }
 

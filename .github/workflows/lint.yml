@@ -23,9 +23,14 @@ jobs:
         run: |
           set -e
           failed=0
+          # Exclude dot/ (submodules), .git, install/utils (third-party), install/lang (sourced from index)
+          # -e SC1091: sourced files use runtime paths, shellcheck can't resolve
+          # -e SC1090: variable in source (e.g. LANG_INDEX)
+          # -e SC2148: lib/*.sh are sourced, not executed (no shebang)
+          # -e SC2015: A && B || C is intentional (fallback pattern)
           while IFS= read -r -d '' f; do
             echo "::group::$f"
-            if ! shellcheck -x "$f"; then failed=1; fi
+            if ! shellcheck -e SC1091,SC1090,SC2148,SC2015 -x "$f"; then failed=1; fi
             echo "::endgroup"
-          done < <(find . -name '*.sh' -print0 ! -path './dot/*')
+          done < <(find . -type f -name '*.sh' ! -path './dot/*' ! -path './.git/*' ! -path './install/utils/*' ! -path './install/lang/*' -print0)
           [[ $failed -eq 0 ]]

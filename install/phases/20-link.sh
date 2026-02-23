@@ -11,8 +11,8 @@ fi
 
 info "Using Stow to create symlinks for all directories"
 info "================================================="
-cd "$DOT_DIR"
+cd "$DOT_DIR" || exit 1
 # --adopt: existing target files (.bashrc, .profile...) are moved into dot/ then replaced by symlink
 stow --adopt --verbose . -vt "$TARGET_HOME"
-cd "$DOTFILES_ROOT"
+cd "$DOTFILES_ROOT" || exit 1
 info "All symlinks created using Stow"
